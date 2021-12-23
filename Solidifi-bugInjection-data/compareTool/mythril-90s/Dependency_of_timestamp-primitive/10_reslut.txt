@@ -1,0 +1,242 @@
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: getHash(string)
+
+PC address: 1190
+
+Estimated Gas Usage: 1014 - 5621
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x40000000000002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: getHash(string), txdata: 0x5b6beeb90000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: submitDocument(string)
+
+PC address: 1190
+
+Estimated Gas Usage: 19182 - 84799
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4008000000201bf3e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: submitDocument(string), txdata: 0x93dc3f1a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: docs(bytes32)
+
+PC address: 1304
+
+Estimated Gas Usage: 1474 - 2604
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: 10.sol:5
+
+
+
+mapping(bytes32=>string) public docs
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xc0000018003, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: docs(bytes32), txdata: 0x6fca17440000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: submitDocument(string)
+
+PC address: 1853
+
+Estimated Gas Usage: 19182 - 84799
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: 10.sol:18
+
+
+
+bytes(docs[_docHash]).length
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x800000bbd3a, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: submitDocument(string), txdata: 0x93dc3f1a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: DocumentSigner
+
+Function name: signers(bytes32,uint256)
+
+PC address: 1970
+
+Estimated Gas Usage: 1171 - 1456
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: 10.sol:6
+
+
+
+mapping(bytes32=>address[]) public signers
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: signers(bytes32,uint256), txdata: 0x9d07635100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

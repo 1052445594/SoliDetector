@@ -1,0 +1,262 @@
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: WhiteBetting
+
+Function name: bug_unchk_send17()
+
+PC address: 1789
+
+Estimated Gas Usage: 1006 - 35194
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_25.sol:249
+
+
+
+msg.sender.send(1 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x418000000541b1b2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: bug_unchk_send19(), txdata: 0xf5bfa0b2, value: 0xde0b6b3a7640000
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: WhiteBetting
+
+Function name: betList(uint64,uint256)
+
+PC address: 4115
+
+Estimated Gas Usage: 1169 - 1454
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_25.sol:50
+
+
+
+mapping(uint64 => BetFixture[]) public betList
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x400020cc2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: betList(uint64,uint256), txdata: 0x553016cd00000000000000000000000000000000000000000000000000020001011010040000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: WhiteBetting
+
+Function name: my_func_unchk11(address)
+
+PC address: 5624
+
+Estimated Gas Usage: 1029 - 35217
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_25.sol:69
+
+
+
+dst.send(msg.value)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4dffffffffffe0000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: my_func_unchk11(address), txdata: 0xc7b3ccc80000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: WhiteBetting
+
+Function name: my_func_uncheck12(address)
+
+PC address: 6741
+
+Estimated Gas Usage: 1128 - 35599
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_25.sol:65
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2400000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: my_func_uncheck12(address), txdata: 0xde7df662000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: WhiteBetting
+
+Function name: my_func_uncheck12(address)
+
+PC address: 6741
+
+Estimated Gas Usage: 1128 - 35599
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_25.sol:65
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

@@ -1,0 +1,126 @@
+mythril.interfaces.cli [ERROR]: Traceback (most recent call last):
+
+  File "/usr/lib/python3/dist-packages/urllib3/response.py", line 425, in _error_catcher
+
+    yield
+
+  File "/usr/lib/python3/dist-packages/urllib3/response.py", line 507, in read
+
+    data = self._fp.read(amt) if not fp_closed else b""
+
+  File "/usr/lib/python3.8/http/client.py", line 455, in read
+
+    n = self.readinto(b)
+
+  File "/usr/lib/python3.8/http/client.py", line 499, in readinto
+
+    n = self.fp.readinto(b)
+
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+
+    return self._sock.recv_into(b)
+
+  File "/usr/lib/python3.8/ssl.py", line 1241, in recv_into
+
+    return self.read(nbytes, buffer)
+
+  File "/usr/lib/python3.8/ssl.py", line 1099, in read
+
+    return self._sslobj.read(len, buffer)
+
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+
+
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 750, in generate
+
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+
+  File "/usr/lib/python3/dist-packages/urllib3/response.py", line 564, in stream
+
+    data = self.read(amt=amt, decode_content=decode_content)
+
+  File "/usr/lib/python3/dist-packages/urllib3/response.py", line 529, in read
+
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+
+    self.gen.throw(type, value, traceback)
+
+  File "/usr/lib/python3/dist-packages/urllib3/response.py", line 443, in _error_catcher
+
+    raise ProtocolError("Connection broken: %r" % e, e)
+
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(104, 'Connection reset by peer'))
+
+
+
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+
+  File "/usr/local/lib/python3.8/dist-packages/mythril-0.22.30-py3.8.egg/mythril/interfaces/cli.py", line 1009, in parse_args_and_execute
+
+    disassembler = MythrilDisassembler(
+
+  File "/usr/local/lib/python3.8/dist-packages/mythril-0.22.30-py3.8.egg/mythril/mythril/mythril_disassembler.py", line 39, in __init__
+
+    self.solc_binary = self._init_solc_binary(solc_version)
+
+  File "/usr/local/lib/python3.8/dist-packages/mythril-0.22.30-py3.8.egg/mythril/mythril/mythril_disassembler.py", line 74, in _init_solc_binary
+
+    solc_binary = util.solc_exists(version)
+
+  File "/usr/local/lib/python3.8/dist-packages/mythril-0.22.30-py3.8.egg/mythril/ethereum/util.py", line 144, in solc_exists
+
+    solcx.install_solc("v" + version)
+
+  File "/usr/local/lib/python3.8/dist-packages/py_solc_x-1.0.0-py3.8.egg/solcx/install.py", line 447, in install_solc
+
+    _install_solc_unix(version, filename, show_progress, solcx_binary_path)
+
+  File "/usr/local/lib/python3.8/dist-packages/py_solc_x-1.0.0-py3.8.egg/solcx/install.py", line 597, in _install_solc_unix
+
+    content = _download_solc(download, show_progress)
+
+  File "/usr/local/lib/python3.8/dist-packages/py_solc_x-1.0.0-py3.8.egg/solcx/install.py", line 566, in _download_solc
+
+    response = requests.get(url, stream=show_progress)
+
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 75, in get
+
+    return request('get', url, params=params, **kwargs)
+
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+
+    return session.request(method=method, url=url, **kwargs)
+
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+
+    resp = self.send(prep, **send_kwargs)
+
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 686, in send
+
+    r.content
+
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 828, in content
+
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 753, in generate
+
+    raise ChunkedEncodingError(e)
+
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(104, 'Connection reset by peer'))
+
+ 
+

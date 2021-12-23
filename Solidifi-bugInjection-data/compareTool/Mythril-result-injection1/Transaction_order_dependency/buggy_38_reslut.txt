@@ -1,0 +1,54 @@
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: BIGBOMBv2
+
+Function name: findfourPercent(uint256)
+
+PC address: 11118
+
+Estimated Gas Usage: 1172 - 1267
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_38.sol:44
+
+
+
+add(a,m)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x208a5000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: findfourPercent(uint256), txdata: 0xd7de7323ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcc, value: 0x0
+
+
+
+
+

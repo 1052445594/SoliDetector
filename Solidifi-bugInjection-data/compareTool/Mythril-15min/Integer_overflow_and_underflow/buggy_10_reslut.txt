@@ -1,0 +1,662 @@
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: increaseLockTime_intou1(uint256)
+
+PC address: 1651
+
+Estimated Gas Usage: 6140 - 26425
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:33
+
+
+
+lockTime_intou1[msg.sender] += _secondsToIncrease
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x100002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: increaseLockTime_intou1(uint256), txdata: 0x1d3fb2a78000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+Caller: [CREATOR], function: increaseLockTime_intou1(uint256), txdata: 0x1d3fb2a78492a24001029705b061b0214938084810020080080800000024000001088802, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: getHash(string)
+
+PC address: 1715
+
+Estimated Gas Usage: 1059 - 5666
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: getHash(string), txdata: 0x5b6beeb90000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: submitDocument(string)
+
+PC address: 1715
+
+Estimated Gas Usage: 19183 - 84800
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x8000000000040b, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: submitDocument(string), txdata: 0x93dc3f1a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on predictable environment variable ====
+
+SWC ID: 116
+
+Severity: Low
+
+Contract: DocumentSigner
+
+Function name: withdraw_intou13()
+
+PC address: 1816
+
+Estimated Gas Usage: 1081 - 1366
+
+A control flow decision is made based on The block.timestamp environment variable.
+
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: buggy_10.sol:71
+
+
+
+require(now > lockTime_intou13[msg.sender])
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: withdraw_intou13(), txdata: 0x5c03b626, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: docs(bytes32)
+
+PC address: 1899
+
+Estimated Gas Usage: 1541 - 2671
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:9
+
+
+
+mapping(bytes32=>string) public docs
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x6bdb6, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: docs(bytes32), txdata: 0x6fca17440000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on predictable environment variable ====
+
+SWC ID: 116
+
+Severity: Low
+
+Contract: DocumentSigner
+
+Function name: withdraw_ovrflow1()
+
+PC address: 2040
+
+Estimated Gas Usage: 1125 - 1410
+
+A control flow decision is made based on The block.timestamp environment variable.
+
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: buggy_10.sol:36
+
+
+
+require(now > lockTime_intou1[msg.sender])
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x12000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: withdraw_ovrflow1(), txdata: 0x76be3cd1, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: submitDocument(string)
+
+PC address: 2475
+
+Estimated Gas Usage: 19183 - 84800
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:44
+
+
+
+bytes(docs[_docHash]).length
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x41080000000012, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: submitDocument(string), txdata: 0x93dc3f1a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004000010101010101010101010140000101010101010101010101010101010101010101010101010101010101010101010101010101010101010000000080002040, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: DocumentSigner
+
+Function name: signers(bytes32,uint256)
+
+PC address: 2592
+
+Estimated Gas Usage: 1172 - 1457
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_10.sol:14
+
+
+
+mapping(bytes32=>address[]) public signers
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x8414c0800000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: signers(bytes32,uint256), txdata: 0x9d07635100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: transfer_intou14(address,uint256)
+
+PC address: 2642
+
+Estimated Gas Usage: 12089 - 52750
+
+The arithmetic operator can underflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:53
+
+
+
+balances_intou14[msg.sender] -= _value
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x800, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: transfer_intou14(address,uint256), txdata: 0xaefa551900000000000000000000000000000000000000000000000000000000000000000101010101010101010101010101010101010101010101010101010101010101, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: transfer_intou14(address,uint256)
+
+PC address: 2667
+
+Estimated Gas Usage: 12089 - 52750
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:54
+
+
+
+balances_intou14[_to] += _value
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x23c7560d20000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: transfer_intou14(address,uint256), txdata: 0xaefa5519000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaace5a480000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: increaseLockTime_intou13(uint256)
+
+PC address: 2694
+
+Estimated Gas Usage: 6116 - 26401
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:68
+
+
+
+lockTime_intou13[msg.sender] += _secondsToIncrease
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x10981000000000800, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: increaseLockTime_intou13(uint256), txdata: 0xb21d31b64000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+Caller: [CREATOR], function: increaseLockTime_intou13(uint256), txdata: 0xb21d31b6c000426012002020800080801080a43804000042040000042442000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: transfer_intou10(address,uint256)
+
+PC address: 2719
+
+Estimated Gas Usage: 12133 - 52794
+
+The arithmetic operator can underflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:25
+
+
+
+balances_intou10[msg.sender] -= _value
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: transfer_intou10(address,uint256), txdata: 0xc176237300000000000000000000000000000000000000000000000000000000000000000101010101010101010101010101010101010101010101010101010101010101, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: DocumentSigner
+
+Function name: transfer_intou10(address,uint256)
+
+PC address: 2744
+
+Estimated Gas Usage: 12133 - 52794
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_10.sol:26
+
+
+
+balances_intou10[_to] += _value
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: transfer_intou10(address,uint256), txdata: 0xc1762373000000000000000000000000affeaffeaffeaffeaffeaffeaffeaffeaffeaffe8000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

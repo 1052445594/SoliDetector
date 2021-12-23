@@ -1,0 +1,492 @@
+==== Dependence on predictable environment variable ====
+
+SWC ID: 120
+
+Severity: Low
+
+Contract: BitpayerDEX
+
+Function name: trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
+
+PC address: 2378
+
+Estimated Gas Usage: 6779 - 43896
+
+A control flow decision is made based on The block.number environment variable.
+
+The block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: 35.sol:267
+
+
+
+(orders[user][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)),v,r,s) == user) &&
+
+      block.number <= expires &&
+
+      orderFills[user][hash].add(amount) <= amountGet
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4100000000002e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256), txdata: 0x0a19b14a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on predictable environment variable ====
+
+SWC ID: 120
+
+Severity: Low
+
+Contract: BitpayerDEX
+
+Function name: trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256)
+
+PC address: 2440
+
+Estimated Gas Usage: 6793 - 43910
+
+A control flow decision is made based on The block.number environment variable.
+
+The block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: 35.sol:266
+
+
+
+require((
+
+      (orders[user][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)),v,r,s) == user) &&
+
+      block.number <= expires &&
+
+      orderFills[user][hash].add(amount) <= amountGet
+
+    ))
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: trade(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32,uint256), txdata: 0x0a19b14a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: BitpayerDEX
+
+Function name: depositToken(address,uint256)
+
+PC address: 4179
+
+Estimated Gas Usage: 9084 - 65608
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: 35.sol:238
+
+
+
+ERC20Essential(token).transferFrom(msg.sender, address(this), amount)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x2e2, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: depositToken(address,uint256), txdata: 0x338b5dea000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef3188024281106406224eeb1f7fbf095f818c2522008241100945c7212e80041d, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: BitpayerDEX
+
+Function name: depositToken(address,uint256)
+
+PC address: 4265
+
+Estimated Gas Usage: 9084 - 65608
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: 35.sol:239
+
+
+
+tokens[token][msg.sender]
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x410c0000000a3e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x40, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: depositToken(address,uint256), txdata: 0x338b5dea000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef698e41d3d3ff8bdf910273d9cb0b4e4ff6154f6ed7ffb5414243cd3c13b7a0d7, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: BitpayerDEX
+
+Function name: depositToken(address,uint256)
+
+PC address: 4322
+
+Estimated Gas Usage: 9084 - 65608
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: 35.sol:239
+
+
+
+tokens[token][msg.sender] = tokens[token][msg.sender].add(amount)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x410c0000000a3e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x40, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: depositToken(address,uint256), txdata: 0x338b5dea000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef698e41d3d3ff8bdf910273d9cb0b4e4ff6154f6ed7ffb5414243cd3c13b7a0d7, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: BitpayerDEX
+
+Function name: withdrawToken(address,uint256)
+
+PC address: 5181
+
+Estimated Gas Usage: 11922 - 69018
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: 35.sol:248
+
+
+
+ERC20Essential(token).transfer(msg.sender, amount)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xfbc2a, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x2000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawToken(address,uint256), txdata: 0x9e281a98000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: BitpayerDEX
+
+Function name: withdrawToken(address,uint256)
+
+PC address: 5261
+
+Estimated Gas Usage: 11922 - 69018
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: 35.sol:249
+
+
+
+tokens[token][msg.sender]
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x100, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawToken(address,uint256), txdata: 0x9e281a98000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on predictable environment variable ====
+
+SWC ID: 120
+
+Severity: Low
+
+Contract: BitpayerDEX
+
+Function name: availableVolume(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32)
+
+PC address: 6304
+
+Estimated Gas Usage: 5994 - 43111
+
+A control flow decision is made based on The block.number environment variable.
+
+The block.number environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: 35.sol:299
+
+
+
+if (!(
+
+      (orders[user][hash] || ecrecover(keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)),v,r,s) == user) &&
+
+      block.number <= expires
+
+    )) return 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4100000000043e, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: availableVolume(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32), txdata: 0xfb6e155f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: BitpayerDEX
+
+Function name: availableVolume(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32)
+
+PC address: 6377
+
+Estimated Gas Usage: 7077 - 44574
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: 35.sol:252
+
+
+
+function balanceOf(address token, address user) public view returns (uint) {
+
+    return tokens[token][user];
+
+  }
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x100000007befe, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: availableVolume(address,uint256,address,uint256,uint256,uint256,address,uint8,bytes32,bytes32), txdata: 0xfb6e155f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

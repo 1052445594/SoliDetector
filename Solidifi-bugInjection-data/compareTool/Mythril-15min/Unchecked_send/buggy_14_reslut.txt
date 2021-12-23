@@ -1,0 +1,368 @@
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ERC20
+
+Function name: bug_unchk_send17()
+
+PC address: 844
+
+Estimated Gas Usage: 897 - 35085
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_14.sol:151
+
+
+
+msg.sender.send(1 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x20000000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_unchk_send29(), txdata: 0xbc699b1f, value: 0xde0b6b3a7640000
+
+Caller: [SOMEGUY], function: bug_unchk_send22(), txdata: 0x788913ab, value: 0xde0b6b3a7640000
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: SaveWon
+
+Function name: bug_unchk_send17()
+
+PC address: 1474
+
+Estimated Gas Usage: 1006 - 35194
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_14.sol:151
+
+
+
+msg.sender.send(1 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21c00c0400000001, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x29dc21020a5100000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_unchk_send19(), txdata: 0xf5bfa0b2, value: 0xde0b6b3a7640000
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: SaveWon
+
+Function name: name()
+
+PC address: 1508
+
+Estimated Gas Usage: 2433 - 4174
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_14.sol:209
+
+
+
+return _name
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: name(), txdata: 0x06fdde03, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: SaveWon
+
+Function name: symbol()
+
+PC address: 1930
+
+Estimated Gas Usage: 2432 - 4173
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_14.sol:219
+
+
+
+return _symbol
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: symbol(), txdata: 0x95d89b41, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: SaveWon
+
+Function name: my_func_unchk11(address)
+
+PC address: 2044
+
+Estimated Gas Usage: 1029 - 35217
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_14.sol:222
+
+
+
+dst.send(msg.value)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2341000000043480, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_unchk11(address), txdata: 0xc7b3ccc80000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: SaveWon
+
+Function name: my_func_uncheck12(address)
+
+PC address: 2120
+
+Estimated Gas Usage: 1128 - 35599
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_14.sol:212
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2075d8, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x20000000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: my_func_uncheck12(address), txdata: 0xde7df662000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: SaveWon
+
+Function name: my_func_uncheck12(address)
+
+PC address: 2120
+
+Estimated Gas Usage: 1128 - 35599
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_14.sol:212
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xfbfbe, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

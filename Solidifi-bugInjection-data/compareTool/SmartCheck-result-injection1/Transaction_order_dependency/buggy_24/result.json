@@ -1,0 +1,897 @@
+{
+  "contract": "buggy_24",
+  "tool": "smartcheck",
+  "start": 1637148220.406136,
+  "end": 1637148225.0474818,
+  "duration": 4.641345739364624,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "adc165",
+      "severity": 1,
+      "line": 217,
+      "column": 52,
+      "content": "0xe00d13D53Ba180EAD5F4838BD56b15629026A8C9"
+    },
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "adc165",
+      "severity": 1,
+      "line": 218,
+      "column": 48,
+      "content": "0xddf0bB01f81059CCdB3D5bF5b1C7Bd540aDDFEac"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 1199,
+      "column": 8,
+      "content": "for(uint256i=0;i<totalUserCount;++i){Userstorageuser=userMapping[addressMapping[i]];user.calcDynamicCommissionAmount=0;}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 1204,
+      "column": 8,
+      "content": "for(uint256i=0;i<totalUserCount;++i){Usermemoryuser=userMapping[addressMapping[i]];if(user.currentInvestAmount>0){uint256commissionDays=now.sub(user.currentInvestTime).div(ONE_DAY);if(commissionDays>=1&&commissionDays<=user.currentInvestCycle){uint256depth=1;addressaddressWalker=user.sponsorAddress;while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}}}}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 1239,
+      "column": 8,
+      "content": "for(uint256i=0;i<totalUserCount;++i){addressuserAddress=addressMapping[i];Userstorageuser=userMapping[userAddress];if(user.calcDynamicCommissionAmount>0){user.dynamicCommissionBalance=user.dynamicCommissionBalance.add(user.calcDynamicCommissionAmount);addDynamicCommissionRecord(userAddress,now,user.calcDynamicCommissionAmount);}}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "k4o1l4",
+      "severity": 1,
+      "line": 836,
+      "column": 12,
+      "content": "while(addressWalker!=GENESIS_USER_ADDRESS){sponsor=userMapping[addressWalker];sponsor.totalDownlineInvestAmount=sponsor.totalDownlineInvestAmount.add(investAmount);addressWalker=sponsor.sponsorAddress;}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "k4o1l4",
+      "severity": 1,
+      "line": 849,
+      "column": 12,
+      "content": "while(addressWalker!=GENESIS_USER_ADDRESS){sponsor=userMapping[addressWalker];sponsor.downlineCount=sponsor.downlineCount.add(1);if(addressWalker==sponsorAddress){sponsor.nodeCount=sponsor.nodeCount.add(1);}sponsor.totalDownlineInvestAmount=sponsor.totalDownlineInvestAmount.add(investAmount);addressWalker=sponsor.sponsorAddress;}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "k4o1l4",
+      "severity": 1,
+      "line": 1211,
+      "column": 20,
+      "content": "while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "k4o1l4",
+      "severity": 1,
+      "line": 1295,
+      "column": 20,
+      "content": "while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "17f23a",
+      "severity": 1,
+      "line": 836,
+      "column": 19,
+      "content": "addressWalker!=GENESIS_USER_ADDRESS"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "17f23a",
+      "severity": 1,
+      "line": 849,
+      "column": 19,
+      "content": "addressWalker!=GENESIS_USER_ADDRESS"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "17f23a",
+      "severity": 1,
+      "line": 1211,
+      "column": 27,
+      "content": "addressWalker!=GENESIS_USER_ADDRESS"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "17f23a",
+      "severity": 1,
+      "line": 1295,
+      "column": 27,
+      "content": "addressWalker!=GENESIS_USER_ADDRESS"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 5,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 167,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 215,
+      "column": 12,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 216,
+      "column": 12,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 217,
+      "column": 12,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 218,
+      "column": 12,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 221,
+      "column": 9,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 379,
+      "column": 28,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 393,
+      "column": 31,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 412,
+      "column": 39,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 426,
+      "column": 43,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 445,
+      "column": 43,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 177,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_RETURN_STRUCT",
+      "patternId": "83hf3l",
+      "severity": 1,
+      "line": 1037,
+      "column": 70,
+      "content": "(uint256[16]memory,address)"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_RETURN_STRUCT",
+      "patternId": "83hf3l",
+      "severity": 1,
+      "line": 1068,
+      "column": 74,
+      "content": "(uint256[16]memory,address)"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_RETURN_STRUCT",
+      "patternId": "83hf3l",
+      "severity": 1,
+      "line": 1091,
+      "column": 72,
+      "content": "(uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory)"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_RETURN_STRUCT",
+      "patternId": "83hf3l",
+      "severity": 1,
+      "line": 1125,
+      "column": 82,
+      "content": "(uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory)"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_RETURN_STRUCT",
+      "patternId": "83hf3l",
+      "severity": 1,
+      "line": 1164,
+      "column": 83,
+      "content": "(uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory)"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 228,
+      "column": 2,
+      "content": "addresspayablewinner_TOD9;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 242,
+      "column": 2,
+      "content": "boolclaimed_TOD8=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 243,
+      "column": 0,
+      "content": "addresspayableowner_TOD8;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 244,
+      "column": 0,
+      "content": "uint256reward_TOD8;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 261,
+      "column": 2,
+      "content": "addresspayablewinner_TOD7;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 275,
+      "column": 2,
+      "content": "boolclaimed_TOD6=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 276,
+      "column": 0,
+      "content": "addresspayableowner_TOD6;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 277,
+      "column": 0,
+      "content": "uint256reward_TOD6;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 294,
+      "column": 2,
+      "content": "addresspayablewinner_TOD5;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 308,
+      "column": 2,
+      "content": "boolclaimed_TOD40=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 309,
+      "column": 0,
+      "content": "addresspayableowner_TOD40;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 310,
+      "column": 0,
+      "content": "uint256reward_TOD40;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 327,
+      "column": 2,
+      "content": "boolclaimed_TOD4=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 328,
+      "column": 0,
+      "content": "addresspayableowner_TOD4;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 329,
+      "column": 0,
+      "content": "uint256reward_TOD4;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 346,
+      "column": 2,
+      "content": "addresspayablewinner_TOD39;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 361,
+      "column": 2,
+      "content": "boolclaimed_TOD38=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 362,
+      "column": 0,
+      "content": "addresspayableowner_TOD38;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 363,
+      "column": 0,
+      "content": "uint256reward_TOD38;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 380,
+      "column": 2,
+      "content": "addresspayablewinner_TOD37;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 394,
+      "column": 2,
+      "content": "boolclaimed_TOD36=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 395,
+      "column": 0,
+      "content": "addresspayableowner_TOD36;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 396,
+      "column": 0,
+      "content": "uint256reward_TOD36;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 413,
+      "column": 2,
+      "content": "addresspayablewinner_TOD35;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 427,
+      "column": 2,
+      "content": "boolclaimed_TOD34=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 428,
+      "column": 0,
+      "content": "addresspayableowner_TOD34;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 429,
+      "column": 0,
+      "content": "uint256reward_TOD34;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 464,
+      "column": 0,
+      "content": "addresspayablewinner_TOD33;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 487,
+      "column": 0,
+      "content": "boolclaimed_TOD32=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 488,
+      "column": 0,
+      "content": "addresspayableowner_TOD32;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 489,
+      "column": 0,
+      "content": "uint256reward_TOD32;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 529,
+      "column": 0,
+      "content": "addresspayablewinner_TOD31;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 552,
+      "column": 0,
+      "content": "boolclaimed_TOD30=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 553,
+      "column": 0,
+      "content": "addresspayableowner_TOD30;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 554,
+      "column": 0,
+      "content": "uint256reward_TOD30;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 574,
+      "column": 0,
+      "content": "addresspayablewinner_TOD3;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 600,
+      "column": 0,
+      "content": "addresspayablewinner_TOD29;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 641,
+      "column": 0,
+      "content": "boolclaimed_TOD28=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 642,
+      "column": 0,
+      "content": "addresspayableowner_TOD28;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 643,
+      "column": 0,
+      "content": "uint256reward_TOD28;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 691,
+      "column": 0,
+      "content": "addresspayablewinner_TOD27;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 718,
+      "column": 0,
+      "content": "boolclaimed_TOD26=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 719,
+      "column": 0,
+      "content": "addresspayableowner_TOD26;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 720,
+      "column": 0,
+      "content": "uint256reward_TOD26;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 745,
+      "column": 0,
+      "content": "addresspayablewinner_TOD25;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 767,
+      "column": 0,
+      "content": "boolclaimed_TOD24=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 768,
+      "column": 0,
+      "content": "addresspayableowner_TOD24;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 769,
+      "column": 0,
+      "content": "uint256reward_TOD24;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 794,
+      "column": 0,
+      "content": "addresspayablewinner_TOD23;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 866,
+      "column": 0,
+      "content": "boolclaimed_TOD22=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 867,
+      "column": 0,
+      "content": "addresspayableowner_TOD22;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 868,
+      "column": 0,
+      "content": "uint256reward_TOD22;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 905,
+      "column": 0,
+      "content": "addresspayablewinner_TOD21;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 941,
+      "column": 0,
+      "content": "boolclaimed_TOD20=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 942,
+      "column": 0,
+      "content": "addresspayableowner_TOD20;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 943,
+      "column": 0,
+      "content": "uint256reward_TOD20;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 968,
+      "column": 0,
+      "content": "boolclaimed_TOD2=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 969,
+      "column": 0,
+      "content": "addresspayableowner_TOD2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 970,
+      "column": 0,
+      "content": "uint256reward_TOD2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 995,
+      "column": 0,
+      "content": "addresspayablewinner_TOD19;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1018,
+      "column": 0,
+      "content": "boolclaimed_TOD18=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1019,
+      "column": 0,
+      "content": "addresspayableowner_TOD18;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1020,
+      "column": 0,
+      "content": "uint256reward_TOD18;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1054,
+      "column": 0,
+      "content": "addresspayablewinner_TOD17;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1072,
+      "column": 0,
+      "content": "boolclaimed_TOD16=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1073,
+      "column": 0,
+      "content": "addresspayableowner_TOD16;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1074,
+      "column": 0,
+      "content": "uint256reward_TOD16;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1111,
+      "column": 0,
+      "content": "addresspayablewinner_TOD15;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1145,
+      "column": 0,
+      "content": "boolclaimed_TOD14=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1146,
+      "column": 0,
+      "content": "addresspayableowner_TOD14;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1147,
+      "column": 0,
+      "content": "uint256reward_TOD14;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1184,
+      "column": 0,
+      "content": "addresspayablewinner_TOD13;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1248,
+      "column": 0,
+      "content": "boolclaimed_TOD12=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1249,
+      "column": 0,
+      "content": "addresspayableowner_TOD12;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1250,
+      "column": 0,
+      "content": "uint256reward_TOD12;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1273,
+      "column": 0,
+      "content": "addresspayablewinner_TOD11;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1323,
+      "column": 0,
+      "content": "boolclaimed_TOD10=false;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1324,
+      "column": 0,
+      "content": "addresspayableowner_TOD10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1325,
+      "column": 0,
+      "content": "uint256reward_TOD10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 1352,
+      "column": 0,
+      "content": "addresspayablewinner_TOD1;"
+    }
+  ]
+}

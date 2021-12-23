@@ -1,0 +1,217 @@
+{
+  "contract": "buggy_22",
+  "tool": "smartcheck",
+  "start": 1637146569.2971013,
+  "end": 1637146572.990041,
+  "duration": 3.6929397583007812,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ARRAY_LENGTH_MANIPULATION",
+      "patternId": "43ba1c",
+      "severity": 1,
+      "line": 440,
+      "column": 21,
+      "content": "proposals.length++"
+    },
+    {
+      "name": "SOLIDITY_ARRAY_LENGTH_MANIPULATION",
+      "patternId": "43ba1c",
+      "severity": 1,
+      "line": 540,
+      "column": 17,
+      "content": "p.votes.length++"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 578,
+      "column": 8,
+      "content": "for(uinti=0;i<p.votes.length;++i){Votestoragev=p.votes[i];uintvoteWeight=tokenAddress.actualBalanceOf(v.voter);quorum+=voteWeight;if(v.inSupport){yea+=voteWeight;}else{nay+=voteWeight;}}"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "f6f853",
+      "severity": 2,
+      "line": 578,
+      "column": 8,
+      "content": "for(uinti=0;i<p.votes.length;++i){Votestoragev=p.votes[i];uintvoteWeight=tokenAddress.actualBalanceOf(v.voter);quorum+=voteWeight;if(v.inSupport){yea+=voteWeight;}else{nay+=voteWeight;}}"
+    },
+    {
+      "name": "SOLIDITY_OVERPOWERED_ROLE",
+      "patternId": "j83hf7",
+      "severity": 2,
+      "line": 370,
+      "column": 4,
+      "content": "functioninit(Token_tokenAddress,address_chairmanAddress,uint_minimumTokensToVote,uint_minimumPercentToPassAVote,uint_minutesForDebate)onlyOwnerpublic{require(!initialized);initialized=true;changeVotingRules(_tokenAddress,_chairmanAddress,_minimumTokensToVote,_minimumPercentToPassAVote,_minutesForDebate);emitInitialized();}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 208,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 76,
+      "column": 12,
+      "content": "balances_intou30[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 115,
+      "column": 12,
+      "content": "balances_intou26[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 228,
+      "column": 12,
+      "content": "balances_intou38[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 259,
+      "column": 12,
+      "content": "balances_intou34[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 269,
+      "column": 12,
+      "content": "balances_intou14[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 299,
+      "column": 12,
+      "content": "balances_intou10[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 379,
+      "column": 12,
+      "content": "balances_intou22[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 485,
+      "column": 12,
+      "content": "balances_intou2[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 550,
+      "column": 12,
+      "content": "balances_intou18[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 73,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou30;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 112,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou26;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 225,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou38;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 254,
+      "column": 2,
+      "content": "addresschairmanAddress;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 256,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou34;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 266,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou14;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 296,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 376,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou22;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 482,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 547,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou18;"
+    }
+  ]
+}

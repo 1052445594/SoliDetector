@@ -1,0 +1,570 @@
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ProofOfExistence
+
+Function name: bug_unchk15(address)
+
+PC address: 1661
+
+Estimated Gas Usage: 980 - 35168
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_46.sol:17
+
+
+
+addr.send (42 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000901d12ebe1b195e5aa8748e62bd7734ae19b51f, value: 0x246ddf97976680000
+
+Caller: [SOMEGUY], function: bug_unchk15(address), txdata: 0x0f80b6aed1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: ProofOfExistence
+
+Function name: bug_unchk15(address)
+
+PC address: 1661
+
+Estimated Gas Usage: 980 - 35168
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_46.sol:17
+
+
+
+addr.send (42 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x10001002200000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x200000000100000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000901d12ebe1b195e5aa8748e62bd7734ae19b51f, value: 0x246ddf97976680000
+
+Caller: [ATTACKER], function: bug_unchk15(address), txdata: 0x0f80b6aed1d1d1d1d1d1d1d1d1d1d1d1deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ProofOfExistence
+
+Function name: unhandledsend_unchk14(address)
+
+PC address: 1704
+
+Estimated Gas Usage: 1002 - 35190
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_46.sol:43
+
+
+
+callee.send(5 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x30004800620, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000901d12ebe1b195e5aa8748e62bd7734ae19b51f, value: 0x4563918244f40000
+
+Caller: [ATTACKER], function: unhandledsend_unchk14(address), txdata: 0x24ebdd34d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: ProofOfExistence
+
+Function name: unhandledsend_unchk14(address)
+
+PC address: 1704
+
+Estimated Gas Usage: 1002 - 35190
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_46.sol:43
+
+
+
+callee.send(5 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x3c0000002001000a, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df6620000000000000000000000000901d12ebe1b195e5aa8748e62bd7734ae19b51f, value: 0x4563918244f40000
+
+Caller: [ATTACKER], function: unhandledsend_unchk14(address), txdata: 0x24ebdd34d1d1d1d1d1d1d1d1d1d1d1d1deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ProofOfExistence
+
+Function name: my_func_unchk11(address)
+
+PC address: 3593
+
+Estimated Gas Usage: 1006 - 35194
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_46.sol:97
+
+
+
+dst.send(msg.value)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x80040002020a32, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d949100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000041000000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000001408040200420800400000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+Caller: [ATTACKER], function: my_func_unchk11(address), txdata: 0xc7b3ccc8eaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaea, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ProofOfExistence
+
+Function name: my_func_uncheck12(address)
+
+PC address: 3626
+
+Estimated Gas Usage: 1077 - 35265
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_46.sol:84
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d949100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000044000000000000000000000000000000000000000000000000000000000000000000000017000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+Caller: [SOMEGUY], function: my_func_uncheck12(address), txdata: 0xde7df662444444444444444444444444deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ProofOfExistence
+
+Function name: my_func_uncheck12(address)
+
+PC address: 3626
+
+Estimated Gas Usage: 1077 - 35265
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_46.sol:84
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x4, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d949100000000000000000000000000000000000000000000000000000000000000170000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+Caller: [ATTACKER], function: my_func_uncheck12(address), txdata: 0xde7df6624343434343434343434343434343434343434343434343434343434343434343, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: ProofOfExistence
+
+Function name: my_func_uncheck12(address)
+
+PC address: 3626
+
+Estimated Gas Usage: 1077 - 35265
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_46.sol:84
+
+
+
+dst.call.value(msg.value)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x3ffffffffffffffff, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: my_func_unchk11(address), txdata: 0xc7b3ccc8000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x1
+
+Caller: [ATTACKER], function: my_func_uncheck12(address), txdata: 0xde7df662000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: ProofOfExistence
+
+Function name: SetFileExistenceProof(address,string,string,address,uint8)
+
+PC address: 4133
+
+Estimated Gas Usage: 48022 - 218940
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x40000000002002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d94910000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000170000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: ProofOfExistence
+
+Function name: SetFileExistenceProof(address,string,string,address,uint8)
+
+PC address: 4137
+
+Estimated Gas Usage: 48022 - 218940
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x10001a388, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d949100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006600000000000000000000000000000000000000000000000000000000000000000000000000170000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: ProofOfExistence
+
+Function name: SetFileExistenceProof(address,string,string,address,uint8)
+
+PC address: 4265
+
+Estimated Gas Usage: 1594 - 9597
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_46.sol:30
+
+
+
+generateQRCodeForFile(dappBoxOrigin,_fileHash,_filePathHash,_contractAddress ,_identifier)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: SetFileExistenceProof(address,string,string,address,uint8), txdata: 0x846d949100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000007, value: 0x0
+
+
+
+
+

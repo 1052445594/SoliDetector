@@ -1,0 +1,927 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sol="http://www.hty.group/tf/ontologies/2020/07/Solildity#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function">
+    <owl:deprecated rdf:parseType="Resource">
+    </owl:deprecated>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForCondition">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Param">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfCondition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#VariableOperation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Constructor">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#StateVar">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Modifier">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Struct">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfRight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionCall">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Library"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForContent">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfWrong">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnValue">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Interface"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnClaim">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#containAssignment"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStateVar"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfCondition"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasParam"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfWrong">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineConstructor"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#after"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionVar">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionStep">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnValue"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnClaim"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfRight">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#before">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#operateVarible"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineModifier"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForCondition">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForContent">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStruct"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIf"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignLeft">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#storageLocate"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionObject"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasModifier"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionVar"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#returnText"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignRight"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opSymbol">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionStep"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#typeName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#valueIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opVarible">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#nameIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionArgument"/>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.MalloryCrossFunction.L141*C4574">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L162*C5100">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.transfer.L164*C5154">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L162*C5100"/>
+            <sol:callFunctionArgument>owner,vb.getBalance(address(this))</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>vb</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>external</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>fallback</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.attack.L155*C4910">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.transfer.L160*C5057">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.withdrawBalance.L159*C5034">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.deposit.value_address_this_.balance_.L157*C4968">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.attack.L155*C4910"/>
+                    <sol:callFunctionArgument></sol:callFunctionArgument>
+                    <sol:callFunctionName>vb.deposit.value(address(this).balance)</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument></sol:callFunctionArgument>
+                <sol:callFunctionName>withdrawBalance</sol:callFunctionName>
+                <sol:callFunctionObject>vb</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:callFunctionArgument>address(this).balance</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>owner</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.withdrawBalance.L159*C5034"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.deposit.value_address_this_.balance_.L157*C4968"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>attack</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.gimme.L154*C4873">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>gimme</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:defineConstructor>
+      <sol:Constructor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor._.L148*C4733">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.vb__vb.L152*C4859">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_msg.sender.L151*C4838">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor._.L148*C4733"/>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>msg.sender</sol:assignRight>
+                <sol:assignLeft>owner</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>_vb</sol:assignRight>
+            <sol:assignLeft>vb</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_msg.sender.L151*C4838"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor_param._vb.L148*C4745">
+            <sol:typeName>VulnBank</sol:typeName>
+            <sol:nameIs>_vb</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Constructor>
+    </sol:defineConstructor>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner.L144*C4642">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.vb.L142*C4607">
+        <sol:typeName>VulnBank</sol:typeName>
+        <sol:nameIs>vb</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:nameIs>MalloryCrossFunction</sol:nameIs>
+  </sol:Contract>
+  <sol:Pragma rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_pragma.^0.5.0.L29*C1378">
+    <sol:pragmaValue>^0.5.0</sol:pragmaValue>
+    <sol:pragmaName>solidity</sol:pragmaName>
+  </sol:Pragma>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.VulnBankSecureLock.L87*C3081">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L104*C3657">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L108*C3796">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L108*C3796">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender__0.L112*C3946">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__false.L111*C3908">
+                        <sol:before>
+                          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L110*C3862">
+                            <sol:before>
+                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__true.L109*C3825">
+                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L108*C3796"/>
+                                <sol:assignSymbol>=</sol:assignSymbol>
+                                <sol:assignRight>true</sol:assignRight>
+                                <sol:assignLeft>disableWithdraw[msg.sender]</sol:assignLeft>
+                              </sol:Assignment>
+                            </sol:before>
+                            <sol:callFunctionArgument>""</sol:callFunctionArgument>
+                            <sol:callFunctionName>msg.sender.call.value(amountToWithdraw)</sol:callFunctionName>
+                          </sol:FunctionCall>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>false</sol:assignRight>
+                        <sol:assignLeft>disableWithdraw[msg.sender]</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>0</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__false.L111*C3908"/>
+                <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L110*C3862"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__true.L109*C3825"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L108*C3796">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L108*C3796"/>
+                    <sol:hasIfCondition>amountToWithdraw&gt;0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L106*C3742">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L105*C3694">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L104*C3657"/>
+                    <sol:callFunctionArgument>disableWithdraw[msg.sender]==false</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:valueIs>userBalances[msg.sender]</sol:valueIs>
+                <sol:nameIs>amountToWithdraw</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L108*C3796"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L106*C3742"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L105*C3694"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:nameIs>withdrawBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L97*C3441">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L99*C3542">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L99*C3542">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender_-_amount.L101*C3614">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L100*C3585">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L99*C3542"/>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>userBalances[to]+amount</sol:assignRight>
+                        <sol:assignLeft>userBalances[to]</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>userBalances[msg.sender]-amount</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L100*C3585"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L99*C3542">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L99*C3542"/>
+                    <sol:hasIfCondition>userBalances[msg.sender]&gt;=amount</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L98*C3494">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L97*C3441"/>
+                <sol:callFunctionArgument>disableWithdraw[msg.sender]==false</sol:callFunctionArgument>
+                <sol:callFunctionName>require</sol:callFunctionName>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L99*C3542"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L98*C3494"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.amount.L97*C3471">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>amount</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.to.L97*C3459">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>to</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>transfer</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L93*C3313">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender___msg.value.L95*C3398">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L94*C3350">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L93*C3313"/>
+                <sol:callFunctionArgument>disableWithdraw[msg.sender]==false</sol:callFunctionArgument>
+                <sol:callFunctionName>require</sol:callFunctionName>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>userBalances[msg.sender]+msg.value</sol:assignRight>
+            <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L94*C3350"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>deposit</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L90*C3225">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.userBalances_a_.L91*C3285">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L90*C3225"/>
+            <sol:returnText>userBalances[a]</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L90*C3268">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L90*C3276">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.a.L90*C3245">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>a</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.disableWithdraw.L89*C3173">
+        <sol:hasModifier>private</sol:hasModifier>
+        <sol:elementTypeName2>bool</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>disableWithdraw</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.userBalances.L88*C3124">
+        <sol:hasModifier>private</sol:hasModifier>
+        <sol:elementTypeName2>uint</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>userBalances</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:inherit>VulnBank</sol:inherit>
+    <sol:nameIs>VulnBankSecureLock</sol:nameIs>
+  </sol:Contract>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.VulnBank.L31*C1433">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L35*C1603">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:nameIs>withdrawBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L34*C1550">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.amount.L34*C1580">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>amount</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.to.L34*C1568">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>to</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>transfer</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L33*C1513">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>deposit</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L32*C1454">
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L32*C1497">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L32*C1505">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.a.L32*C1474">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>a</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:nameIs>VulnBank</sol:nameIs>
+  </sol:Contract>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.VulnBankNoLock.L37*C1643">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L51*C2067">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L54*C2158">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L54*C2158">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender__0.L56*C2233">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L55*C2187">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L54*C2158"/>
+                        <sol:callFunctionArgument>""</sol:callFunctionArgument>
+                        <sol:callFunctionName>msg.sender.call.value(amountToWithdraw)</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>0</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L55*C2187"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L54*C2158">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L54*C2158"/>
+                    <sol:hasIfCondition>amountToWithdraw&gt;0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L52*C2104">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L51*C2067"/>
+                <sol:valueIs>userBalances[msg.sender]</sol:valueIs>
+                <sol:nameIs>amountToWithdraw</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L54*C2158"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L52*C2104"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:nameIs>withdrawBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L45*C1899">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L46*C1952">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L46*C1952">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender_-_amount.L48*C2024">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L47*C1995">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L46*C1952"/>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>userBalances[to]+amount</sol:assignRight>
+                        <sol:assignLeft>userBalances[to]</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>userBalances[msg.sender]-amount</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L47*C1995"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L46*C1952">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L46*C1952"/>
+                    <sol:hasIfCondition>userBalances[msg.sender]&gt;=amount</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L45*C1899"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L46*C1952"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.amount.L45*C1929">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>amount</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.to.L45*C1917">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>to</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>transfer</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L42*C1819">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender___msg.value.L43*C1856">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L42*C1819"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>userBalances[msg.sender]+msg.value</sol:assignRight>
+            <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>deposit</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L39*C1731">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.userBalances_a_.L40*C1791">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L39*C1731"/>
+            <sol:returnText>userBalances[a]</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L39*C1774">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L39*C1782">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.a.L39*C1751">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>a</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.userBalances.L38*C1682">
+        <sol:hasModifier>private</sol:hasModifier>
+        <sol:elementTypeName2>uint</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>userBalances</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:inherit>VulnBank</sol:inherit>
+    <sol:nameIs>VulnBankNoLock</sol:nameIs>
+  </sol:Contract>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.VulnBankBuggyLock.L60*C2273">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L75*C2752">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L79*C2891">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L79*C2891">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender__0.L83*C3041">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__false.L82*C3003">
+                        <sol:before>
+                          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L81*C2957">
+                            <sol:before>
+                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__true.L80*C2920">
+                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L79*C2891"/>
+                                <sol:assignSymbol>=</sol:assignSymbol>
+                                <sol:assignRight>true</sol:assignRight>
+                                <sol:assignLeft>disableWithdraw[msg.sender]</sol:assignLeft>
+                              </sol:Assignment>
+                            </sol:before>
+                            <sol:callFunctionArgument>""</sol:callFunctionArgument>
+                            <sol:callFunctionName>msg.sender.call.value(amountToWithdraw)</sol:callFunctionName>
+                          </sol:FunctionCall>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>false</sol:assignRight>
+                        <sol:assignLeft>disableWithdraw[msg.sender]</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>0</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__false.L82*C3003"/>
+                <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.call.value_amountToWithdraw_.L81*C2957"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.disableWithdraw_msg.sender__true.L80*C2920"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L79*C2891">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.amountToWithdraw_0.L79*C2891"/>
+                    <sol:hasIfCondition>amountToWithdraw&gt;0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L77*C2837">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L76*C2789">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.withdrawBalance.L75*C2752"/>
+                    <sol:callFunctionArgument>disableWithdraw[msg.sender]==false</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:valueIs>userBalances[msg.sender]</sol:valueIs>
+                <sol:nameIs>amountToWithdraw</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.amountToWithdraw_0.L79*C2891"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uintamountToWithdraw.L77*C2837"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L76*C2789"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:nameIs>withdrawBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L69*C2584">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L70*C2637">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L70*C2637">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender_-_amount.L72*C2709">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L71*C2680">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L70*C2637"/>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>userBalances[to]+amount</sol:assignRight>
+                        <sol:assignLeft>userBalances[to]</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>userBalances[msg.sender]-amount</sol:assignRight>
+                    <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_to___amount.L71*C2680"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L70*C2637">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.userBalances_msg.sender___amount.L70*C2637"/>
+                    <sol:hasIfCondition>userBalances[msg.sender]&gt;=amount</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.transfer.L69*C2584"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.userBalances_msg.sender___amount.L70*C2637"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.amount.L69*C2614">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>amount</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.to.L69*C2602">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>to</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>transfer</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L66*C2504">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.userBalances_msg.sender___msg.value.L67*C2541">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.deposit.L66*C2504"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>userBalances[msg.sender]+msg.value</sol:assignRight>
+            <sol:assignLeft>userBalances[msg.sender]</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>deposit</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L63*C2416">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.userBalances_a_.L64*C2476">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBalance.L63*C2416"/>
+            <sol:returnText>userBalances[a]</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L63*C2459">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L63*C2467">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.a.L63*C2436">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>a</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getBalance</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.disableWithdraw.L62*C2364">
+        <sol:hasModifier>private</sol:hasModifier>
+        <sol:elementTypeName2>bool</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>disableWithdraw</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.userBalances.L61*C2315">
+        <sol:hasModifier>private</sol:hasModifier>
+        <sol:elementTypeName2>uint</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>userBalances</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:inherit>VulnBank</sol:inherit>
+    <sol:nameIs>VulnBankBuggyLock</sol:nameIs>
+  </sol:Contract>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.MallorySameFunction.L116*C3986">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L137*C4513">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.withdrawBalance.L138*C4545">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L137*C4513"/>
+            <sol:callFunctionArgument></sol:callFunctionArgument>
+            <sol:callFunctionName>withdrawBalance</sol:callFunctionName>
+            <sol:callFunctionObject>vb</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>external</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>fallback</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.attack.L130*C4323">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.transfer.L135*C4470">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.withdrawBalance.L134*C4447">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.deposit.value_address_this_.balance_.L132*C4381">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.attack.L130*C4323"/>
+                    <sol:callFunctionArgument></sol:callFunctionArgument>
+                    <sol:callFunctionName>vb.deposit.value(address(this).balance)</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument></sol:callFunctionArgument>
+                <sol:callFunctionName>withdrawBalance</sol:callFunctionName>
+                <sol:callFunctionObject>vb</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:callFunctionArgument>address(this).balance</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>owner</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.withdrawBalance.L134*C4447"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.vb.deposit.value_address_this_.balance_.L132*C4381"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>attack</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.gimme.L129*C4286">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>gimme</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:defineConstructor>
+      <sol:Constructor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor._.L123*C4144">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.vb__vb.L127*C4272">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_msg.sender.L126*C4251">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor._.L123*C4144"/>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>msg.sender</sol:assignRight>
+                <sol:assignLeft>owner</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>_vb</sol:assignRight>
+            <sol:assignLeft>vb</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_msg.sender.L126*C4251"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_constructor_param._vb.L123*C4156">
+            <sol:typeName>VulnBank</sol:typeName>
+            <sol:nameIs>_vb</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Constructor>
+    </sol:defineConstructor>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner.L119*C4053">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.vb.L117*C4018">
+        <sol:typeName>VulnBank</sol:typeName>
+        <sol:nameIs>vb</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:nameIs>MallorySameFunction</sol:nameIs>
+  </sol:Contract>
+</rdf:RDF>

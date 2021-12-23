@@ -1,0 +1,273 @@
+{
+  "contract": "buggy_31",
+  "tool": "smartcheck",
+  "start": 1637148717.942944,
+  "end": 1637148720.7411797,
+  "duration": 2.7982356548309326,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 42,
+      "column": 19,
+      "content": "(address(0))"
+    },
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 69,
+      "column": 12,
+      "content": "returnaddress(0)"
+    },
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 73,
+      "column": 12,
+      "content": "returnaddress(0)"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 91,
+      "column": 0,
+      "content": "contractOwnable{functionwithdrawAll_txorigin22(addresspayable_recipient,addressowner_txorigin22)public{require(tx.origin==owner_txorigin22);_recipient.transfer(address<missing ';'>(this).balance);}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 183,
+      "column": 0,
+      "content": "contractReentrancyGuard{functionsendto_txorigin21(addresspayablereceiver,uintamount,addressowner_txorigin21)public{require(tx.origin==owner_txorigin21);receiver.transfer(amount);}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 216,
+      "column": 0,
+      "content": "contractFeeTransactionManagerisOwnable,ReentrancyGuard{functionbug_txorigin20(addressowner_txorigin20)public{require(tx.origin==owner_txorigin20);}IERC20publictoken;functionwithdrawAll_txorigin2(addresspayable_recipient,addressowner_txorigin2)public{require(tx.origin==owner_txorigin2);_recipient.transfer(address<missing ';'>(this).balance);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_SHOULD_NOT_BE_PURE",
+      "patternId": "11314f",
+      "severity": 1,
+      "line": 39,
+      "column": 4,
+      "content": "functionrecover(bytes32hash,bytesmemorysignature)internalpurereturns(address){if(signature.length!=65){return(address(0));}bytes32r;bytes32s;uint8v;assembly{r:=mload(add(signature,0x20))s:=mload(add(signature,0x40))v:=byte(0,mload(add(signature,0x60)))}if(uint256(s)>0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0){returnaddress(0);}if(v!=27&&v!=28){returnaddress(0);}returnecrecover(hash,v,r,s);}"
+    },
+    {
+      "name": "SOLIDITY_TX_ORIGIN",
+      "patternId": "12e802",
+      "severity": 2,
+      "line": 219,
+      "column": 16,
+      "content": "tx.origin"
+    },
+    {
+      "name": "SOLIDITY_USING_INLINE_ASSEMBLY",
+      "patternId": "109cd5",
+      "severity": 1,
+      "line": 53,
+      "column": 8,
+      "content": "assembly{r:=mload(add(signature,0x20))s:=mload(add(signature,0x40))v:=byte(0,mload(add(signature,0x60)))}"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 92,
+      "column": 2,
+      "content": "functionwithdrawAll_txorigin22(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 185,
+      "column": 2,
+      "content": "functionsendto_txorigin21(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 222,
+      "column": 2,
+      "content": "functionwithdrawAll_txorigin2(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 92,
+      "column": 50,
+      "content": "_recipient,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 92,
+      "column": 61,
+      "content": "addressowner_txorigin22)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 93,
+      "column": 8,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 93,
+      "column": 19,
+      "content": "origin==owner_txorigin22);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 94,
+      "column": 8,
+      "content": "_recipient.transfer"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 94,
+      "column": 27,
+      "content": "(address<missing ';'>"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 94,
+      "column": 35,
+      "content": "(this).balance);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 185,
+      "column": 45,
+      "content": "receiver,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 185,
+      "column": 55,
+      "content": "uintamount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 185,
+      "column": 67,
+      "content": "addressowner_txorigin21)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 186,
+      "column": 1,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 186,
+      "column": 13,
+      "content": "origin==owner_txorigin21);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 187,
+      "column": 1,
+      "content": "receiver.transfer(amount);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 222,
+      "column": 49,
+      "content": "_recipient,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 222,
+      "column": 60,
+      "content": "addressowner_txorigin2)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 223,
+      "column": 8,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 223,
+      "column": 19,
+      "content": "origin==owner_txorigin2);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 224,
+      "column": 8,
+      "content": "_recipient.transfer"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 224,
+      "column": 27,
+      "content": "(address<missing ';'>"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 224,
+      "column": 35,
+      "content": "(this).balance);"
+    }
+  ]
+}

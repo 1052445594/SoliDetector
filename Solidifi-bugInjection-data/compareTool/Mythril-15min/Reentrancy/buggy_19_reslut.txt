@@ -1,0 +1,2276 @@
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: owned
+
+Function name: withdrawBalance_re_ent33()
+
+PC address: 474
+
+Estimated Gas Usage: 7015 - 61866
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:76
+
+
+
+msg.sender.call.value(userBalance_re_ent33[msg.sender])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x40044040400000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x100000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: withdrawBalance_re_ent33(), txdata: 0xc6604ad7, value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent33(), txdata: 0xc6604ad7, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: owned
+
+Function name: withdrawBalance_re_ent33()
+
+PC address: 558
+
+Estimated Gas Usage: 7015 - 61866
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:80
+
+
+
+userBalance_re_ent33[msg.sender] = 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent33(), txdata: 0xc6604ad7, value: 0x0
+
+
+
+==== Dependence on predictable environment variable ====
+
+SWC ID: 116
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawBalance_re_ent19()
+
+PC address: 3125
+
+Estimated Gas Usage: 1936 - 2221
+
+A control flow decision is made based on The block.timestamp environment variable.
+
+The block.timestamp environment variable is used to determine a control flow decision. Note that the values of variables like coinbase, gaslimit, block number and timestamp are predictable and can be manipulated by a malicious miner. Also keep in mind that attackers know hashes of earlier blocks. Don't use any of those environment variables as sources of randomness and be aware that use of these variables introduces a certain level of trust into miners.
+
+--------------------
+
+In file: buggy_19.sol:345
+
+
+
+     if (amountToWithdraw > 0) 
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x20144000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: withdrawBalance_re_ent19(), txdata: 0x4ca6972a, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent24(uint256)
+
+PC address: 3507
+
+Estimated Gas Usage: 7924 - 62775
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:238
+
+
+
+msg.sender.call.value(_weiToWithdraw)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent24(uint256), txdata: 0x5700ec4d0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent24(uint256)
+
+PC address: 3507
+
+Estimated Gas Usage: 7924 - 62775
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_19.sol:238
+
+
+
+msg.sender.call.value(_weiToWithdraw)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x20080840001000001, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: withdrawFunds_re_ent24(uint256), txdata: 0x5700ec4d0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent24(uint256)
+
+PC address: 3579
+
+Estimated Gas Usage: 7924 - 62775
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:239
+
+
+
+balances_re_ent24[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x40000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent24(uint256), txdata: 0x5700ec4d0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent24(uint256)
+
+PC address: 3586
+
+Estimated Gas Usage: 7924 - 62775
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:239
+
+
+
+balances_re_ent24[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x40000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent24(uint256), txdata: 0x5700ec4d0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent13(uint256)
+
+PC address: 3881
+
+Estimated Gas Usage: 7971 - 62822
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:473
+
+
+
+//bug
+
+        balances_re_ent13[msg.sende
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x4, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent13(uint256), txdata: 0x6658c94a0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent13(uint256)
+
+PC address: 3966
+
+Estimated Gas Usage: 7971 - 62822
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:476
+
+
+
+() onlyOwner public{
+
+        require(msg.sender
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent13(uint256), txdata: 0x6658c94a0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent13(uint256)
+
+PC address: 3972
+
+Estimated Gas Usage: 7971 - 62822
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:476
+
+
+
+() onlyOwner public{
+
+        require(msg.sender
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x3, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent13(uint256), txdata: 0x6658c94a0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent11()
+
+PC address: 4415
+
+Estimated Gas Usage: 7050 - 61901
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:509
+
+
+
+ces_re_ent11[msg.sender] = 0;
+
+   
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent11(), txdata: 0x8cb21c8e, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent11()
+
+PC address: 4493
+
+Estimated Gas Usage: 7050 - 61901
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:511
+
+
+
+lic{
+
+        require(msg.sender =
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent11(), txdata: 0x8cb21c8e, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent17(uint256)
+
+PC address: 4543
+
+Estimated Gas Usage: 7950 - 62801
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:395
+
+
+
+ire(success);  //bug
+
+        balances_re_
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x80002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent17(uint256), txdata: 0x8d18e1e80000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent17(uint256)
+
+PC address: 4628
+
+Estimated Gas Usage: 7950 - 62801
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:398
+
+
+
+veBonusCacl_7() onlyOwner public{
+
+        requi
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent17(uint256), txdata: 0x8d18e1e80000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent17(uint256)
+
+PC address: 4634
+
+Estimated Gas Usage: 7950 - 62801
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:398
+
+
+
+veBonusCacl_7() onlyOwner public{
+
+        requi
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent17(uint256), txdata: 0x8d18e1e80000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawBalance_re_ent26()
+
+PC address: 4686
+
+Estimated Gas Usage: 7039 - 61890
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:210
+
+
+
+msg.sender.call.value(userBalance_re_ent26[msg.sender])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x8, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent26(), txdata: 0x8f94454c, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawBalance_re_ent26()
+
+PC address: 4770
+
+Estimated Gas Usage: 7039 - 61890
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:214
+
+
+
+userBalance_re_ent26[msg.sender] = 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent26(), txdata: 0x8f94454c, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent21()
+
+PC address: 4986
+
+Estimated Gas Usage: 7107 - 61958
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:261
+
+
+
+msg.sender.call.value(balances_re_ent21[msg.sender ])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent21(), txdata: 0x96c176f9, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent21()
+
+PC address: 5065
+
+Estimated Gas Usage: 7107 - 61958
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:263
+
+
+
+balances_re_ent21[msg.sender] = 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent21(), txdata: 0x96c176f9, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: bug_re_ent15()
+
+PC address: 5241
+
+Estimated Gas Usage: 7765 - 62236
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:434
+
+
+
+     revert();
+
+        }
+
+        n
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21c11c0542440002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0xde0b6b3a7640000
+
+Caller: [ATTACKER], function: bug_re_ent15(), txdata: 0x9a9cb105, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: ethBank
+
+Function name: bug_re_ent15()
+
+PC address: 5241
+
+Estimated Gas Usage: 7765 - 62236
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_19.sol:434
+
+
+
+     revert();
+
+        }
+
+        n
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21010c0542040004, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x401000800400c0010, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0xde0b6b3a7640000
+
+Caller: [ATTACKER], function: bug_re_ent15(), txdata: 0x9a9cb105, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: bug_re_ent15()
+
+PC address: 5313
+
+Estimated Gas Usage: 7765 - 62236
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:439
+
+
+
+      require(msg.sender ==
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21c10c0542640002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0xde0b6b3a7640000
+
+Caller: [ATTACKER], function: bug_re_ent15(), txdata: 0x9a9cb105, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: bug_re_ent15()
+
+PC address: 5319
+
+Estimated Gas Usage: 7765 - 62236
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:439
+
+
+
+      require(msg.sender ==
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21c10c0542640002, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0xde0b6b3a7640000
+
+Caller: [ATTACKER], function: bug_re_ent15(), txdata: 0x9a9cb105, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent31(uint256)
+
+PC address: 5457
+
+Estimated Gas Usage: 7923 - 62774
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:115
+
+
+
+msg.sender.call.value(_weiToWithdraw)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent31(uint256), txdata: 0xa112c6150000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent31(uint256)
+
+PC address: 5457
+
+Estimated Gas Usage: 7923 - 62774
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_19.sol:115
+
+
+
+msg.sender.call.value(_weiToWithdraw)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent31(uint256), txdata: 0xa112c6150000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent31(uint256)
+
+PC address: 5529
+
+Estimated Gas Usage: 7923 - 62774
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:116
+
+
+
+balances_re_ent31[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent31(uint256), txdata: 0xa112c6150000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent31(uint256)
+
+PC address: 5536
+
+Estimated Gas Usage: 7923 - 62774
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:116
+
+
+
+balances_re_ent31[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent31(uint256), txdata: 0xa112c6150000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent3(uint256)
+
+PC address: 5600
+
+Estimated Gas Usage: 8014 - 62865
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:146
+
+
+
+msg.sender.call.value(_weiToWithdraw)("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xcd004, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x40000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent3(uint256), txdata: 0xa4e80ee00000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent3(uint256)
+
+PC address: 5685
+
+Estimated Gas Usage: 8014 - 62865
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:148
+
+
+
+balances_re_ent3[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xc0020, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent3(uint256), txdata: 0xa4e80ee00000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawFunds_re_ent3(uint256)
+
+PC address: 5691
+
+Estimated Gas Usage: 8014 - 62865
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:148
+
+
+
+balances_re_ent3[msg.sender] -= _weiToWithdraw
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xc0020, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1000000000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFunds_re_ent3(uint256), txdata: 0xa4e80ee00000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdrawBalance_re_ent33()
+
+PC address: 5784
+
+Estimated Gas Usage: 7105 - 61956
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:76
+
+
+
+msg.sender.call.value(userBalance_re_ent33[msg.sender])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x102000801, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent33(), txdata: 0xc6604ad7, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdrawBalance_re_ent33()
+
+PC address: 5868
+
+Estimated Gas Usage: 7105 - 61956
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:80
+
+
+
+userBalance_re_ent33[msg.sender] = 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x100000020, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawBalance_re_ent33(), txdata: 0xc6604ad7, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent29()
+
+PC address: 6005
+
+Estimated Gas Usage: 7032 - 61883
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:164
+
+
+
+msg.sender.call.value(balances_re_ent29[msg.sender ])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent29(), txdata: 0xe8a53b87, value: 0x0
+
+
+
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent29()
+
+PC address: 6005
+
+Estimated Gas Usage: 7032 - 61883
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_19.sol:164
+
+
+
+msg.sender.call.value(balances_re_ent29[msg.sender ])("")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x7f3f80400080, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: withdraw_balances_re_ent29(), txdata: 0xe8a53b87, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent29()
+
+PC address: 6076
+
+Estimated Gas Usage: 7032 - 61883
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:165
+
+
+
+balances_re_ent29[msg.sender] = 0
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent29(), txdata: 0xe8a53b87, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent12()
+
+PC address: 6182
+
+Estimated Gas Usage: 14304 - 88775
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:492
+
+
+
+  }
+
+    function releaStaticBonu
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent12(), txdata: 0xe9d0bb81, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent12()
+
+PC address: 6196
+
+Estimated Gas Usage: 14304 - 88775
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:492
+
+
+
+  }
+
+    function releaStaticBonu
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent12(), txdata: 0xe9d0bb81, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent12()
+
+PC address: 6201
+
+Estimated Gas Usage: 14304 - 88775
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:493
+
+
+
+Owner public{
+
+        require(msg.sender ==
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent12(), txdata: 0xe9d0bb81, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent1()
+
+PC address: 6258
+
+Estimated Gas Usage: 7047 - 61898
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_19.sol:552
+
+
+
+der] = 0;
+
+     }
+
+}
+
+
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent1(), txdata: 0xf0b6e306, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Medium
+
+Contract: ethBank
+
+Function name: withdraw_balances_re_ent1()
+
+PC address: 6337
+
+Estimated Gas Usage: 7047 - 61898
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a user defined address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:555
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdraw_balances_re_ent1(), txdata: 0xf0b6e306, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent2()
+
+PC address: 6531
+
+Estimated Gas Usage: 14347 - 88818
+
+Read of persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:317
+
+
+
+= msg.sender;
+
+      jackpot_re_
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent2(), txdata: 0xfb7e0819, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent2()
+
+PC address: 6545
+
+Estimated Gas Usage: 14347 - 88818
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:317
+
+
+
+= msg.sender;
+
+      jackpot_re_
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent2(), txdata: 0xfb7e0819, value: 0x0
+
+
+
+==== State access after external call ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: ethBank
+
+Function name: buyTicket_re_ent2()
+
+PC address: 6550
+
+Estimated Gas Usage: 14347 - 88818
+
+Write to persistent state following external call
+
+The contract account state is accessed after an external call to a fixed address. To prevent reentrancy issues, consider accessing the state only before the call, especially if the callee is untrusted. Alternatively, a reentrancy lock can be used to prevent untrusted callees from re-entering the contract in an intermediate state.
+
+--------------------
+
+In file: buggy_19.sol:318
+
+
+
+= address(this).balance;
+
+    }
+
+    functio
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: buyTicket_re_ent2(), txdata: 0xfb7e0819, value: 0x0
+
+
+
+
+

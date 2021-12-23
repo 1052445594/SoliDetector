@@ -1,0 +1,257 @@
+{
+  "contract": "buggy_25",
+  "tool": "smartcheck",
+  "start": 1637140751.5372808,
+  "end": 1637140754.8408465,
+  "duration": 3.303565740585327,
+  "analysis": [
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 38,
+      "column": 5,
+      "content": "startTime+(5*1days)==block.timestamp"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 58,
+      "column": 5,
+      "content": "startTime+(5*1days)==block.timestamp"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 83,
+      "column": 16,
+      "content": "now!=pastBlockTime_tmstmp20"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 85,
+      "column": 11,
+      "content": "now%15==0"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 96,
+      "column": 5,
+      "content": "startTime+(5*1days)==block.timestamp"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 134,
+      "column": 5,
+      "content": "startTime+(5*1days)==block.timestamp"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 216,
+      "column": 16,
+      "content": "now!=pastBlockTime_tmstmp16"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 218,
+      "column": 11,
+      "content": "now%15==0"
+    },
+    {
+      "name": "SOLIDITY_EXACT_TIME",
+      "patternId": "1955d9",
+      "severity": 2,
+      "line": 245,
+      "column": 5,
+      "content": "startTime+(5*1days)==block.timestamp"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 190,
+      "column": 4,
+      "content": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "f6f853",
+      "severity": 2,
+      "line": 190,
+      "column": 4,
+      "content": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+    },
+    {
+      "name": "SOLIDITY_OVERPOWERED_ROLE",
+      "patternId": "j83hf7",
+      "severity": 2,
+      "line": 91,
+      "column": 2,
+      "content": "functionsetOpenStatus(uint64_fixtureId,uint8_open_status)externalonlyOwner{gameList[_fixtureId].open_status=_open_status;}"
+    },
+    {
+      "name": "SOLIDITY_OVERPOWERED_ROLE",
+      "patternId": "j83hf7",
+      "severity": 2,
+      "line": 118,
+      "column": 2,
+      "content": "functionsetGameInfo(uint64_fixtureId,uint256_timestamp,uint32_odd_homeTeam,uint32_odd_drawTeam,uint32_odd_awayTeam,uint32_odd_over,uint32_odd_under,uint32_odd_homeTeamAndDraw,uint32_odd_homeAndAwayTeam,uint32_odd_awayTeamAndDraw,uint8_open_status)externalonlyOwner{gameList[_fixtureId].timestamp=_timestamp;gameList[_fixtureId].odd_homeTeam=_odd_homeTeam;gameList[_fixtureId].odd_drawTeam=_odd_drawTeam;gameList[_fixtureId].odd_awayTeam=_odd_awayTeam;gameList[_fixtureId].odd_over=_odd_over;gameList[_fixtureId].odd_under=_odd_under;gameList[_fixtureId].odd_homeTeamAndDraw=_odd_homeTeamAndDraw;gameList[_fixtureId].odd_homeAndAwayTeam=_odd_homeAndAwayTeam;gameList[_fixtureId].odd_awayTeamAndDraw=_odd_awayTeamAndDraw;gameList[_fixtureId].open_status=_open_status;gameList[_fixtureId].isDone=false;emitSetGame(_fixtureId,_timestamp,_odd_homeTeam,_odd_drawTeam,_odd_awayTeam,_odd_over,_odd_under,_odd_homeTeamAndDraw,_odd_homeAndAwayTeam,_odd_awayTeamAndDraw,_open_status);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 160,
+      "column": 11,
+      "content": "if(_selectedTeam==8){require(gameList[_fixtureId].odd_awayTeamAndDraw==_odd);}else{revert();}"
+    },
+    {
+      "name": "SOLIDITY_TRANSFER_IN_LOOP",
+      "patternId": "8jdj43",
+      "severity": 2,
+      "line": 190,
+      "column": 4,
+      "content": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 249,
+      "column": 2,
+      "content": "functionchangeOwner(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 11,
+      "column": 0,
+      "content": "addresswinner_tmstmp23;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 36,
+      "column": 0,
+      "content": "addresswinner_tmstmp22;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 56,
+      "column": 0,
+      "content": "addresswinner_tmstmp10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 65,
+      "column": 0,
+      "content": "uint256bugv_tmstmp5=block.timestamp;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 67,
+      "column": 0,
+      "content": "uint256bugv_tmstmp4=block.timestamp;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 69,
+      "column": 0,
+      "content": "uint256bugv_tmstmp3=block.timestamp;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 71,
+      "column": 0,
+      "content": "uint256bugv_tmstmp2=block.timestamp;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 73,
+      "column": 0,
+      "content": "uint256bugv_tmstmp1=block.timestamp;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 94,
+      "column": 0,
+      "content": "addresswinner_tmstmp2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 111,
+      "column": 0,
+      "content": "addresswinner_tmstmp19;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 132,
+      "column": 0,
+      "content": "addresswinner_tmstmp18;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 233,
+      "column": 0,
+      "content": "addresswinner_tmstmp15;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 243,
+      "column": 0,
+      "content": "addresswinner_tmstmp14;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 250,
+      "column": 4,
+      "content": "owner=_newOwner;"
+    }
+  ]
+}

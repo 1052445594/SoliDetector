@@ -1,0 +1,195 @@
+/data/buggy_29.sol
+line 160:10 extraneous input 'payable' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 211:16 extraneous input 'payable' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'length', 'balance', 'memory', 'storage', 'emit', '_', 'revert', Identifier}
+line 283:42 extraneous input 'amounts' expecting {',', ')'}
+line 283:70 extraneous input 'listingIds' expecting {',', ')'}
+jar:file:/usr/local/lib/node_modules/@smartdec/smartcheck/jdeploy-bundle/smartcheck-2.0-jar-with-dependencies.jar!/solidity-rules.xmlruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: adc165
+severity: 1
+line: 146
+column: 61
+content: 0x0C8cDC16973E88FAb31DD0FCB844DdF0e1056dE2
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 287
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 287
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 3
+column: 16
+content: >=
+
+ruleId: SOLIDITY_SAFEMATH
+patternId: 837cac
+severity: 1
+line: 140
+column: 4
+content: usingSafeMathforuint256;
+
+ruleId: SOLIDITY_TRANSFER_IN_LOOP
+patternId: 8jdj43
+severity: 2
+line: 287
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 293
+column: 20
+content: listing.amountLeft>=0
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 16
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 23
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 27
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 151
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 158
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 165
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 172
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 179
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 186
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 240
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 244
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 248
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 276
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 310
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 328
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 341
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 350
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 359
+column: 17
+content: send(1ether)
+
+ruleId: SOLIDITY_UNCHECKED_CALL
+patternId: f39eed
+severity: 3
+line: 369
+column: 17
+content: send(1ether)
+
+SOLIDITY_SAFEMATH :1
+SOLIDITY_PRAGMAS_VERSION :1
+SOLIDITY_EXTRA_GAS_IN_LOOPS :1
+SOLIDITY_ADDRESS_HARDCODED :1
+SOLIDITY_UINT_CANT_BE_NEGATIVE :1
+SOLIDITY_GAS_LIMIT_IN_LOOPS :1
+SOLIDITY_UNCHECKED_CALL :19
+SOLIDITY_TRANSFER_IN_LOOP :1

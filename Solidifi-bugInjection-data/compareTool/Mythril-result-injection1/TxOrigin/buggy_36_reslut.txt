@@ -1,0 +1,1344 @@
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: owned
+
+Function name: bug_txorigin32(address)
+
+PC address: 276
+
+Estimated Gas Usage: 202 - 297
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:30
+
+
+
+require(tx.origin == owner_txorigin32)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_txorigin32(address), txdata: 0x06b3ad660000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: owned
+
+Function name: sendto_txorigin33(address,uint256,address)
+
+PC address: 315
+
+Estimated Gas Usage: 288 - 383
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:8
+
+
+
+require (tx.origin == owner_txorigin5)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: sendto_txorigin5(address,uint256,address), txdata: 0xe5d6249f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: owned
+
+Function name: transferOwnership(address)
+
+PC address: 398
+
+Estimated Gas Usage: 1068 - 1163
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:22
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: transferOwnership(address), txdata: 0xf2fde38b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: tokenRecipient
+
+Function name: transferTo_txorigin31(address,uint256,address)
+
+PC address: 539
+
+Estimated Gas Usage: 244 - 339
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:41
+
+
+
+require(tx.origin == owner_txorigin15)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferTo_txorigin15(address,uint256,address), txdata: 0x0405a8a7000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: tokenRecipient
+
+Function name: bug_txorigin16(address)
+
+PC address: 565
+
+Estimated Gas Usage: 246 - 341
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:37
+
+
+
+require(tx.origin == owner_txorigin16)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: bug_txorigin16(address), txdata: 0x3261a0e00000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: tokenRecipient
+
+Function name: receiveApproval(address,uint256,address,bytes)
+
+PC address: 665
+
+Estimated Gas Usage: 3560 - 42898
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_36.sol:48
+
+
+
+t.transferFrom(_from, address(this), _value)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x8000000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: receiveApproval(address,uint256,address,bytes), txdata: 0x8f4ffcb100000000000000000000000000000000000000000000000000000000000000000000000000000000003f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a, value: 0x0
+
+Caller: [ATTACKER], function: receiveApproval(address,uint256,address,bytes), txdata: 0x8f4ffcb10a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a000000000000000000000000000000000000000000000000000000000000000f0a0a0adeadbeefdeadbeefdeadbeefdeadbeefdeadbeef0000000000000000000000000000000000000000000000000000000000000029, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: tokenRecipient
+
+Function name: withdrawAll_txorigin30(address,address)
+
+PC address: 951
+
+Estimated Gas Usage: 311 - 406
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:60
+
+
+
+require(tx.origin == owner_txorigin30)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawAll_txorigin30(address,address), txdata: 0xf6f1137100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: tokenRecipient
+
+Function name: withdrawAll_txorigin30(address,address)
+
+PC address: 988
+
+Estimated Gas Usage: 1841 - 36029
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_36.sol:61
+
+
+
+_recipient.transfer(address(this).balance)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x20002118400000282, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: unknown, txdata: 0x80020401, value: 0x1
+
+Caller: [ATTACKER], function: withdrawAll_txorigin30(address,address), txdata: 0xf6f11371808080808080808080808080deadbeefdeadbeefdeadbeefdeadbeefdeadbeef808080808080808080808080deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: MindsyncPlatform
+
+Function name: proposals(uint256)
+
+PC address: 2651
+
+Estimated Gas Usage: 1074 - 1169
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_36.sol:191
+
+
+
+Proposal[] public proposals
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4020fbffd, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: proposals(uint256), txdata: 0x013cf08b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: transferTo_txorigin31(address,uint256,address)
+
+PC address: 2903
+
+Estimated Gas Usage: 311 - 406
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:41
+
+
+
+require(tx.origin == owner_txorigin15)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x207bffd, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: transferTo_txorigin19(address,uint256,address), txdata: 0x5d7585b8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: bug_txorigin32(address)
+
+PC address: 2929
+
+Estimated Gas Usage: 291 - 386
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:30
+
+
+
+require(tx.origin == owner_txorigin32)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x480c80c1a9595d038, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: bug_txorigin4(address), txdata: 0xb9e312580000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: sendto_txorigin21(address,uint256,address)
+
+PC address: 2953
+
+Estimated Gas Usage: 311 - 406
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:332
+
+
+
+require (tx.origin == owner_txorigin21)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x10c000205bffd, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: sendto_txorigin17(address,uint256,address), txdata: 0xebb646c2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: MindsyncPlatform
+
+Function name: sendto_txorigin21(address,uint256,address)
+
+PC address: 2990
+
+Estimated Gas Usage: 1235 - 35423
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_36.sol:333
+
+
+
+receiver.transfer(amount)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x100000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1490112240c20010, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x1
+
+Caller: [ATTACKER], function: sendto_txorigin5(address,uint256,address), txdata: 0xe5d6249f000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: withdrawAll_txorigin22(address,address)
+
+PC address: 3050
+
+Estimated Gas Usage: 289 - 384
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:303
+
+
+
+require(tx.origin == owner_txorigin22)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x20fbffd, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: withdrawAll_txorigin14(address,address), txdata: 0xf935226e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Unprotected Ether Withdrawal ====
+
+SWC ID: 105
+
+Severity: High
+
+Contract: MindsyncPlatform
+
+Function name: withdrawAll_txorigin22(address,address)
+
+PC address: 3087
+
+Estimated Gas Usage: 1907 - 36095
+
+Any sender can withdraw Ether from the contract account.
+
+Arbitrary senders other than the contract creator can profitably extract Ether from the contract account. Verify the business logic carefully and make sure that appropriate security controls are in place to prevent unexpected loss of funds.
+
+--------------------
+
+In file: buggy_36.sol:304
+
+
+
+_recipient.transfer(address(this).balance)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1008000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x1804100021010, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x1
+
+Caller: [ATTACKER], function: withdrawAll_txorigin10(address,address), txdata: 0xfe3d3a94000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: MindsyncPlatform
+
+Function name: executeProposal(uint256,bytes)
+
+PC address: 3123
+
+Estimated Gas Usage: 1516 - 4293
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_36.sol:471
+
+
+
+function executeProposal(uint proposalNumber, bytes memory transactionBytecode) public {
+
+        Proposal storage p = proposals[proposalNumber];
+
+
+
+        require(initialized);
+
+        require(now > p.minExecutionDate                                             // If it is past the voting deadline
+
+            && !p.executed                                                          // and it has not already been executed
+
+            && p.proposalHash == keccak256(abi.encodePacked(p.recipient, p.amount, transactionBytecode))); // and the supplied code matches the proposal...
+
+
+
+
+
+        // ...then tally the results
+
+        uint quorum = 0;
+
+        uint yea = 0;
+
+        uint nay = 0;
+
+
+
+        for (uint i = 0; i <  p.votes.length; ++i) {
+
+            Vote storage v = p.votes[i];
+
+            uint voteWeight = tokenAddress.actualBalanceOf(v.voter);
+
+            quorum += voteWeight;
+
+            if (v.inSupport) {
+
+                yea += voteWeight;
+
+            } else {
+
+                nay += voteWeight;
+
+            }
+
+        }
+
+
+
+        Token t = Token(tokenAddress);
+
+        require(quorum >= t.totalSupply().mul(minimumQuorum).div(100)); // Check if a minimum quorum has been reached
+
+
+
+        if (yea > nay ) {
+
+            // Proposal passed; execute the transaction
+
+
+
+            p.executed = true;
+
+            
+
+            (bool success, ) = p.recipient.call.value(p.amount)(transactionBytecode);
+
+            require(success);
+
+
+
+            p.proposalPassed = true;
+
+        } else {
+
+            // Proposal failed
+
+            p.proposalPassed = false;
+
+        }
+
+
+
+        // Fire Events
+
+        emit ProposalTallied(proposalNumber, yea - nay, quorum, p.proposalPassed);
+
+    }
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x40007bfb8, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: executeProposal(uint256,bytes), txdata: 0x237e949200000000000000000000000000000000000000000000000000000000000000190000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: changeVotingRules(address,address,uint256,uint256,uint256)
+
+PC address: 4133
+
+Estimated Gas Usage: 1252 - 1347
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:22
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x4002079fdd, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: changeVotingRules(address,address,uint256,uint256,uint256), txdata: 0x5938748e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== External Call To User-Supplied Address ====
+
+SWC ID: 107
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: receiveApproval(address,uint256,address,bytes)
+
+PC address: 4475
+
+Estimated Gas Usage: 3663 - 43189
+
+A call to a user-supplied address is executed.
+
+An external message call to an address specified by the caller is executed. Note that the callee account might contain arbitrary code and could re-enter any function within this contract. Reentering the contract in an intermediate state may lead to unexpected behaviour. Make sure that no state modifications are executed after this call and/or reentrancy guards are in place.
+
+--------------------
+
+In file: buggy_36.sol:48
+
+
+
+t.transferFrom(_from, address(this), _value)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xc040203e389, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: receiveApproval(address,uint256,address,bytes), txdata: 0x8f4ffcb1000000000000000000000000000000000000000000000000000000000000003f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000deadbeefdeadbeefdeadbeefdeadbeefdeadbeef0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: newProposal(address,uint256,string,bytes)
+
+PC address: 4888
+
+Estimated Gas Usage: 4246 - 44267
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:264
+
+
+
+require(tokenAddress.actualBalanceOf(msg.sender) > minimumTokensToVote)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2040000000038b1c, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: newProposal(address,uint256,string,bytes), txdata: 0xb1050da50000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: MindsyncPlatform
+
+Function name: vote(uint256,bool)
+
+PC address: 5553
+
+Estimated Gas Usage: 4397 - 39054
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_36.sol:441
+
+
+
+function vote(
+
+        uint proposalNumber,
+
+        bool supportsProposal
+
+    )
+
+        onlyTokenholders public
+
+        returns (uint voteID)
+
+    {
+
+        Proposal storage p = proposals[proposalNumber];
+
+        require(p.voted[msg.sender] != true);
+
+
+
+        voteID = p.votes.length++;
+
+        p.votes[voteID] = Vote({inSupport: supportsProposal, voter: msg.sender});
+
+        p.voted[msg.sender] = true;
+
+        p.numberOfVotes = voteID +1;
+
+        emit Voted(proposalNumber,  supportsProposal, msg.sender);
+
+        return voteID;
+
+    }
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2020000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: vote(uint256,bool), txdata: 0xc9d27afe00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: MindsyncPlatform
+
+Function name: checkProposalCode(uint256,address,uint256,bytes)
+
+PC address: 6182
+
+Estimated Gas Usage: 1500 - 4277
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: buggy_36.sol:385
+
+
+
+function checkProposalCode(
+
+        uint proposalNumber,
+
+        address destination,
+
+        uint weiAmount,
+
+        bytes memory transactionBytecode
+
+    )
+
+        view public
+
+        returns (bool codeChecksOut)
+
+    {
+
+        Proposal storage p = proposals[proposalNumber];
+
+        return p.proposalHash == keccak256(abi.encodePacked(destination, weiAmount, transactionBytecode));
+
+    }
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x40207bfbc, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: checkProposalCode(uint256,address,uint256,bytes), txdata: 0xeceb294500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000013, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: transferOwnership(address)
+
+PC address: 6381
+
+Estimated Gas Usage: 1113 - 1208
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:22
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x22048208242080000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: transferOwnership(address), txdata: 0xf2fde38b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: MindsyncPlatform
+
+Function name: init(address,address,uint256,uint256,uint256)
+
+PC address: 6438
+
+Estimated Gas Usage: 1251 - 1346
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_36.sol:22
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x13aa2814000100202, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x2, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: init(address,address,uint256,uint256,uint256), txdata: 0xf934436e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

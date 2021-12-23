@@ -1,0 +1,54 @@
+==== Unchecked return value from external call. ====
+
+SWC ID: 104
+
+Severity: Medium
+
+Contract: RaffleTokenExchange
+
+Function name: bug_unchk_send1()
+
+PC address: 1221
+
+Estimated Gas Usage: 919 - 35107
+
+The return value of a message call is not checked.
+
+External calls return a boolean value. If the callee halts with an exception, 'false' is returned and execution continues in the caller. The caller should check whether an exception happened and react accordingly to avoid unexpected behavior. For example it is often desirable to wrap external calls in require() so the transaction is reverted if the call fails.
+
+--------------------
+
+In file: buggy_29.sol:310
+
+
+
+msg.sender.send(1 ether)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x21c00c0403000001, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x23c0be9607f00000, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_unchk_send11(), txdata: 0x92307e38, value: 0xde0b6b3a7640000
+
+
+
+
+

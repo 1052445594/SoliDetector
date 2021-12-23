@@ -1,0 +1,105 @@
+{
+  "contract": "26",
+  "tool": "smartcheck",
+  "start": 1637142934.8262553,
+  "end": 1637142937.644336,
+  "duration": 2.8180806636810303,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "adc165",
+      "severity": 1,
+      "line": 72,
+      "column": 18,
+      "content": "0x0e475cd2c1f8222868cf85B4f97D7EB70fB3ffD3"
+    },
+    {
+      "name": "SOLIDITY_ERC20_APPROVE",
+      "patternId": "af782c",
+      "severity": 2,
+      "line": 106,
+      "column": 4,
+      "content": "functionapprove(addressspender,uint256value)publicreturns(bool){_approve(msg.sender,spender,value);returntrue;}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 59,
+      "column": 0,
+      "content": "contractUBBCTokenisIERC20{usingSafeMathforuint256;mapping(address=>uint256)private_balances;mapping(address=>mapping(address=>uint256))private_allowances;uint256private_totalSupply;stringprivate_name;stringprivate_symbol;uint8private_decimals;constructor()public{_name=\"UBBC Token\";_symbol=\"UBBC\";_decimals=18;_totalSupply=260000000ether;_balances[0x0e475cd2c1f8222868cf85B4f97D7EB70fB3ffD3]=_totalSupply;}eventTransfer(addresssender,addressto,uint256value);eventApproval(addressowner,addressspender,uint256value);functionname()publicviewreturns(stringmemory){return_name;}functionsymbol()publicviewreturns(stringmemory){return_symbol;}functiondecimals()publicviewreturns(uint8){return_decimals;}functiontotalSupply()publicviewreturns(uint256){return_totalSupply;}functionbalanceOf(addressaccount)publicviewreturns(uint256){return_balances[account];}functiontransfer(addressrecipient,uint256amount)publicreturns(bool){_transfer(msg.sender,recipient,amount);returntrue;}functionallowance(addressowner,addressspender)publicviewreturns(uint256){return_allowances[owner][spender];}functionapprove(addressspender,uint256value)publicreturns(bool){_approve(msg.sender,spender,value);returntrue;}functiontransferFrom(addresssender,addressrecipient,uint256amount)publicreturns(bool){_transfer(sender,recipient,amount);_approve(sender,msg.sender,_allowances[sender][msg.sender].sub(amount));returntrue;}functionincreaseAllowance(addressspender,uint256addedValue)publicreturns(bool){_approve(msg.sender,spender,_allowances[msg.sender][spender].add(addedValue));returntrue;}functiondecreaseAllowance(addressspender,uint256subtractedValue)publicreturns(bool){_approve(msg.sender,spender,_allowances[msg.sender][spender].sub(subtractedValue));returntrue;}function_transfer(addresssender,addressrecipient,uint256amount)internal{require(sender!=address(0),\"ERC20: transfer from the zero address\");require(recipient!=address(0),\"ERC20: transfer to the zero address\");_balances[sender]=_balances[sender].sub(amount);_balances[recipient]=_balances[recipient].add(amount);emitTransfer(sender,recipient,amount);}function_approve(addressowner,addressspender,uint256value)internal{require(owner!=address(0),\"ERC20: approve from the zero address\");require(spender!=address(0),\"ERC20: approve to the zero address\");_allowances[owner][spender]=value;emitApproval(owner,spender,value);}function()payableexternal{revert();}}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 61,
+      "column": 33,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 62,
+      "column": 54,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 63,
+      "column": 12,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 64,
+      "column": 11,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 65,
+      "column": 11,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 66,
+      "column": 10,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_REDUNDANT_FALLBACK_REJECT",
+      "patternId": "b85a32",
+      "severity": 1,
+      "line": 142,
+      "column": 32,
+      "content": "{revert();}"
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 60,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    }
+  ]
+}

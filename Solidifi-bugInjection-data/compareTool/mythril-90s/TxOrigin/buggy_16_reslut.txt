@@ -1,0 +1,678 @@
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: Owned
+
+Function name: bug_txorigin12(address)
+
+PC address: 276
+
+Estimated Gas Usage: 202 - 297
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:124
+
+
+
+require(tx.origin == owner_txorigin32)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0xc0000000001, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_txorigin32(address), txdata: 0x06b3ad660000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: Owned
+
+Function name: transferOwnership(address)
+
+PC address: 317
+
+Estimated Gas Usage: 1068 - 1163
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x107002000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: transferOwnership(address), txdata: 0xf2fde38b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: Owned
+
+Function name: sendto_txorigin33(address,uint256,address)
+
+PC address: 448
+
+Estimated Gas Usage: 332 - 427
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:102
+
+
+
+require (tx.origin == owner_txorigin33)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: sendto_txorigin33(address,uint256,address), txdata: 0xf7ae6cde000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: transferTo_txorigin15(address,uint256,address)
+
+PC address: 3105
+
+Estimated Gas Usage: 332 - 427
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:379
+
+
+
+require(tx.origin == owner_txorigin15)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferTo_txorigin11(address,uint256,address), txdata: 0xfca25f6c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: transferEther(address,uint256)
+
+PC address: 3139
+
+Estimated Gas Usage: 1153 - 1248
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferEther(address,uint256), txdata: 0x05b1137b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: bug_txorigin32(address)
+
+PC address: 3292
+
+Estimated Gas Usage: 292 - 387
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:124
+
+
+
+require(tx.origin == owner_txorigin32)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_txorigin36(address), txdata: 0xb389b2c90000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: sendto_txorigin21(address,uint256,address)
+
+PC address: 3618
+
+Estimated Gas Usage: 333 - 428
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:301
+
+
+
+require (tx.origin == owner_txorigin21)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: sendto_txorigin1(address,uint256,address), txdata: 0x64acbadd000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: withdrawAll_txorigin22(address,address)
+
+PC address: 3699
+
+Estimated Gas Usage: 312 - 407
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:290
+
+
+
+require(tx.origin == owner_txorigin22)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawAll_txorigin30(address,address), txdata: 0xf6f1137100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: burn(uint256)
+
+PC address: 4265
+
+Estimated Gas Usage: 1118 - 1213
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: burn(uint256), txdata: 0x42966c680000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: withdrawFund()
+
+PC address: 4726
+
+Estimated Gas Usage: 1097 - 1192
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawFund(), txdata: 0xe07fa3c1, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: withdrawForeignTokens(address)
+
+PC address: 4814
+
+Estimated Gas Usage: 1095 - 1190
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: withdrawForeignTokens(address), txdata: 0xe58fc54c0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: transferOwnership(address)
+
+PC address: 5105
+
+Estimated Gas Usage: 1091 - 1186
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferOwnership(address), txdata: 0xf2fde38b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: ExclusivePlatform
+
+Function name: updateXPLPerEther(uint256)
+
+PC address: 5238
+
+Estimated Gas Usage: 1095 - 1190
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_16.sol:110
+
+
+
+require(msg.sender == owner)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: updateXPLPerEther(uint256), txdata: 0xf388ef800000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

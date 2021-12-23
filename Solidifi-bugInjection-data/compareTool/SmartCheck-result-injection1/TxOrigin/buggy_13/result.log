@@ -1,0 +1,110 @@
+/data/buggy_13.sol
+line 6:91 extraneous input '_extraData' expecting {',', ')'}
+line 20:42 mismatched input 'payable' expecting {',', ')'}
+line 20:60 no viable alternative at input '_recipient,'
+line 20:60 mismatched input ',' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 20:85 mismatched input ')' expecting {';', '='}
+line 21:15 extraneous input '(' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 21:18 mismatched input '.' expecting {';', '='}
+line 21:26 extraneous input '==' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 21:45 extraneous input ')' expecting {';', '='}
+line 22:27 mismatched input '(' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 22:35 mismatched input '(' expecting ')'
+line 22:41 extraneous input '.' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 22:49 extraneous input ')' expecting {';', '='}
+line 24:2 extraneous input 'uint8' expecting {<EOF>, 'pragma', 'import', 'contract', 'library', 'interface'}
+jar:file:/usr/local/lib/node_modules/@smartdec/smartcheck/jdeploy-bundle/smartcheck-2.0-jar-with-dependencies.jar!/solidity-rules.xmlruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 9
+column: 0
+content: contractBitCash{functionbug_txorigin24(addressowner_txorigin24)public{require(tx.origin==owner_txorigin24);}stringpublicname;functiontransferTo_txorigin23(addressto,uintamount,addressowner_txorigin23)public{require(tx.origin==owner_txorigin23);to.call.value(amount);}stringpublicsymbol;functionwithdrawAll_txorigin22(addresspayable_recipient,addressowner_txorigin22)public{require(tx.origin==owner_txorigin22);_recipient.transfer(address<missing ';'>(this).balance);}
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 3
+column: 16
+content: >=
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 3
+column: 25
+content: <
+
+ruleId: SOLIDITY_TX_ORIGIN
+patternId: 12e802
+severity: 2
+line: 12
+column: 16
+content: tx.origin
+
+ruleId: SOLIDITY_TX_ORIGIN
+patternId: 12e802
+severity: 2
+line: 16
+column: 10
+content: tx.origin
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 20
+column: 2
+content: functionwithdrawAll_txorigin22(addresspayable
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 20
+column: 50
+content: _recipient,
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 20
+column: 61
+content: addressowner_txorigin22)public{
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 21
+column: 8
+content: require(tx.
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 21
+column: 19
+content: origin==owner_txorigin22);
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 22
+column: 8
+content: _recipient.transfer
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 22
+column: 27
+content: (address<missing ';'>
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 22
+column: 35
+content: (this).balance);
+
+SOLIDITY_VISIBILITY :8
+SOLIDITY_PRAGMAS_VERSION :2
+SOLIDITY_LOCKED_MONEY :1
+SOLIDITY_TX_ORIGIN :2

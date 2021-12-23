@@ -1,0 +1,56 @@
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: digitalNotary
+
+Function name: account_info_rotate_tine(uint256)
+
+PC address: 953
+
+Estimated Gas Usage: 23561 - 85707
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: 50.sol:156
+
+
+
+owncount - 1
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1022013faef0400d, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: registerHash(bytes32), txdata: 0x8f1de16e0000000000808000000000000000002000000000000000000000000000000000, value: 0x11c37937e08000
+
+Caller: [CREATOR], function: changeHashOwnership(bytes32,address), txdata: 0x3a1903d600000000008080000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x58d15e17628000
+
+
+
+
+

@@ -1,0 +1,678 @@
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: transferTo_txorigin39(address,uint256,address)
+
+PC address: 3100
+
+Estimated Gas Usage: 332 - 427
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:721
+
+
+
+require(tx.origin == owner_txorigin15)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferTo_txorigin11(address,uint256,address), txdata: 0xfca25f6c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: bug_txorigin32(address)
+
+PC address: 3126
+
+Estimated Gas Usage: 292 - 387
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:323
+
+
+
+require(tx.origin == owner_txorigin32)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: bug_txorigin20(address), txdata: 0x5119e0000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: sendto_txorigin21(address,uint256,address)
+
+PC address: 3150
+
+Estimated Gas Usage: 333 - 428
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:600
+
+
+
+require (tx.origin == owner_txorigin21)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: sendto_txorigin17(address,uint256,address), txdata: 0xebb646c2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionEnd(uint256,uint256)
+
+PC address: 3238
+
+Estimated Gas Usage: 1145 - 1240
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2180000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: calcDynamicCommissionEnd(uint256,uint256), txdata: 0x0cd2ed8700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionEnd(uint256,uint256)
+
+PC address: 3300
+
+Estimated Gas Usage: 1207 - 1302
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_24.sol:882
+
+
+
+index + length
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1460100006050841, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: calcDynamicCommissionEnd(uint256,uint256), txdata: 0x0cd2ed87800000000110400010a0840201200800000400001002009800008024d510a8a580000000000000010a00201000020000040401001200a0081b04802210200001, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionBegin(uint256,uint256)
+
+PC address: 3436
+
+Estimated Gas Usage: 1167 - 1262
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: calcDynamicCommissionBegin(uint256,uint256), txdata: 0x0ff9793700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionBegin(uint256,uint256)
+
+PC address: 3498
+
+Estimated Gas Usage: 1229 - 1324
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_24.sol:830
+
+
+
+index + length
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x48000092208, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: calcDynamicCommissionBegin(uint256,uint256), txdata: 0x0ff97937c0000000000000004040018000002450010400802a00280000474804022c810080400a00000000800c0090104004000041018206080340a65040400d56c3120f, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: withdrawAll_txorigin6(address,address)
+
+PC address: 3569
+
+Estimated Gas Usage: 312 - 407
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:575
+
+
+
+require(tx.origin == owner_txorigin22)
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1003820, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: withdrawAll_txorigin30(address,address), txdata: 0xf6f1137100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionRange(uint256,uint256)
+
+PC address: 3829
+
+Estimated Gas Usage: 1144 - 1239
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x1003820, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: calcDynamicCommissionRange(uint256,uint256), txdata: 0x3a1a4ad500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Integer Arithmetic Bugs ====
+
+SWC ID: 101
+
+Severity: High
+
+Contract: FomoFeast
+
+Function name: calcDynamicCommissionRange(uint256,uint256)
+
+PC address: 3891
+
+Estimated Gas Usage: 1206 - 1301
+
+The arithmetic operator can overflow.
+
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+
+--------------------
+
+In file: buggy_24.sol:841
+
+
+
+index + length
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [CREATOR], function: calcDynamicCommissionRange(uint256,uint256), txdata: 0x3a1a4ad5bfffffffffffffffffffffc400000100000000000000fff14545ffffffffffe4bfffffffffffffffffffffc254a222000001fffffffffff00001000000100003, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: operatorWithdraw()
+
+PC address: 11706
+
+Estimated Gas Usage: 1086 - 1181
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: operatorWithdraw(), txdata: 0xbaec22ec, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: transferOwnership(address)
+
+PC address: 12582
+
+Estimated Gas Usage: 1124 - 1219
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: transferOwnership(address), txdata: 0xf2fde38b0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+==== Dependence on tx.origin ====
+
+SWC ID: 115
+
+Severity: Low
+
+Contract: FomoFeast
+
+Function name: getUserByIndex(uint256)
+
+PC address: 12780
+
+Estimated Gas Usage: 1293 - 3880
+
+Use of tx.origin as a part of authorization control.
+
+The tx.origin environment variable has been found to influence a control flow decision. Note that using tx.origin as a security control might cause a situation where a user inadvertently authorizes a smart contract to perform an action on their behalf. It is recommended to use msg.sender instead.
+
+--------------------
+
+In file: buggy_24.sol:332
+
+
+
+require(msg.sender == owner, "onlyOwner")
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2000000000000000, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [SOMEGUY], function: getUserByIndex(uint256), txdata: 0xff5d32fe0000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

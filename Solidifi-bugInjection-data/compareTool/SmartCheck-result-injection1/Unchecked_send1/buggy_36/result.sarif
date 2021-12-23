@@ -1,0 +1,1012 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Arithmetic_13",
+              "name": "ArithmeticVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ARRAY_LENGTH_MANIPULATION"
+              }
+            },
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_27",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_OVERPOWERED_ROLE"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_32",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SAFEMATH"
+              }
+            },
+            {
+              "id": "UncheckedLowCalls_8",
+              "name": "UncheckedLowCallsVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_UNCHECKED_CALL"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/buggy_36.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "buggy_36"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ARRAY_LENGTH_MANIPULATION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "proposals.length++"
+                  },
+                  "startColumn": 21,
+                  "startLine": 321
+                }
+              }
+            }
+          ],
+          "ruleId": "Arithmetic_13"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_ARRAY_LENGTH_MANIPULATION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "p.votes.length++"
+                  },
+                  "startColumn": 17,
+                  "startLine": 414
+                }
+              }
+            }
+          ],
+          "ruleId": "Arithmetic_13"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<p.votes.length;++i){Votestoragev=p.votes[i];uintvoteWeight=tokenAddress.actualBalanceOf(v.voter);quorum+=voteWeight;if(v.inSupport){yea+=voteWeight;}else{nay+=voteWeight;}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 447
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<p.votes.length;++i){Votestoragev=p.votes[i];uintvoteWeight=tokenAddress.actualBalanceOf(v.voter);quorum+=voteWeight;if(v.inSupport){yea+=voteWeight;}else{nay+=voteWeight;}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 447
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_OVERPOWERED_ROLE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functioninit(Token_tokenAddress,address_chairmanAddress,uint_minimumTokensToVote,uint_minimumPercentToPassAVote,uint_minutesForDebate)onlyOwnerpublic{require(!initialized);initialized=true;changeVotingRules(_tokenAddress,_chairmanAddress,_minimumTokensToVote,_minimumPercentToPassAVote,_minutesForDebate);emitInitialized();}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 263
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_27"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": ">="
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SAFEMATH"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "usingSafeMathforuint256;"
+                  },
+                  "startColumn": 4,
+                  "startLine": 159
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_32"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 13
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 25
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 32
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 46
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 53
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 61
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 65
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 69
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 73
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 77
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 81
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 85
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 165
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 169
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 173
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 177
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 182
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 187
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 191
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 195
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 199
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 203
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 207
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 251
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 270
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 298
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 338
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 363
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 392
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 422
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 479
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_36.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresschairmanAddress;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 179
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

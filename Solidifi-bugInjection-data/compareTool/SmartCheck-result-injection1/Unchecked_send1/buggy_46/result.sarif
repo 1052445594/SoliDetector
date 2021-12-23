@@ -1,0 +1,446 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_35",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+              }
+            },
+            {
+              "id": "UncheckedLowCalls_8",
+              "name": "UncheckedLowCallsVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_UNCHECKED_CALL"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/buggy_46.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "buggy_46"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<fileExistenceProofs[dappBoxOrigin].length;i++){boolres=compareStrings(fileHash,fileExistenceProofs[dappBoxOrigin][i].fileHash)&&compareStrings(filePathHash,fileExistenceProofs[dappBoxOrigin][i].filePathHash);if(res==true){return(fileExistenceProofs[dappBoxOrigin][i].date,fileExistenceProofs[dappBoxOrigin][i].filesender,fileExistenceProofs[dappBoxOrigin][i].contractAddress,fileExistenceProofs[dappBoxOrigin][i].identifier,fileExistenceProofs[dappBoxOrigin][i].QRCodeHash);}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 53
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<fileExistenceProofs[dappBoxOrigin].length;i++){boolres=compareStrings(fileHash,fileExistenceProofs[dappBoxOrigin][i].fileHash)&&compareStrings(filePathHash,fileExistenceProofs[dappBoxOrigin][i].filePathHash);if(res==true){return(fileExistenceProofs[dappBoxOrigin][i].date,fileExistenceProofs[dappBoxOrigin][i].filesender,fileExistenceProofs[dappBoxOrigin][i].contractAddress,fileExistenceProofs[dappBoxOrigin][i].identifier,fileExistenceProofs[dappBoxOrigin][i].QRCodeHash);}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 53
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<len;i++){boolres=compareStrings(fileHash,fileExistenceProofs[dappBoxOrigin][i].fileHash)&&compareStrings(filePathHash,fileExistenceProofs[dappBoxOrigin][i].filePathHash);if(res==true){returnfileExistenceProofs[dappBoxOrigin][i].QRCodeHash;}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 108
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<len;i++){if(QRCodeHash==fileExistenceProofs[dappBoxOrigin][i].QRCodeHash){return(fileExistenceProofs[dappBoxOrigin][i].date,fileExistenceProofs[dappBoxOrigin][i].filesender,fileExistenceProofs[dappBoxOrigin][i].contractAddress,fileExistenceProofs[dappBoxOrigin][i].identifier,fileExistenceProofs[dappBoxOrigin][i].QRCodeHash);}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 130
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": ">="
+                  },
+                  "startColumn": 16,
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "<"
+                  },
+                  "startColumn": 25,
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256,address,address,BlockchainIdentification,bytes32)"
+                  },
+                  "startColumn": 128,
+                  "startLine": 51
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256,address,address,BlockchainIdentification,bytes32)"
+                  },
+                  "startColumn": 101,
+                  "startLine": 128
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 44
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 69
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 85
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 98
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 121
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "send(1ether)"
+                  },
+                  "startColumn": 17,
+                  "startLine": 143
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_46.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>FileExistenceStruct[])fileExistenceProofs;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 21
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

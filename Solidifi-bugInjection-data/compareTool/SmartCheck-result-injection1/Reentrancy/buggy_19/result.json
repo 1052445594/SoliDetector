@@ -1,0 +1,121 @@
+{
+  "contract": "buggy_19",
+  "tool": "smartcheck",
+  "start": 1637147610.29616,
+  "end": 1637147613.2970843,
+  "duration": 3.0009243488311768,
+  "analysis": [
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 76,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 108,
+      "column": 0,
+      "content": "contractethBankisowned{function()payableexternal{}mapping(address=>uint)balances_re_ent31;functionwithdrawFunds_re_ent31(uint256_weiToWithdraw)public{require(balances_re_ent31[msg.sender]>=_weiToWithdraw);msg.sender.call.value(_weiToWithdraw);balances_re_ent31[msg.sender]-=_weiToWithdraw;}functionwithdrawForUser(addresspayable_address,uintamount)onlyOwnerpublic{require(msg.sender==owner,\"only owner can use this method\");_address.transfer(amount);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 77,
+      "column": 8,
+      "content": "if(!success){revert();}"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 76,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 119,
+      "column": 4,
+      "content": "functionwithdrawForUser(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 56,
+      "column": 2,
+      "content": "boolnot_called_re_ent34=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 72,
+      "column": 0,
+      "content": "mapping(address=>uint)userBalance_re_ent33;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 98,
+      "column": 0,
+      "content": "mapping(address=>uint)redeemableEther_re_ent32;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 111,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_re_ent31;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 119,
+      "column": 45,
+      "content": "_address,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 119,
+      "column": 54,
+      "content": "uintamount)"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 120,
+      "column": 15,
+      "content": "(msg.sender==owner,\"only owner can use this method\");"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 121,
+      "column": 8,
+      "content": "_address.transfer(amount);"
+    }
+  ]
+}

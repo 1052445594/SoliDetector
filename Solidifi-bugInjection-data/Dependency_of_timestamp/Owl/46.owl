@@ -1,0 +1,872 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sol="http://www.hty.group/tf/ontologies/2020/07/Solildity#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function">
+    <owl:deprecated rdf:parseType="Resource">
+    </owl:deprecated>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForCondition">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Param">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfCondition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#VariableOperation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Constructor">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#StateVar">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Modifier">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Struct">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfRight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionCall">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Library"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForContent">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfWrong">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnValue">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Interface"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnClaim">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#containAssignment"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStateVar"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfCondition"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasParam"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfWrong">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineConstructor"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#after"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionVar">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionStep">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnValue"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnClaim"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfRight">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#before">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#operateVarible"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineModifier"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForCondition">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForContent">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStruct"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIf"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignLeft">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#storageLocate"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionObject"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasModifier"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionVar"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#returnText"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignRight"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opSymbol">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionStep"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#typeName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#valueIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opVarible">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#nameIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionArgument"/>
+  <sol:Pragma rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_pragma.&gt;=0.4.21&lt;0.6.0.L2*C1">
+    <sol:pragmaValue>&gt;=0.4.21&lt;0.6.0</sol:pragmaValue>
+    <sol:pragmaName>solidity</sol:pragmaName>
+  </sol:Pragma>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.ProofOfExistence.L4*C35">
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.bugv_tmstmp4.L83*C2838">
+        <sol:valueIs>block.timestamp</sol:valueIs>
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>bugv_tmstmp4</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_tmstmp10.L17*C328">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.startTime__5_1days___block.timestamp.L18*C377">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L18*C377">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.winner_tmstmp10_msg.sender.L19*C459">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L18*C377"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>msg.sender</sol:assignRight>
+                    <sol:assignLeft>winner_tmstmp10</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.startTime__5_1days___block.timestamp.L18*C377">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.startTime__5_1days___block.timestamp.L18*C377"/>
+                    <sol:hasIfCondition>startTime+(5*1days)==block.timestamp</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_tmstmp10.L17*C328"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.startTime__5_1days___block.timestamp.L18*C377"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.startTime.L17*C351">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>startTime</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>play_tmstmp10</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.generateQRCodeForFile.L85*C2879">
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L88*C3117">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L88*C3126">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._fileHash.L88*C2989">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>_fileHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.filePath.L88*C3014">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>filePath</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32QRCodeHash.L90*C3149">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.generateQRCodeForFile.L85*C2879"/>
+            <sol:valueIs>null</sol:valueIs>
+            <sol:nameIs>QRCodeHash</sol:nameIs>
+            <sol:typeName>bytes32</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._contractAddress.L88*C3038">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>_contractAddress</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasModifier>pure</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.dappBoxOrigin.L88*C2966">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>dappBoxOrigin</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.QRCodeHash.L92*C3299">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.QRCodeHash_keccak256_abi.encodePacked_dappBoxOrigin__fileHash_filePath__contractAddress__identifier__.L91*C3177">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32QRCodeHash.L90*C3149"/>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>keccak256(abi.encodePacked(dappBoxOrigin,_fileHash,filePath,_contractAddress,_identifier))</sol:assignRight>
+                <sol:assignLeft>QRCodeHash</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:returnText>QRCodeHash</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasModifier>internal</sol:hasModifier>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.QRCodeHash_keccak256_abi.encodePacked_dappBoxOrigin__fileHash_filePath__contractAddress__identifier__.L91*C3177"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._identifier.L88*C3064">
+            <sol:typeName>BlockchainIdentification</sol:typeName>
+            <sol:nameIs>_identifier</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>generateQRCodeForFile</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.bugv_tmstmp5.L69*C2496">
+        <sol:valueIs>block.timestamp</sol:valueIs>
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>bugv_tmstmp5</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.bugv_tmstmp1.L135*C4852">
+        <sol:valueIs>block.timestamp</sol:valueIs>
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>bugv_tmstmp1</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getQRCode.L97*C3366">
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256len.L102*C3567">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getQRCode.L97*C3366"/>
+            <sol:valueIs>fileExistenceProofs[dappBoxOrigin].length</sol:valueIs>
+            <sol:nameIs>len</sol:nameIs>
+            <sol:typeName>uint256</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.fileHash.L101*C3475">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>fileHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasFor>
+          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_leni____boolres_compareStrings_fileHash_fileExistenceProofs_dappBoxOrigin__i_.fileHash_&amp;&amp;compareStrings_filePathHash_fileExistenceProofs_dappBoxOrigin__i_.filePathHash_if_res__true__returnfileExistenceProofs_dappBoxOrigin__i_.QRCodeHash__.L103*C3632">
+            <sol:conditionStep>i++</sol:conditionStep>
+            <sol:hasForCondition>
+              <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i_len.L103*C3632">
+                <sol:conditionValue>len</sol:conditionValue>
+                <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+              </sol:ForCondition>
+            </sol:hasForCondition>
+            <sol:conditionVar>i</sol:conditionVar>
+            <sol:hasStateVar>
+              <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L103*C3632">
+                <sol:valueIs>0</sol:valueIs>
+                <sol:nameIs>i</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:stateVar>
+            </sol:hasStateVar>
+            <sol:hasIf>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.res__true.L108*C3883">
+                <sol:hasIfRight>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L108*C3883">
+                    <sol:hasReturnValue>
+                      <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight_return.fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash.L110*C3930">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L108*C3883"/>
+                        <sol:returnText>fileExistenceProofs[dappBoxOrigin][i].QRCodeHash</sol:returnText>
+                      </sol:ReturnValue>
+                    </sol:hasReturnValue>
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.res__true.L108*C3883">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.res__true.L108*C3883"/>
+                        <sol:hasIfCondition>res==true</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:hasIfRight>
+                <sol:before>
+                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.boolres.L106*C3694">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_leni____boolres_compareStrings_fileHash_fileExistenceProofs_dappBoxOrigin__i_.fileHash_&amp;&amp;compareStrings_filePathHash_fileExistenceProofs_dappBoxOrigin__i_.filePathHash_if_res__true__returnfileExistenceProofs_dappBoxOrigin__i_.QRCodeHash__.L103*C3632"/>
+                    <sol:valueIs>compareStrings(fileHash,fileExistenceProofs[dappBoxOrigin][i].fileHash)&amp;&amp;compareStrings(filePathHash,fileExistenceProofs[dappBoxOrigin][i].filePathHash)</sol:valueIs>
+                    <sol:nameIs>res</sol:nameIs>
+                    <sol:typeName>bool</sol:typeName>
+                  </sol:StateVar>
+                </sol:before>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.res__true.L108*C3883"/>
+              </sol:FunctionIf>
+            </sol:hasIf>
+            <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.boolres.L106*C3694"/>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256len.L102*C3567"/>
+          </sol:FunctionFor>
+        </sol:hasFor>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.dappBoxOrigin.L101*C3452">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>dappBoxOrigin</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:nameIs>getQRCode</sol:nameIs>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L101*C3540">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L101*C3548">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.filePathHash.L101*C3499">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>filePathHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.bugv_tmstmp3.L94*C3324">
+        <sol:valueIs>block.timestamp</sol:valueIs>
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>bugv_tmstmp3</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.bug_tmstmp1.L44*C1410">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.block.timestamp__1546300800.L45*C1466">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.bug_tmstmp1.L44*C1410"/>
+            <sol:returnText>block.timestamp&gt;=1546300800</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L44*C1445">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bool.L44*C1454">
+                <sol:typeName>bool</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:nameIs>bug_tmstmp1</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.bugv_tmstmp2.L115*C4014">
+        <sol:valueIs>block.timestamp</sol:valueIs>
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>bugv_tmstmp2</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.SetFileExistenceProof.L25*C558">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.filePathHash__filePathHash.L36*C1145">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.fileHash__fileHash.L35*C1107">
+                <sol:before>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.filesender_dappBoxOrigin.L34*C1063">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.date__date.L33*C1033">
+                        <sol:before>
+                          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32QRCodeHash.L32*C912">
+                            <sol:before>
+                              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256_date.L31*C883">
+                                <sol:before>
+                                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.FileExistenceStructmemorynewInfo.L30*C839">
+                                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.SetFileExistenceProof.L25*C558"/>
+                                    <sol:storageLocate>memory</sol:storageLocate>
+                                    <sol:valueIs>null</sol:valueIs>
+                                    <sol:nameIs>newInfo</sol:nameIs>
+                                    <sol:typeName>FileExistenceStruct</sol:typeName>
+                                  </sol:StateVar>
+                                </sol:before>
+                                <sol:valueIs>now</sol:valueIs>
+                                <sol:nameIs>_date</sol:nameIs>
+                                <sol:typeName>uint256</sol:typeName>
+                              </sol:StateVar>
+                            </sol:before>
+                            <sol:valueIs>generateQRCodeForFile(dappBoxOrigin,_fileHash,_filePathHash,_contractAddress,_identifier)</sol:valueIs>
+                            <sol:nameIs>QRCodeHash</sol:nameIs>
+                            <sol:typeName>bytes32</sol:typeName>
+                          </sol:StateVar>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>_date</sol:assignRight>
+                        <sol:assignLeft>newInfo.date</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>dappBoxOrigin</sol:assignRight>
+                    <sol:assignLeft>newInfo.filesender</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:before>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>_fileHash</sol:assignRight>
+                <sol:assignLeft>newInfo.fileHash</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>_filePathHash</sol:assignRight>
+            <sol:assignLeft>newInfo.filePathHash</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.filesender_dappBoxOrigin.L34*C1063"/>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.date__date.L33*C1033"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._filePathHash.L28*C707">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>_filePathHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.QRCodeHash_QRCodeHash.L39*C1285">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.identifier__identifier.L38*C1243">
+                <sol:before>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.contractAddress__contractAddress.L37*C1191">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.filePathHash__filePathHash.L36*C1145"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>_contractAddress</sol:assignRight>
+                    <sol:assignLeft>newInfo.contractAddress</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:before>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>_identifier</sol:assignRight>
+                <sol:assignLeft>newInfo.identifier</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>QRCodeHash</sol:assignRight>
+            <sol:assignLeft>newInfo.QRCodeHash</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.QRCodeHash.L42*C1385">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.fileExistenceProofs_dappBoxOrigin_.push.L41*C1327">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.QRCodeHash_QRCodeHash.L39*C1285"/>
+                <sol:callFunctionArgument>newInfo</sol:callFunctionArgument>
+                <sol:callFunctionName>push</sol:callFunctionName>
+                <sol:callFunctionObject>fileExistenceProofs[dappBoxOrigin]</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:returnText>QRCodeHash</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.fileHash__fileHash.L35*C1107"/>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L28*C807">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L28*C816">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:nameIs>SetFileExistenceProof</sol:nameIs>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.fileExistenceProofs_dappBoxOrigin_.push.L41*C1327"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.FileExistenceStructmemorynewInfo.L30*C839"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.identifier__identifier.L38*C1243"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._fileHash.L28*C682">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>_fileHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._identifier.L28*C762">
+            <sol:typeName>BlockchainIdentification</sol:typeName>
+            <sol:nameIs>_identifier</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._contractAddress.L28*C736">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>_contractAddress</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32QRCodeHash.L32*C912"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256_date.L31*C883"/>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.newInfo.contractAddress__contractAddress.L37*C1191"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.dappBoxOrigin.L28*C659">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>dappBoxOrigin</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.GetFileExistenceProof.L49*C1540">
+        <sol:hasFor>
+          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_fileExistenceProofs_dappBoxOrigin_.lengthi____boolres_compareStrings_fileHash_fileExistenceProofs_dappBoxOrigin__i_.fileHash_&amp;&amp;compareStrings_filePathHash_fileExistenceProofs_dappBoxOrigin__i_.filePathHash_if_res__true__return_fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash___.L54*C1808">
+            <sol:conditionStep>i++</sol:conditionStep>
+            <sol:hasForCondition>
+              <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i_fileExistenceProofs_dappBoxOrigin_.length.L54*C1808">
+                <sol:conditionValue>fileExistenceProofs[dappBoxOrigin].length</sol:conditionValue>
+                <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+              </sol:ForCondition>
+            </sol:hasForCondition>
+            <sol:conditionVar>i</sol:conditionVar>
+            <sol:hasStateVar>
+              <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L54*C1808">
+                <sol:valueIs>0</sol:valueIs>
+                <sol:nameIs>i</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:stateVar>
+            </sol:hasStateVar>
+            <sol:hasIf>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.res__true.L59*C2097">
+                <sol:hasIfRight>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L59*C2097">
+                    <sol:hasReturnValue>
+                      <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight_return._fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash_.L61*C2144">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L59*C2097"/>
+                        <sol:returnText>(fileExistenceProofs[dappBoxOrigin][i].date,fileExistenceProofs[dappBoxOrigin][i].filesender,fileExistenceProofs[dappBoxOrigin][i].contractAddress,fileExistenceProofs[dappBoxOrigin][i].identifier,fileExistenceProofs[dappBoxOrigin][i].QRCodeHash)</sol:returnText>
+                      </sol:ReturnValue>
+                    </sol:hasReturnValue>
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.res__true.L59*C2097">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.res__true.L59*C2097"/>
+                        <sol:hasIfCondition>res==true</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:hasIfRight>
+                <sol:before>
+                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.boolres.L57*C1908">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_fileExistenceProofs_dappBoxOrigin_.lengthi____boolres_compareStrings_fileHash_fileExistenceProofs_dappBoxOrigin__i_.fileHash_&amp;&amp;compareStrings_filePathHash_fileExistenceProofs_dappBoxOrigin__i_.filePathHash_if_res__true__return_fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash___.L54*C1808"/>
+                    <sol:valueIs>compareStrings(fileHash,fileExistenceProofs[dappBoxOrigin][i].fileHash)&amp;&amp;compareStrings(filePathHash,fileExistenceProofs[dappBoxOrigin][i].filePathHash)</sol:valueIs>
+                    <sol:nameIs>res</sol:nameIs>
+                    <sol:typeName>bool</sol:typeName>
+                  </sol:StateVar>
+                </sol:before>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.res__true.L59*C2097"/>
+              </sol:FunctionIf>
+            </sol:hasIf>
+            <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.boolres.L57*C1908"/>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.GetFileExistenceProof.L49*C1540"/>
+          </sol:FunctionFor>
+        </sol:hasFor>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L52*C1727">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L52*C1784">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.BlockchainIdentification.L52*C1759">
+                <sol:typeName>BlockchainIdentification</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address.L52*C1751">
+                <sol:typeName>address</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address.L52*C1743">
+                <sol:typeName>address</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint256.L52*C1735">
+                <sol:typeName>uint256</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.filePathHash.L52*C1687">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>filePathHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.fileHash.L52*C1663">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>fileHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.dappBoxOrigin.L52*C1641">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>dappBoxOrigin</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>GetFileExistenceProof</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.winner_tmstmp10.L16*C303">
+        <sol:typeName>address</sol:typeName>
+        <sol:nameIs>winner_tmstmp10</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:nameIs>ProofOfExistence</sol:nameIs>
+    <sol:hasStruct>
+      <sol:Struct rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_struct.FileExistenceStruct.L8*C119">
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.BlockchainIdentification.L15*C265">
+            <sol:typeName>BlockchainIdentification</sol:typeName>
+            <sol:nameIs>identifier</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.bytes32.L14*C245">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>QRCodeHash</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.address.L13*C220">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>contractAddress</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.string.L12*C199">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>filePathHash</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.string.L11*C182">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>fileHash</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.address.L10*C162">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>filesender</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.uint256.L9*C148">
+            <sol:typeName>uint256</sol:typeName>
+            <sol:nameIs>date</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:nameIs>FileExistenceStruct</sol:nameIs>
+      </sol:Struct>
+    </sol:hasStruct>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.compareStrings.L72*C2538">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.bytes_a_.length!_bytes_b_.length.L77*C2683">
+            <sol:hasIfWrong>
+              <sol:IfWrong rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifWrong._.L77*C2683">
+                <sol:hasReturnValue>
+                  <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifWrong_return.keccak256_abi.encode_a____keccak256_abi.encode_b__.L80*C2765">
+                    <sol:before>
+                      <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_return.false.L78*C2732">
+                        <sol:before>
+                          <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L77*C2683">
+                            <sol:hasReturnValue rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_return.false.L78*C2732"/>
+                            <sol:before>
+                              <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.bytes_a_.length!_bytes_b_.length.L77*C2683">
+                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.bytes_a_.length!_bytes_b_.length.L77*C2683"/>
+                                <sol:hasIfCondition>bytes(a).length!=bytes(b).length</sol:hasIfCondition>
+                              </sol:IfCondition>
+                            </sol:before>
+                          </sol:IfRight>
+                        </sol:before>
+                        <sol:returnText>false</sol:returnText>
+                      </sol:ReturnValue>
+                    </sol:before>
+                    <sol:returnText>keccak256(abi.encode(a))==keccak256(abi.encode(b))</sol:returnText>
+                  </sol:ReturnValue>
+                </sol:hasReturnValue>
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.bytes_a_.length!_bytes_b_.length.L77*C2683"/>
+              </sol:IfWrong>
+            </sol:hasIfWrong>
+            <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L77*C2683"/>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.compareStrings.L72*C2538"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.bytes_a_.length!_bytes_b_.length.L77*C2683"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L75*C2658">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bool.L75*C2667">
+                <sol:typeName>bool</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>internal</sol:hasModifier>
+        <sol:hasModifier>pure</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.b.L75*C2627">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>b</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.a.L75*C2610">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>a</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>compareStrings</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.searchExistenceProoUsngQRf.L118*C4056">
+        <sol:hasFor>
+          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_leni____if_QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash__return_fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash___.L123*C4356">
+            <sol:conditionStep>i++</sol:conditionStep>
+            <sol:hasForCondition>
+              <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i_len.L123*C4356">
+                <sol:conditionValue>len</sol:conditionValue>
+                <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+              </sol:ForCondition>
+            </sol:hasForCondition>
+            <sol:conditionVar>i</sol:conditionVar>
+            <sol:hasStateVar>
+              <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L123*C4356">
+                <sol:valueIs>0</sol:valueIs>
+                <sol:nameIs>i</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:stateVar>
+            </sol:hasStateVar>
+            <sol:hasIf>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash.L125*C4410">
+                <sol:hasIfRight>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L125*C4410">
+                    <sol:hasReturnValue>
+                      <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight_return._fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash_.L127*C4504">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L125*C4410"/>
+                        <sol:returnText>(fileExistenceProofs[dappBoxOrigin][i].date,fileExistenceProofs[dappBoxOrigin][i].filesender,fileExistenceProofs[dappBoxOrigin][i].contractAddress,fileExistenceProofs[dappBoxOrigin][i].identifier,fileExistenceProofs[dappBoxOrigin][i].QRCodeHash)</sol:returnText>
+                      </sol:ReturnValue>
+                    </sol:hasReturnValue>
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash.L125*C4410">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash.L125*C4410"/>
+                        <sol:hasIfCondition>QRCodeHash==fileExistenceProofs[dappBoxOrigin][i].QRCodeHash</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:hasIfRight>
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i_leni____if_QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash__return_fileExistenceProofs_dappBoxOrigin__i_.date_fileExistenceProofs_dappBoxOrigin__i_.filesender_fileExistenceProofs_dappBoxOrigin__i_.contractAddress_fileExistenceProofs_dappBoxOrigin__i_.identifier_fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash___.L123*C4356"/>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.QRCodeHash__fileExistenceProofs_dappBoxOrigin__i_.QRCodeHash.L125*C4410"/>
+              </sol:FunctionIf>
+            </sol:hasIf>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256len.L122*C4291">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.searchExistenceProoUsngQRf.L118*C4056"/>
+                <sol:valueIs>fileExistenceProofs[dappBoxOrigin].length</sol:valueIs>
+                <sol:nameIs>len</sol:nameIs>
+                <sol:typeName>uint256</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+          </sol:FunctionFor>
+        </sol:hasFor>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.uint256len.L122*C4291"/>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L121*C4214">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L121*C4271">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.BlockchainIdentification.L121*C4246">
+                <sol:typeName>BlockchainIdentification</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address.L121*C4238">
+                <sol:typeName>address</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address.L121*C4230">
+                <sol:typeName>address</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint256.L121*C4222">
+                <sol:typeName>uint256</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.QRCodeHash.L121*C4182">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>QRCodeHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.dappBoxOrigin.L121*C4160">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>dappBoxOrigin</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>searchExistenceProoUsngQRf</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.fileExistenceProofs.L22*C493">
+        <sol:elementTypeName2>FileExistenceStruct[]</sol:elementTypeName2>
+        <sol:elementTypeName1>address</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>fileExistenceProofs</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+  </sol:Contract>
+</rdf:RDF>

@@ -1,0 +1,1532 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_19",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ADDRESS_HARDCODED"
+              }
+            },
+            {
+              "id": "Reentrancy_12",
+              "name": "ReentrancyVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_CALL_WITHOUT_DATA"
+              }
+            },
+            {
+              "id": "Ignore_22",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ERC20_APPROVE"
+              }
+            },
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_31",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_REVERT_REQUIRE"
+              }
+            },
+            {
+              "id": "Ignore_32",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SAFEMATH"
+              }
+            },
+            {
+              "id": "UncheckedLowCalls_8",
+              "name": "UncheckedLowCallsVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_UNCHECKED_CALL"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/buggy_17.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "buggy_17"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0x9fd50776F133751E8Ae6abE1Be124638Bb917E05"
+                  },
+                  "startColumn": 33,
+                  "startLine": 340
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0x0"
+                  },
+                  "startColumn": 27,
+                  "startLine": 188
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0x0"
+                  },
+                  "startColumn": 27,
+                  "startLine": 363
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+                  },
+                  "startColumn": 36,
+                  "startLine": 112
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(balances_re_ent1[msg.sender])(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 168
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(balances_re_ent21[msg.sender])(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 182
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(_weiToWithdraw)(\"\")"
+                  },
+                  "startColumn": 29,
+                  "startLine": 275
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(userBalance_re_ent26[msg.sender])(\"\")"
+                  },
+                  "startColumn": 36,
+                  "startLine": 310
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(_weiToWithdraw)(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 357
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_CALL_WITHOUT_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(1ether)(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 419
+                }
+              }
+            }
+          ],
+          "ruleId": "Reentrancy_12"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_ERC20_APPROVE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionapprove(address_spender,uint256_value)publicreturns(boolsuccess){allowance[msg.sender][_spender]=_value;emitApproval(msg.sender,_spender,_value);returntrue;}"
+                  },
+                  "startColumn": 2,
+                  "startLine": 231
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_22"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<frozenAddresses.length;i++){balanceOf[frozenAddresses[i]]=frozenWallets[frozenAddresses[i]].rewardedAmount;totalSupply=totalSupply.add(frozenWallets[frozenAddresses[i]].rewardedAmount);}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 348
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<frozenAddresses.length;i++){balanceOf[frozenAddresses[i]]=frozenWallets[frozenAddresses[i]].rewardedAmount;totalSupply=totalSupply.add(frozenWallets[frozenAddresses[i]].rewardedAmount);}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 348
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_REVERT_REQUIRE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "if(!success){revert();}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 113
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_31"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_REVERT_REQUIRE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "if(!success){revert();}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 311
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_31"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_REVERT_REQUIRE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "if(!success){revert();}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 420
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_31"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SAFEMATH"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "usingSafeMathforuint256;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 89
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_32"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+                  },
+                  "startColumn": 36,
+                  "startLine": 112
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(balances_re_ent1[msg.sender])(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 168
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(balances_re_ent21[msg.sender])(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 182
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(_weiToWithdraw)(\"\")"
+                  },
+                  "startColumn": 29,
+                  "startLine": 275
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(userBalance_re_ent26[msg.sender])(\"\")"
+                  },
+                  "startColumn": 36,
+                  "startLine": 310
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(_weiToWithdraw)(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 357
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UNCHECKED_CALL"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "call.value(1ether)(\"\")"
+                  },
+                  "startColumn": 35,
+                  "startLine": 419
+                }
+              }
+            }
+          ],
+          "ruleId": "UncheckedLowCalls_8"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent36;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 47
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent24;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 57
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresspayablelastPlayer_re_ent23;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 73
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uintjackpot_re_ent23;"
+                  },
+                  "startColumn": 6,
+                  "startLine": 74
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256counter_re_ent35=0;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 90
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "boolnot_called_re_ent34=true;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 99
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)userBalance_re_ent33;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 108
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)redeemableEther_re_ent32;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 119
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent31;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 129
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresspayablelastPlayer_re_ent30;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 137
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uintjackpot_re_ent30;"
+                  },
+                  "startColumn": 6,
+                  "startLine": 138
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)redeemableEther_re_ent11;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 147
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent10;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 157
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent1;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 166
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent21;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 180
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256counter_re_ent21=0;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 193
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "boolnot_called_re_ent20=true;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 206
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresspayablelastPlayer_re_ent2;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 221
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uintjackpot_re_ent2;"
+                  },
+                  "startColumn": 6,
+                  "startLine": 222
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)userBalance_re_ent19;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 236
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)redeemableEther_re_ent18;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 254
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent3;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 271
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "string_tokenName=\"AZ FundChain\";"
+                  },
+                  "startColumn": 1,
+                  "startLine": 280
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent29;"
+                  },
+                  "startColumn": 38,
+                  "startLine": 280
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "string_tokenSymbol=\"AZT\";"
+                  },
+                  "startColumn": 1,
+                  "startLine": 286
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256counter_re_ent28=0;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 287
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint8_decimals=18;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 295
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "boolnot_called_re_ent27=true;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 297
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)userBalance_re_ent26;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 306
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)redeemableEther_re_ent25;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 325
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent17;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 353
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresspayablelastPlayer_re_ent16;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 369
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uintjackpot_re_ent16;"
+                  },
+                  "startColumn": 6,
+                  "startLine": 370
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)balances_re_ent15;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 387
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256counter_re_ent14=0;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 400
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "boolnot_called_re_ent13=true;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 416
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_17.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>uint)userBalance_re_ent12;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 429
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

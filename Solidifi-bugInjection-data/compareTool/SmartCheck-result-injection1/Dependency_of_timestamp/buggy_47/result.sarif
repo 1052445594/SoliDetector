@@ -1,0 +1,1122 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_22",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ERC20_APPROVE"
+              }
+            },
+            {
+              "id": "TimeManipulation_5",
+              "name": "TimeManipulationVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXACT_TIME"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/buggy_47.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "buggy_47"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ERC20_APPROVE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionapprove(addressspender,uinttokens)publicreturns(bool){require(balances[msg.sender]>=tokens);require(tokens>0);allowed[msg.sender][spender]=tokens;emitApproval(msg.sender,spender,tokens);returntrue;}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 139
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_22"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 19
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp24"
+                  },
+                  "startColumn": 16,
+                  "startLine": 31
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 33
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 46
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp40"
+                  },
+                  "startColumn": 16,
+                  "startLine": 61
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 63
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp4"
+                  },
+                  "startColumn": 16,
+                  "startLine": 71
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 73
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 87
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp36"
+                  },
+                  "startColumn": 16,
+                  "startLine": 99
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 101
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp20"
+                  },
+                  "startColumn": 16,
+                  "startLine": 130
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 132
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 149
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 176
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp16"
+                  },
+                  "startColumn": 16,
+                  "startLine": 198
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 200
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 220
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp32"
+                  },
+                  "startColumn": 16,
+                  "startLine": 234
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 236
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "startTime+(5*1days)==block.timestamp"
+                  },
+                  "startColumn": 5,
+                  "startLine": 251
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now!=pastBlockTime_tmstmp28"
+                  },
+                  "startColumn": 16,
+                  "startLine": 272
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXACT_TIME"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "now%15==0"
+                  },
+                  "startColumn": 11,
+                  "startLine": 274
+                }
+              }
+            }
+          ],
+          "ruleId": "TimeManipulation_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "constructor(addresspayable"
+                  },
+                  "startColumn": 4,
+                  "startLine": 292
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp27;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 11
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp26;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp23;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 38
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp22;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 44
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp39;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 79
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp38;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 85
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "mapping(address=>mapping(address=>uint))allowed;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 105
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp2;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 147
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp19;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 165
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp18;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 174
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp35;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 208
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp34;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 218
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uinttokenPrice=0.0001ether;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 228
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp31;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 242
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp30;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 249
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addresswinner_tmstmp3;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 257
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256bugv_tmstmp2=block.timestamp;"
+                  },
+                  "startColumn": 0,
+                  "startLine": 285
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "uint256bugv_tmstmp1=block.timestamp;"
+                  },
+                  "startColumn": 2,
+                  "startLine": 287
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "admin=msg."
+                  },
+                  "startColumn": 8,
+                  "startLine": 294
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/buggy_47.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "sender;ieoState=State.beforeStart;"
+                  },
+                  "startColumn": 20,
+                  "startLine": 294
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

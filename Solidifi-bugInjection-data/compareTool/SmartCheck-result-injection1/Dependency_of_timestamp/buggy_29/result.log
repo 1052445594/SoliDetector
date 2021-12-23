@@ -1,0 +1,238 @@
+/data/buggy_29.sol
+line 170:10 extraneous input 'payable' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 230:16 extraneous input 'payable' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'length', 'balance', 'memory', 'storage', 'emit', '_', 'revert', Identifier}
+line 300:42 extraneous input 'amounts' expecting {',', ')'}
+line 300:70 extraneous input 'listingIds' expecting {',', ')'}
+jar:file:/usr/local/lib/node_modules/@smartdec/smartcheck/jdeploy-bundle/smartcheck-2.0-jar-with-dependencies.jar!/solidity-rules.xmlruleId: SOLIDITY_ADDRESS_HARDCODED
+patternId: adc165
+severity: 1
+line: 153
+column: 61
+content: 0x0C8cDC16973E88FAb31DD0FCB844DdF0e1056dE2
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 17
+column: 5
+content: startTime+(5*1days)==block.timestamp
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 30
+column: 16
+content: now!=pastBlockTime_tmstmp16
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 32
+column: 11
+content: now%15==0
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 168
+column: 5
+content: startTime+(5*1days)==block.timestamp
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 184
+column: 16
+content: now!=pastBlockTime_tmstmp20
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 186
+column: 11
+content: now%15==0
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 196
+column: 5
+content: startTime+(5*1days)==block.timestamp
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 328
+column: 5
+content: startTime+(5*1days)==block.timestamp
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 361
+column: 16
+content: now!=pastBlockTime_tmstmp12
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 363
+column: 11
+content: now%15==0
+
+ruleId: SOLIDITY_EXACT_TIME
+patternId: 1955d9
+severity: 2
+line: 386
+column: 5
+content: startTime+(5*1days)==block.timestamp
+
+ruleId: SOLIDITY_EXTRA_GAS_IN_LOOPS
+patternId: d3j11j
+severity: 1
+line: 304
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_GAS_LIMIT_IN_LOOPS
+patternId: f6f853
+severity: 2
+line: 304
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 3
+column: 16
+content: >=
+
+ruleId: SOLIDITY_SAFEMATH
+patternId: 837cac
+severity: 1
+line: 147
+column: 4
+content: usingSafeMathforuint256;
+
+ruleId: SOLIDITY_TRANSFER_IN_LOOP
+patternId: 8jdj43
+severity: 2
+line: 304
+column: 8
+content: for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,"Listing is not active anymore!");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,"Amount left needs to be higher than 0.");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}
+
+ruleId: SOLIDITY_UINT_CANT_BE_NEGATIVE
+patternId: d48ac4
+severity: 2
+line: 310
+column: 20
+content: listing.amountLeft>=0
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 15
+column: 0
+content: addresswinner_tmstmp18;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 157
+column: 2
+content: addresswinner_tmstmp23;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 166
+column: 2
+content: addresswinner_tmstmp22;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 194
+column: 2
+content: addresswinner_tmstmp2;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 202
+column: 2
+content: addresswinner_tmstmp19;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 258
+column: 2
+content: uint256bugv_tmstmp3=block.timestamp;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 260
+column: 2
+content: uint256bugv_tmstmp2=block.timestamp;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 262
+column: 2
+content: uint256bugv_tmstmp1=block.timestamp;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 273
+column: 0
+content: uint256bugv_tmstmp5=block.timestamp;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 281
+column: 0
+content: uint256bugv_tmstmp4=block.timestamp;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 290
+column: 0
+content: addresswinner_tmstmp15;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 326
+column: 0
+content: addresswinner_tmstmp14;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 373
+column: 0
+content: addresswinner_tmstmp11;
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 384
+column: 0
+content: addresswinner_tmstmp10;
+
+SOLIDITY_VISIBILITY :14
+SOLIDITY_SAFEMATH :1
+SOLIDITY_PRAGMAS_VERSION :1
+SOLIDITY_EXTRA_GAS_IN_LOOPS :1
+SOLIDITY_ADDRESS_HARDCODED :1
+SOLIDITY_UINT_CANT_BE_NEGATIVE :1
+SOLIDITY_GAS_LIMIT_IN_LOOPS :1
+SOLIDITY_TRANSFER_IN_LOOP :1
+SOLIDITY_EXACT_TIME :11

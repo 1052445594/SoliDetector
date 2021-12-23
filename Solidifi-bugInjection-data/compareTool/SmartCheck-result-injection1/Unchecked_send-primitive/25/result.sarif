@@ -1,0 +1,292 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_27",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_OVERPOWERED_ROLE"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_31",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_REVERT_REQUIRE"
+              }
+            },
+            {
+              "id": "DenialService_5",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_TRANSFER_IN_LOOP"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/25.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "25"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 141
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 141
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_OVERPOWERED_ROLE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionsetOpenStatus(uint64_fixtureId,uint8_open_status)externalonlyOwner{gameList[_fixtureId].open_status=_open_status;}"
+                  },
+                  "startColumn": 2,
+                  "startLine": 58
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_27"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_OVERPOWERED_ROLE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionsetGameInfo(uint64_fixtureId,uint256_timestamp,uint32_odd_homeTeam,uint32_odd_drawTeam,uint32_odd_awayTeam,uint32_odd_over,uint32_odd_under,uint32_odd_homeTeamAndDraw,uint32_odd_homeAndAwayTeam,uint32_odd_awayTeamAndDraw,uint8_open_status)externalonlyOwner{gameList[_fixtureId].timestamp=_timestamp;gameList[_fixtureId].odd_homeTeam=_odd_homeTeam;gameList[_fixtureId].odd_drawTeam=_odd_drawTeam;gameList[_fixtureId].odd_awayTeam=_odd_awayTeam;gameList[_fixtureId].odd_over=_odd_over;gameList[_fixtureId].odd_under=_odd_under;gameList[_fixtureId].odd_homeTeamAndDraw=_odd_homeTeamAndDraw;gameList[_fixtureId].odd_homeAndAwayTeam=_odd_homeAndAwayTeam;gameList[_fixtureId].odd_awayTeamAndDraw=_odd_awayTeamAndDraw;gameList[_fixtureId].open_status=_open_status;gameList[_fixtureId].isDone=false;emitSetGame(_fixtureId,_timestamp,_odd_homeTeam,_odd_drawTeam,_odd_awayTeam,_odd_over,_odd_under,_odd_homeTeamAndDraw,_odd_homeAndAwayTeam,_odd_awayTeamAndDraw,_open_status);}"
+                  },
+                  "startColumn": 2,
+                  "startLine": 76
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_27"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_REVERT_REQUIRE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "if(_selectedTeam==8){require(gameList[_fixtureId].odd_awayTeamAndDraw==_odd);}else{revert();}"
+                  },
+                  "startColumn": 11,
+                  "startLine": 114
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_31"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_TRANSFER_IN_LOOP"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uinti=0;i<betList[_fixtureId].length;i++){uint16selectedTeam=betList[_fixtureId][i].selectedTeam;uint256returnEth=(betList[_fixtureId][i].stake*betList[_fixtureId][i].odd)/1000;if((selectedTeam==1&&_homeDrawAway==1)||(selectedTeam==2&&_homeDrawAway==2)||(selectedTeam==3&&_homeDrawAway==3)||(selectedTeam==4&&_overUnder==1)||(selectedTeam==5&&_overUnder==2)||(selectedTeam==6&&(_homeDrawAway==1||_homeDrawAway==2))||(selectedTeam==7&&(_homeDrawAway==1||_homeDrawAway==3))||(selectedTeam==8&&(_homeDrawAway==3||_homeDrawAway==2))){betList[_fixtureId][i].player.transfer(returnEth);}}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 141
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionchangeOwner(addresspayable"
+                  },
+                  "startColumn": 2,
+                  "startLine": 182
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/25.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "owner=_newOwner;"
+                  },
+                  "startColumn": 4,
+                  "startLine": 183
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

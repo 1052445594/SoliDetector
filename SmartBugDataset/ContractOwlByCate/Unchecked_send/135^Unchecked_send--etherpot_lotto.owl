@@ -1,0 +1,942 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sol="http://www.hty.group/tf/ontologies/2020/07/Solildity#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function">
+    <owl:deprecated rdf:parseType="Resource">
+    </owl:deprecated>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForCondition">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Param">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfCondition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#VariableOperation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Constructor">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#StateVar">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Modifier">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Struct">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfRight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionCall">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Library"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForContent">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfWrong">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnValue">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Interface"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnClaim">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#containAssignment"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStateVar"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfCondition"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasParam"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfWrong">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineConstructor"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionVar">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#after"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionStep">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnValue"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnClaim"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfRight">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#before">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#operateVarible"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineModifier"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForContent">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForCondition">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStruct"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIf"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignLeft">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#storageLocate"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionObject"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasModifier"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionVar"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#returnText"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignRight"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opSymbol">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionStep"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#typeName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#valueIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opVarible">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#nameIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionArgument"/>
+  <sol:Pragma rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_pragma.^0.4.0.L7*C164">
+    <sol:pragmaValue>^0.4.0</sol:pragmaValue>
+    <sol:pragmaName>solidity</sol:pragmaName>
+  </sol:Pragma>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.Lotto.L8*C189">
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.blocksPerRound.L9*C207">
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>6800</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>blocksPerRound</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getIsCashed.L30*C1446">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.rounds_roundIndex_.isCashed_subpotIndex_.L32*C1552">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getIsCashed.L30*C1446"/>
+            <sol:returnText>rounds[roundIndex].isCashed[subpotIndex]</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L30*C1510">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bool.L30*C1519">
+                <sol:typeName>bool</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.subpotIndex.L30*C1483">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>subpotIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L30*C1467">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getIsCashed</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.ticketPrice.L11*C436">
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>100000000000000000</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>ticketPrice</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getTicketPrice.L15*C669">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.ticketPrice.L15*C719">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getTicketPrice.L15*C669"/>
+            <sol:returnText>ticketPrice</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L15*C704">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L15*C712">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:nameIs>getTicketPrice</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getPot.L90*C3985">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.rounds_roundIndex_.pot.L91*C4043">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getPot.L90*C3985"/>
+            <sol:returnText>rounds[roundIndex].pot</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L90*C4027">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L90*C4035">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L90*C4001">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getPot</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getHashOfBlock.L81*C3607">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.uint_block.blockhash_blockIndex__.L82*C3673">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getHashOfBlock.L81*C3607"/>
+            <sol:returnText>uint(block.blockhash(blockIndex))</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L81*C3657">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L81*C3665">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.blockIndex.L81*C3631">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>blockIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getHashOfBlock</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getTicketsCountByBuyer.L87*C3838">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.rounds_roundIndex_.ticketsCountByBuyer_buyer_.L88*C3927">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getTicketsCountByBuyer.L87*C3838"/>
+            <sol:returnText>rounds[roundIndex].ticketsCountByBuyer[buyer]</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L87*C3910">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L87*C3919">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.buyer.L87*C3886">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>buyer</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L87*C3870">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getTicketsCountByBuyer</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getSubpotsCount.L55*C2656">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.subpotsCount.L59*C2838">
+            <sol:before>
+              <sol:VariableOperation rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprVaribleOp.subpotsCount__.L58*C2821">
+                <sol:before>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L57*C2779">
+                    <sol:operateVarible rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprVaribleOp.subpotsCount__.L58*C2821"/>
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.pot_blockReward_0.L57*C2779">
+                        <sol:before>
+                          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.pot_blockReward_0.L57*C2779">
+                            <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L57*C2779"/>
+                            <sol:before>
+                              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpotsCount.L56*C2723">
+                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getSubpotsCount.L55*C2656"/>
+                                <sol:valueIs>rounds[roundIndex].pot/blockReward</sol:valueIs>
+                                <sol:nameIs>subpotsCount</sol:nameIs>
+                                <sol:typeName>var</sol:typeName>
+                              </sol:StateVar>
+                            </sol:before>
+                            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.pot_blockReward_0.L57*C2779"/>
+                          </sol:FunctionIf>
+                        </sol:before>
+                        <sol:hasIfCondition>rounds[roundIndex].pot%blockReward&gt;0</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:before>
+                <sol:opSymbol>++</sol:opSymbol>
+                <sol:opVarible>subpotsCount</sol:opVarible>
+              </sol:VariableOperation>
+            </sol:before>
+            <sol:returnText>subpotsCount</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasIf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.pot_blockReward_0.L57*C2779"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpotsCount.L56*C2723"/>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L55*C2707">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L55*C2715">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L55*C2681">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getSubpotsCount</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.blockReward.L13*C533">
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>5000000000000000000</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>blockReward</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBlocksPerRound.L14*C590">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.blocksPerRound.L14*C643">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBlocksPerRound.L14*C590"/>
+            <sol:returnText>blocksPerRound</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L14*C628">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L14*C636">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:nameIs>getBlocksPerRound</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getSubpot.L61*C2863">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.rounds_roundIndex_.pot_getSubpotsCount_roundIndex_.L62*C2924">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getSubpot.L61*C2863"/>
+            <sol:returnText>rounds[roundIndex].pot/getSubpotsCount(roundIndex)</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L61*C2908">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L61*C2916">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L61*C2882">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getSubpot</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.calculateWinner.L34*C1605">
+        <sol:nameIs>calculateWinner</sol:nameIs>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varwinningTicketIndex.L41*C2076">
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockHash.L40*C2014">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.calculateWinner.L34*C1605"/>
+                <sol:valueIs>getHashOfBlock(decisionBlockNumber)</sol:valueIs>
+                <sol:nameIs>decisionBlockHash</sol:nameIs>
+                <sol:typeName>var</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:valueIs>decisionBlockHash%rounds[roundIndex].ticketsCount</sol:valueIs>
+            <sol:nameIs>winningTicketIndex</sol:nameIs>
+            <sol:typeName>var</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasFor>
+          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_varbuyerIndex_0buyerIndex_rounds_roundIndex_.buyers.lengthbuyerIndex____varbuyer_rounds_roundIndex_.buyers_buyerIndex_ticketIndex__rounds_roundIndex_.ticketsCountByBuyer_buyer_if_ticketIndex_winningTicketIndex__returnbuyer__.L44*C2249">
+            <sol:conditionStep>buyerIndex++</sol:conditionStep>
+            <sol:hasForCondition>
+              <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.buyerIndex_rounds_roundIndex_.buyers.length.L44*C2249">
+                <sol:conditionValue>rounds[roundIndex].buyers.length</sol:conditionValue>
+                <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+              </sol:ForCondition>
+            </sol:hasForCondition>
+            <sol:conditionVar>buyerIndex</sol:conditionVar>
+            <sol:hasStateVar>
+              <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.varbuyerIndex.L44*C2249">
+                <sol:valueIs>0</sol:valueIs>
+                <sol:nameIs>buyerIndex</sol:nameIs>
+                <sol:typeName>var</sol:typeName>
+              </sol:stateVar>
+            </sol:hasStateVar>
+            <sol:hasIf>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.ticketIndex_winningTicketIndex.L47*C2447">
+                <sol:hasIfRight>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L47*C2447">
+                    <sol:hasReturnValue>
+                      <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight_return.buyer.L48*C2484">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L47*C2447"/>
+                        <sol:returnText>buyer</sol:returnText>
+                      </sol:ReturnValue>
+                    </sol:hasReturnValue>
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.ticketIndex_winningTicketIndex.L47*C2447">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if.ticketIndex_winningTicketIndex.L47*C2447"/>
+                        <sol:hasIfCondition>ticketIndex&gt;winningTicketIndex</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:hasIfRight>
+                <sol:before>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.ticketIndex__rounds_roundIndex_.ticketsCountByBuyer_buyer_.L46*C2386">
+                    <sol:before>
+                      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.varbuyer.L45*C2334">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_varbuyerIndex_0buyerIndex_rounds_roundIndex_.buyers.lengthbuyerIndex____varbuyer_rounds_roundIndex_.buyers_buyerIndex_ticketIndex__rounds_roundIndex_.ticketsCountByBuyer_buyer_if_ticketIndex_winningTicketIndex__returnbuyer__.L44*C2249"/>
+                        <sol:valueIs>rounds[roundIndex].buyers[buyerIndex]</sol:valueIs>
+                        <sol:nameIs>buyer</sol:nameIs>
+                        <sol:typeName>var</sol:typeName>
+                      </sol:StateVar>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>ticketIndex+rounds[roundIndex].ticketsCountByBuyer[buyer]</sol:assignRight>
+                    <sol:assignLeft>ticketIndex</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:before>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if.ticketIndex_winningTicketIndex.L47*C2447"/>
+              </sol:FunctionIf>
+            </sol:hasIf>
+            <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.ticketIndex__rounds_roundIndex_.ticketsCountByBuyer_buyer_.L46*C2386"/>
+            <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for_varDeclare.varbuyer.L45*C2334"/>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varticketIndex.L43*C2218">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varwinningTicketIndex.L41*C2076"/>
+                <sol:valueIs>uint256(0)</sol:valueIs>
+                <sol:nameIs>ticketIndex</sol:nameIs>
+                <sol:typeName>var</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+          </sol:FunctionFor>
+        </sol:hasFor>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varticketIndex.L43*C2218"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockHash.L40*C2014"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.subpotIndex.L34*C1647">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>subpotIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockNumber.L36*C1833">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.calculateWinner.L34*C1605"/>
+            <sol:valueIs>getDecisionBlockNumber(roundIndex,subpotIndex)</sol:valueIs>
+            <sol:nameIs>decisionBlockNumber</sol:nameIs>
+            <sol:typeName>var</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.decisionBlockNumber_block.number.L37*C1908">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L37*C1908">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.decisionBlockNumber_block.number.L37*C1908">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.decisionBlockNumber_block.number.L37*C1908"/>
+                    <sol:hasIfCondition>decisionBlockNumber&gt;block.number</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockNumber.L36*C1833"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.decisionBlockNumber_block.number.L37*C1908"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L34*C1674">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address.L34*C1682">
+                <sol:typeName>address</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L34*C1630">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBuyers.L84*C3719">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.rounds_roundIndex_.buyers.L85*C3800">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getBuyers.L84*C3719"/>
+            <sol:returnText>rounds[roundIndex].buyers</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L84*C3778">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.address[].L84*C3787">
+                <sol:typeName>address[]</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.buyer.L84*C3754">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>buyer</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L84*C3738">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getBuyers</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:nameIs>Lotto</sol:nameIs>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getRoundIndex.L26*C1163">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.block.number_blocksPerRound.L28*C1406">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getRoundIndex.L26*C1163"/>
+            <sol:returnText>block.number/blocksPerRound</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L26*C1197">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L26*C1206">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:nameIs>getRoundIndex</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.cash.L64*C2987">
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.subpotIndex.L64*C3018">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>subpotIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.isCashed_subpotIndex_.L71*C3249">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L71*C3249">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.isCashed_subpotIndex_.L71*C3249">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.isCashed_subpotIndex_.L71*C3249"/>
+                    <sol:hasIfCondition>rounds[roundIndex].isCashed[subpotIndex]</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.cash.L64*C2987"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.isCashed_subpotIndex_.L71*C3249"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner.send.L77*C3504">
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpot.L75*C3429">
+                <sol:before>
+                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varwinner.L74*C3374">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.cash.L64*C2987"/>
+                    <sol:valueIs>calculateWinner(roundIndex,subpotIndex)</sol:valueIs>
+                    <sol:nameIs>winner</sol:nameIs>
+                    <sol:typeName>var</sol:typeName>
+                  </sol:StateVar>
+                </sol:before>
+                <sol:valueIs>getSubpot(roundIndex)</sol:valueIs>
+                <sol:nameIs>subpot</sol:nameIs>
+                <sol:typeName>var</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:callFunctionArgument>subpot</sol:callFunctionArgument>
+            <sol:callFunctionName>send</sol:callFunctionName>
+            <sol:callFunctionObject>winner</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpotsCount.L65*C3038">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.cash.L64*C2987"/>
+            <sol:valueIs>getSubpotsCount(roundIndex)</sol:valueIs>
+            <sol:nameIs>subpotsCount</sol:nameIs>
+            <sol:typeName>var</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpot.L75*C3429"/>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockNumber.L68*C3127">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.cash.L64*C2987"/>
+            <sol:valueIs>getDecisionBlockNumber(roundIndex,subpotIndex)</sol:valueIs>
+            <sol:nameIs>decisionBlockNumber</sol:nameIs>
+            <sol:typeName>var</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varwinner.L74*C3374"/>
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.decisionBlockNumber_block.number.L69*C3202">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L69*C3202">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.decisionBlockNumber_block.number.L69*C3202">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.decisionBlockNumber_block.number.L69*C3202"/>
+                    <sol:hasIfCondition>decisionBlockNumber&gt;block.number</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.vardecisionBlockNumber.L68*C3127"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.decisionBlockNumber_block.number.L69*C3202"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.subpotIndex__subpotsCount.L66*C3087">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L66*C3087">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.subpotIndex__subpotsCount.L66*C3087">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.subpotIndex__subpotsCount.L66*C3087"/>
+                    <sol:hasIfCondition>subpotIndex&gt;=subpotsCount</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varsubpotsCount.L65*C3038"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.subpotIndex__subpotsCount.L66*C3087"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.isCashed_subpotIndex__true.L78*C3526">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner.send.L77*C3504"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>true</sol:assignRight>
+            <sol:assignLeft>rounds[roundIndex].isCashed[subpotIndex]</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:nameIs>cash</sol:nameIs>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L64*C3001">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStruct>
+      <sol:Struct rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_struct.Round.L17*C769">
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.mapping(address=&gt;uint).L22*C866">
+            <sol:typeName>mapping(address=&gt;uint)</sol:typeName>
+            <sol:nameIs>ticketsCountByBuyer</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.mapping(uint=&gt;bool).L21*C835">
+            <sol:typeName>mapping(uint=&gt;bool)</sol:typeName>
+            <sol:nameIs>isCashed</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.uint.L20*C815">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>ticketsCount</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.uint.L19*C804">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>pot</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.address[].L18*C785">
+            <sol:typeName>address[]</sol:typeName>
+            <sol:nameIs>buyers</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:nameIs>Round</sol:nameIs>
+      </sol:Struct>
+    </sol:hasStruct>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_sv.rounds.L24*C914">
+        <sol:elementTypeName2>Round</sol:elementTypeName2>
+        <sol:elementTypeName1>uint</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>rounds</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L93*C4078">
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varvalue.L96*C4208">
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varroundIndex.L95*C4173">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L93*C4078"/>
+                <sol:valueIs>getRoundIndex()</sol:valueIs>
+                <sol:nameIs>roundIndex</sol:nameIs>
+                <sol:typeName>var</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:valueIs>msg.value-(msg.value%ticketPrice)</sol:valueIs>
+            <sol:nameIs>value</sol:nameIs>
+            <sol:typeName>var</sol:typeName>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:nameIs>fallback</sol:nameIs>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___ticketsCount.L109*C4682">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.buyers_buyersLength__msg.sender.L107*C4624">
+                <sol:before>
+                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.varbuyersLength.L106*C4568">
+                    <sol:before>
+                      <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L105*C4508">
+                        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.buyers_buyersLength__msg.sender.L107*C4624"/>
+                        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.varbuyersLength.L106*C4568"/>
+                        <sol:before>
+                          <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___0.L105*C4508">
+                            <sol:before>
+                              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___0.L105*C4508">
+                                <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L105*C4508"/>
+                                <sol:before>
+                                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCount__ticketsCount.L104*C4460">
+                                    <sol:before>
+                                      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varticketsCount.L103*C4421">
+                                        <sol:before>
+                                          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.send.L100*C4338">
+                                            <sol:before>
+                                              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L98*C4278">
+                                                <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.send.L100*C4338"/>
+                                                <sol:before>
+                                                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.value_msg.value.L98*C4278">
+                                                    <sol:before>
+                                                      <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.value_msg.value.L98*C4278">
+                                                        <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L98*C4278"/>
+                                                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L93*C4078"/>
+                                                        <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.value_msg.value.L98*C4278"/>
+                                                      </sol:FunctionIf>
+                                                    </sol:before>
+                                                    <sol:hasIfCondition
+                                                    >value&lt;msg.value</sol:hasIfCondition>
+                                                  </sol:IfCondition>
+                                                </sol:before>
+                                              </sol:IfRight>
+                                            </sol:before>
+                                            <sol:callFunctionArgument
+                                            >msg.value-value</sol:callFunctionArgument>
+                                            <sol:callFunctionName
+                                            >send</sol:callFunctionName>
+                                            <sol:callFunctionObject
+                                            >msg.sender</sol:callFunctionObject>
+                                          </sol:FunctionCall>
+                                        </sol:before>
+                                        <sol:valueIs>value/ticketPrice</sol:valueIs>
+                                        <sol:nameIs>ticketsCount</sol:nameIs>
+                                        <sol:typeName>var</sol:typeName>
+                                      </sol:StateVar>
+                                    </sol:before>
+                                    <sol:assignSymbol>=</sol:assignSymbol>
+                                    <sol:assignRight>rounds[roundIndex].ticketsCount+ticketsCount</sol:assignRight>
+                                    <sol:assignLeft>rounds[roundIndex].ticketsCount</sol:assignLeft>
+                                  </sol:Assignment>
+                                </sol:before>
+                                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___0.L105*C4508"/>
+                              </sol:FunctionIf>
+                            </sol:before>
+                            <sol:hasIfCondition>rounds[roundIndex].ticketsCountByBuyer[msg.sender]==0</sol:hasIfCondition>
+                          </sol:IfCondition>
+                        </sol:before>
+                      </sol:IfRight>
+                    </sol:before>
+                    <sol:valueIs>rounds[roundIndex].buyers.length++</sol:valueIs>
+                    <sol:nameIs>buyersLength</sol:nameIs>
+                    <sol:typeName>var</sol:typeName>
+                  </sol:StateVar>
+                </sol:before>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>msg.sender</sol:assignRight>
+                <sol:assignLeft>rounds[roundIndex].buyers[buyersLength]</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>rounds[roundIndex].ticketsCountByBuyer[msg.sender]+ticketsCount</sol:assignRight>
+            <sol:assignLeft>rounds[roundIndex].ticketsCountByBuyer[msg.sender]</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCount__ticketsCount.L110*C4749">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___ticketsCount.L109*C4682"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>rounds[roundIndex].ticketsCount+ticketsCount</sol:assignRight>
+            <sol:assignLeft>rounds[roundIndex].ticketsCount</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasIf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.rounds_roundIndex_.ticketsCountByBuyer_msg.sender___0.L105*C4508"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varticketsCount.L103*C4421"/>
+        <sol:hasIf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.value_msg.value.L98*C4278"/>
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.value__0.L97*C4256">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L97*C4256">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.value__0.L97*C4256">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.value__0.L97*C4256"/>
+                    <sol:hasIfCondition>value==0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varvalue.L96*C4208"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.value__0.L97*C4256"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCount__ticketsCount.L104*C4460"/>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.varroundIndex.L95*C4173"/>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.pot__value.L112*C4832">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.rounds_roundIndex_.ticketsCount__ticketsCount.L110*C4749"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>rounds[roundIndex].pot+value</sol:assignRight>
+            <sol:assignLeft>rounds[roundIndex].pot</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getDecisionBlockNumber.L52*C2508">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.__roundIndex_1__blocksPerRound__subpotIndex.L53*C2600">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getDecisionBlockNumber.L52*C2508"/>
+            <sol:returnText>((roundIndex+1)*blocksPerRound)+subpotIndex</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L52*C2583">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.uint.L52*C2592">
+                <sol:typeName>uint</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>constant</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.subpotIndex.L52*C2556">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>subpotIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.roundIndex.L52*C2540">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>roundIndex</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getDecisionBlockNumber</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+  </sol:Contract>
+</rdf:RDF>

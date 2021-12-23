@@ -1,0 +1,65 @@
+{
+  "contract": "29",
+  "tool": "smartcheck",
+  "start": 1637148366.1845188,
+  "end": 1637148369.1829765,
+  "duration": 2.998457670211792,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "adc165",
+      "severity": 1,
+      "line": 137,
+      "column": 61,
+      "content": "0x0C8cDC16973E88FAb31DD0FCB844DdF0e1056dE2"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 248,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "f6f853",
+      "severity": 2,
+      "line": 248,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 131,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    },
+    {
+      "name": "SOLIDITY_TRANSFER_IN_LOOP",
+      "patternId": "8jdj43",
+      "severity": 2,
+      "line": 248,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "d48ac4",
+      "severity": 2,
+      "line": 254,
+      "column": 20,
+      "content": "listing.amountLeft>=0"
+    }
+  ]
+}

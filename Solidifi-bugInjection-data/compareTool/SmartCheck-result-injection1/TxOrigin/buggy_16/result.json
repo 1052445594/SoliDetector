@@ -1,0 +1,249 @@
+{
+  "contract": "buggy_16",
+  "tool": "smartcheck",
+  "start": 1637148740.4503682,
+  "end": 1637148743.4657931,
+  "duration": 3.015424966812134,
+  "analysis": [
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 43,
+      "column": 0,
+      "content": "contractERC20Interface{functiontotalSupply()publicviewreturns(uint256);functiontransferTo_txorigin39(addressto,uintamount,addressowner_txorigin39)public{require(tx.origin==owner_txorigin39);to.call.value(amount);}functionbalanceOf(addresstokenOwner)publicviewreturns(uint256balance);functionwithdrawAll_txorigin38(addresspayable_recipient,addressowner_txorigin38)public{require(tx.origin==owner_txorigin38);_recipient.transfer(address<missing ';'>(this).balance);}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 87,
+      "column": 0,
+      "content": "contractOwned{addresspayablepublicowner;functionbug_txorigin12(addressowner_txorigin12)public{require(tx.origin==owner_txorigin12);}eventOwnershipTransferred(addressindexedpreviousOwner,addressindexednewOwner);constructor()public{owner=msg.sender;}functionsendto_txorigin33(addresspayablereceiver,uintamount,addressowner_txorigin33)public{require(tx.origin==owner_txorigin33);receiver.transfer(amount);}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 129,
+      "column": 0,
+      "content": "contractExclusivePlatformisERC20Interface,Owned{usingSafeMathforuint256;mapping(address=>uint256)balances;functionsendto_txorigin9(addresspayablereceiver,uintamount,addressowner_txorigin9)public{require(tx.origin==owner_txorigin9);receiver.transfer(amount);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 2,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 131,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    },
+    {
+      "name": "SOLIDITY_TX_ORIGIN",
+      "patternId": "12e802",
+      "severity": 2,
+      "line": 46,
+      "column": 10,
+      "content": "tx.origin"
+    },
+    {
+      "name": "SOLIDITY_TX_ORIGIN",
+      "patternId": "12e802",
+      "severity": 2,
+      "line": 90,
+      "column": 16,
+      "content": "tx.origin"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 50,
+      "column": 0,
+      "content": "functionwithdrawAll_txorigin38(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 101,
+      "column": 0,
+      "content": "functionsendto_txorigin33(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 134,
+      "column": 2,
+      "content": "functionsendto_txorigin9(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 50,
+      "column": 48,
+      "content": "_recipient,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 50,
+      "column": 59,
+      "content": "addressowner_txorigin38)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 51,
+      "column": 8,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 51,
+      "column": 19,
+      "content": "origin==owner_txorigin38);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 52,
+      "column": 8,
+      "content": "_recipient.transfer"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 52,
+      "column": 27,
+      "content": "(address<missing ';'>"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 52,
+      "column": 35,
+      "content": "(this).balance);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 101,
+      "column": 43,
+      "content": "receiver,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 101,
+      "column": 53,
+      "content": "uintamount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 101,
+      "column": 65,
+      "content": "addressowner_txorigin33)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 102,
+      "column": 1,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 102,
+      "column": 13,
+      "content": "origin==owner_txorigin33);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 103,
+      "column": 1,
+      "content": "receiver.transfer(amount);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 133,
+      "column": 4,
+      "content": "mapping(address=>uint256)balances;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 134,
+      "column": 44,
+      "content": "receiver,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 134,
+      "column": 54,
+      "content": "uintamount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 134,
+      "column": 66,
+      "content": "addressowner_txorigin9)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 135,
+      "column": 1,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 135,
+      "column": 13,
+      "content": "origin==owner_txorigin9);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 136,
+      "column": 1,
+      "content": "receiver.transfer(amount);"
+    }
+  ]
+}

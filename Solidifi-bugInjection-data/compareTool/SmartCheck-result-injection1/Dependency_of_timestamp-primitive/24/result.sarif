@@ -1,0 +1,798 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_19",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ADDRESS_HARDCODED"
+              }
+            },
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_29",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+              }
+            },
+            {
+              "id": "Ignore_32",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SAFEMATH"
+              }
+            },
+            {
+              "id": "Ignore_35",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/24.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "24"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0xe00d13D53Ba180EAD5F4838BD56b15629026A8C9"
+                  },
+                  "startColumn": 52,
+                  "startLine": 217
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0xddf0bB01f81059CCdB3D5bF5b1C7Bd540aDDFEac"
+                  },
+                  "startColumn": 48,
+                  "startLine": 218
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<totalUserCount;++i){Userstorageuser=userMapping[addressMapping[i]];user.calcDynamicCommissionAmount=0;}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 641
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<totalUserCount;++i){Usermemoryuser=userMapping[addressMapping[i]];if(user.currentInvestAmount>0){uint256commissionDays=now.sub(user.currentInvestTime).div(ONE_DAY);if(commissionDays>=1&&commissionDays<=user.currentInvestCycle){uint256depth=1;addressaddressWalker=user.sponsorAddress;while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}}}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 646
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<totalUserCount;++i){addressuserAddress=addressMapping[i];Userstorageuser=userMapping[userAddress];if(user.calcDynamicCommissionAmount>0){user.dynamicCommissionBalance=user.dynamicCommissionBalance.add(user.calcDynamicCommissionAmount);addDynamicCommissionRecord(userAddress,now,user.calcDynamicCommissionAmount);}}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 681
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "while(addressWalker!=GENESIS_USER_ADDRESS){sponsor=userMapping[addressWalker];sponsor.totalDownlineInvestAmount=sponsor.totalDownlineInvestAmount.add(investAmount);addressWalker=sponsor.sponsorAddress;}"
+                  },
+                  "startColumn": 12,
+                  "startLine": 451
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "while(addressWalker!=GENESIS_USER_ADDRESS){sponsor=userMapping[addressWalker];sponsor.downlineCount=sponsor.downlineCount.add(1);if(addressWalker==sponsorAddress){sponsor.nodeCount=sponsor.nodeCount.add(1);}sponsor.totalDownlineInvestAmount=sponsor.totalDownlineInvestAmount.add(investAmount);addressWalker=sponsor.sponsorAddress;}"
+                  },
+                  "startColumn": 12,
+                  "startLine": 464
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}"
+                  },
+                  "startColumn": 20,
+                  "startLine": 653
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "while(addressWalker!=GENESIS_USER_ADDRESS){Userstoragesponsor=userMapping[addressWalker];if(sponsor.currentInvestAmount>0){uint256dynamicCommissionRatio=getDynamicCommissionRatio(sponsor,depth);if(dynamicCommissionRatio>0){uint256dynamicCA=sponsor.currentInvestAmount;if(dynamicCA>user.currentInvestAmount){dynamicCA=user.currentInvestAmount;}dynamicCA=dynamicCA.mul(user.currentStaticCommissionRatio);dynamicCA=dynamicCA.mul(dynamicCommissionRatio);if(sponsor.currentlevel==1){dynamicCA=dynamicCA.mul(3).div(1000*100*10);}elseif(sponsor.currentlevel==2){dynamicCA=dynamicCA.mul(6).div(1000*100*10);}else{dynamicCA=dynamicCA.div(1000*100);}sponsor.calcDynamicCommissionAmount=sponsor.calcDynamicCommissionAmount.add(dynamicCA);}}addressWalker=sponsor.sponsorAddress;depth=depth.add(1);}"
+                  },
+                  "startColumn": 20,
+                  "startLine": 706
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addressWalker!=GENESIS_USER_ADDRESS"
+                  },
+                  "startColumn": 19,
+                  "startLine": 451
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addressWalker!=GENESIS_USER_ADDRESS"
+                  },
+                  "startColumn": 19,
+                  "startLine": 464
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addressWalker!=GENESIS_USER_ADDRESS"
+                  },
+                  "startColumn": 27,
+                  "startLine": 653
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "addressWalker!=GENESIS_USER_ADDRESS"
+                  },
+                  "startColumn": 27,
+                  "startLine": 706
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 167
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 12,
+                  "startLine": 215
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 12,
+                  "startLine": 216
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 12,
+                  "startLine": 217
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 12,
+                  "startLine": 218
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 9,
+                  "startLine": 221
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 30,
+                  "startLine": 237
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 33,
+                  "startLine": 238
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 41,
+                  "startLine": 239
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 45,
+                  "startLine": 240
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "private"
+                  },
+                  "startColumn": 45,
+                  "startLine": 241
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_29"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SAFEMATH"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "usingSafeMathforuint256;"
+                  },
+                  "startColumn": 4,
+                  "startLine": 177
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_32"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256[16]memory,address)"
+                  },
+                  "startColumn": 70,
+                  "startLine": 554
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256[16]memory,address)"
+                  },
+                  "startColumn": 74,
+                  "startLine": 572
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory,uint256[3]memory)"
+                  },
+                  "startColumn": 72,
+                  "startLine": 577
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory)"
+                  },
+                  "startColumn": 82,
+                  "startLine": 598
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SHOULD_RETURN_STRUCT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/24.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "(uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory,uint256[2]memory)"
+                  },
+                  "startColumn": 83,
+                  "startLine": 619
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_35"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

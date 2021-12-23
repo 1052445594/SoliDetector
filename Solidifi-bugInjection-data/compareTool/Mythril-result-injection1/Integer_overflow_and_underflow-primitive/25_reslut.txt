@@ -1,0 +1,54 @@
+==== Exception State ====
+
+SWC ID: 110
+
+Severity: Medium
+
+Contract: WhiteBetting
+
+Function name: betList(uint64,uint256)
+
+PC address: 3365
+
+Estimated Gas Usage: 1190 - 1475
+
+An assertion violation was triggered.
+
+It is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).
+
+--------------------
+
+In file: 25.sol:41
+
+
+
+mapping(uint64 => BetFixture[]) public betList
+
+
+
+--------------------
+
+Initial State:
+
+
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+
+
+Transaction Sequence:
+
+
+
+Caller: [CREATOR], calldata: , value: 0x0
+
+Caller: [ATTACKER], function: betList(uint64,uint256), txdata: 0x553016cd00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+
+
+
+

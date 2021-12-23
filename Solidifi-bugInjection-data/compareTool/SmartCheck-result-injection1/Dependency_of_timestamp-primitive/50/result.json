@@ -1,0 +1,105 @@
+{
+  "contract": "50",
+  "tool": "smartcheck",
+  "start": 1637143021.8771033,
+  "end": 1637143024.527638,
+  "duration": 2.6505346298217773,
+  "analysis": [
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 4,
+      "column": 0,
+      "content": "contractdigitalNotary{addresspayableprivatemanager;boolprivatecontractactive;uintprivatehashfee;uintprivatechangehashownerfee;structHashRegistration{addressowner;uintregistrationtime;}mapping(bytes32=>HashRegistration[])HashList;uintprivateHashListLength;eventRegisterHashEvent(addressindexedmsgsender,bytes32indexedhash,uinttimestamp);eventChangeHashOwnershipEvent(addressindexedmsgsender,addressindexednewowner,bytes32indexedhash,uinttimestamp);constructor()public{manager=msg.sender;contractactive=true;hashfee=5000000000000000;changehashownerfee=25000000000000000;HashListLength=0;}modifieronlyManager(){require(msg.sender==manager);_;}functiongethashfee()externalviewreturns(uint){returnhashfee;}functionsethashfee(uintnewfee)externalonlyManager{require(newfee>=0);hashfee=newfee;}functiongetchangehashownerfee()externalviewreturns(uint){returnchangehashownerfee;}functionsetchangehashownerfee(uintnewfee)externalonlyManager{require(newfee>=0);changehashownerfee=newfee;}functiongetcontractactive()externalviewreturns(bool){returncontractactive;}functionsetcontractactive(boolcontactive)externalonlyManager{contractactive=contactive;}functiongetmanager()externalviewreturns(address){returnmanager;}functionsetmanager(addresspayablenewmngr)externalonlyManager{require(newmngr.balance>0);manager=newmngr;}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 2,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 7,
+      "column": 20,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 9,
+      "column": 9,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 11,
+      "column": 9,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 13,
+      "column": 9,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 23,
+      "column": 9,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 90,
+      "column": 4,
+      "content": "functionsetmanager(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 21,
+      "column": 4,
+      "content": "mapping(bytes32=>HashRegistration[])HashList;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 92,
+      "column": 8,
+      "content": "require(newmngr."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 92,
+      "column": 24,
+      "content": "balance>0);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 93,
+      "column": 8,
+      "content": "manager=newmngr;"
+    }
+  ]
+}

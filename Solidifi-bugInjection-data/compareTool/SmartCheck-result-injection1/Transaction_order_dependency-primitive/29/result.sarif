@@ -1,0 +1,246 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_19",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ADDRESS_HARDCODED"
+              }
+            },
+            {
+              "id": "Ignore_25",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+              }
+            },
+            {
+              "id": "DenialService_4",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_32",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_SAFEMATH"
+              }
+            },
+            {
+              "id": "DenialService_5",
+              "name": "DenialServiceVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_TRANSFER_IN_LOOP"
+              }
+            },
+            {
+              "id": "Arithmetic_15",
+              "name": "ArithmeticVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_UINT_CANT_BE_NEGATIVE"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/29.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "29"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ADDRESS_HARDCODED"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "0x0C8cDC16973E88FAb31DD0FCB844DdF0e1056dE2"
+                  },
+                  "startColumn": 61,
+                  "startLine": 137
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_EXTRA_GAS_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 248
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_25"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_GAS_LIMIT_IN_LOOPS"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 248
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_4"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": ">="
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_SAFEMATH"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "usingSafeMathforuint256;"
+                  },
+                  "startColumn": 4,
+                  "startLine": 131
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_32"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_TRANSFER_IN_LOOP"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+                  },
+                  "startColumn": 8,
+                  "startLine": 248
+                }
+              }
+            }
+          ],
+          "ruleId": "DenialService_5"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_UINT_CANT_BE_NEGATIVE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/29.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "listing.amountLeft>=0"
+                  },
+                  "startColumn": 20,
+                  "startLine": 254
+                }
+              }
+            }
+          ],
+          "ruleId": "Arithmetic_15"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

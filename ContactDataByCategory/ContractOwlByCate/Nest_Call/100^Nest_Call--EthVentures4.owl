@@ -1,0 +1,914 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sol="http://www.hty.group/tf/ontologies/2020/07/Solildity#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function">
+    <owl:deprecated rdf:parseType="Resource">
+    </owl:deprecated>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForCondition">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Param">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfCondition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#VariableOperation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Constructor">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#StateVar">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Modifier">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Struct">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfRight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionCall">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Library"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForContent">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfWrong">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnValue">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Interface"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnClaim">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#containAssignment"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStateVar"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfCondition"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasParam"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfWrong">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineConstructor"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#after"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionVar">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionStep">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnValue"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnClaim"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfRight">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#before">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#operateVarible"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineModifier"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForCondition">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForContent">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStruct"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIf"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignLeft">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#storageLocate"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionObject"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasModifier"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionVar"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#returnText"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignRight"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opSymbol">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionStep"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#typeName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#valueIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opVarible">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#nameIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionArgument"/>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.EthVentures4.L1*C0">
+    <sol:nameIs>EthVentures4</sol:nameIs>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.totaldeposited.L14*C384">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>totaldeposited</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.Enter.L30*C954">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.msg.value_2ether.L33*C1183">
+            <sol:hasIfWrong>
+              <sol:IfWrong rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong._.L33*C1183">
+                <sol:hasStateVar>
+                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.boolalreadyinvestor.L63*C2387">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.balance__amount.L61*C2281">
+                        <sol:before>
+                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.amount-_amount_100.L60*C2260">
+                            <sol:before>
+                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldeposited__amount.L59*C2209">
+                                <sol:before>
+                                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.fees_amount_100.L58*C2153">
+                                    <sol:before>
+                                      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.uintamount.L57*C2129">
+                                        <sol:before>
+                                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;Dividends_have_been_paid_out!&quot;.L50*C1864">
+                                            <sol:before>
+                                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldividends__PRE_payout.L48*C1803">
+                                                <sol:before>
+                                                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totalpaidout__PRE_payout.L47*C1749">
+                                                    <sol:before>
+                                                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.investors_PRE_i_.etherAddress.send.L46*C1672">
+                                                        <sol:before>
+                                                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.PRE_payout_PRE_amount_investors_PRE_i_.percentage_ownership_10000000000.L45*C1573">
+                                                            <sol:before>
+                                                              <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifRight_for.for_uintPRE_i_0PRE_i_investors.lengthPRE_i____PRE_payout_PRE_amount_investors_PRE_i_.percentage_ownership_10000000000investors_PRE_i_.etherAddress.send_PRE_payout_totalpaidout__PRE_payouttotaldividends__PRE_payout_.L43*C1519">
+    <sol:hasStateVar>
+      <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uintPRE_i.L43*C1519">
+        <sol:valueIs>0</sol:valueIs>
+        <sol:nameIs>PRE_i</sol:nameIs>
+        <sol:typeName>uint</sol:typeName>
+      </sol:stateVar>
+    </sol:hasStateVar>
+    <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totalpaidout__PRE_payout.L47*C1749"/>
+    <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldividends__PRE_payout.L48*C1803"/>
+    <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.PRE_payout_PRE_amount_investors_PRE_i_.percentage_ownership_10000000000.L45*C1573"/>
+    <sol:before>
+      <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifRight._.L41*C1472">
+        <sol:conditionStep>noDecelaration</sol:conditionStep>
+        <sol:condition>noDecelaration</sol:condition>
+        <sol:conditionVar>noDeclaration</sol:conditionVar>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;Dividends_have_been_paid_out!&quot;.L50*C1864"/>
+        <sol:hasFor rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifRight_for.for_uintPRE_i_0PRE_i_investors.lengthPRE_i____PRE_payout_PRE_amount_investors_PRE_i_.percentage_ownership_10000000000investors_PRE_i_.etherAddress.send_PRE_payout_totalpaidout__PRE_payouttotaldividends__PRE_payout_.L43*C1519"/>
+        <sol:before>
+          <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if.investors.length!_0&amp;&amp;PRE_amount!_0.L41*C1472">
+            <sol:before>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if.investors.length!_0&amp;&amp;PRE_amount!_0.L41*C1472">
+                <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifRight._.L41*C1472"/>
+                <sol:before>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.PRE_amount-_PRE_amount_100.L39*C1387">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totalpaidout__PRE_amount_100.L38*C1331">
+                        <sol:before>
+                          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L37*C1258">
+                            <sol:before>
+                              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.uintPRE_amount.L36*C1230">
+                                <sol:before>
+                                  <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.uintPRE_payout.L35*C1212">
+                                    <sol:before>
+                                      <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L33*C1183">
+                                        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.PRE_amount-_PRE_amount_100.L39*C1387"/>
+                                        <sol:hasStateVar>
+                                          <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L66*C2534">
+                                            <sol:valueIs>0</sol:valueIs>
+                                            <sol:nameIs>i</sol:nameIs>
+                                            <sol:typeName>uint</sol:typeName>
+                                          </sol:stateVar>
+                                        </sol:hasStateVar>
+                                        <sol:conditionStep>i++</sol:conditionStep>
+                                        <sol:hasStateVar>
+                                          <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uintk.L84*C3290">
+                                            <sol:valueIs>0</sol:valueIs>
+                                            <sol:nameIs>k</sol:nameIs>
+                                            <sol:typeName>uint</sol:typeName>
+                                          </sol:stateVar>
+                                        </sol:hasStateVar>
+                                        <sol:conditionVar>k</sol:conditionVar>
+                                        <sol:hasIf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if.investors.length!_0&amp;&amp;PRE_amount!_0.L41*C1472"/>
+                                        <sol:before>
+                                          <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.msg.value_2ether.L33*C1183">
+                                            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.msg.value_2ether.L33*C1183"/>
+                                            <sol:hasIfCondition
+                                            >msg.value&lt;2ether</sol:hasIfCondition>
+                                          </sol:IfCondition>
+                                        </sol:before>
+                                        <sol:conditionStep>k++</sol:conditionStep>
+                                        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.uintPRE_payout.L35*C1212"/>
+                                        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight_varDeclare.uintPRE_amount.L36*C1230"/>
+                                        <sol:hasForCondition>
+                                          <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i_investors.length.L66*C2534">
+                                            <sol:conditionValue
+                                            >investors.length</sol:conditionValue>
+                                            <sol:conditionSymbol
+                                            >&lt;</sol:conditionSymbol>
+                                          </sol:ForCondition>
+                                        </sol:hasForCondition>
+                                        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totalpaidout__PRE_amount_100.L38*C1331"/>
+                                        <sol:hasForCondition>
+                                          <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.k_investors.length.L84*C3290">
+                                            <sol:conditionValue
+                                            >investors.length</sol:conditionValue>
+                                            <sol:conditionSymbol
+                                            >&lt;</sol:conditionSymbol>
+                                          </sol:ForCondition>
+                                        </sol:hasForCondition>
+                                        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L37*C1258"/>
+                                        <sol:conditionVar>i</sol:conditionVar>
+                                      </sol:IfRight>
+                                    </sol:before>
+                                    <sol:valueIs>null</sol:valueIs>
+                                    <sol:nameIs>PRE_payout</sol:nameIs>
+                                    <sol:typeName>uint</sol:typeName>
+                                  </sol:StateVar>
+                                </sol:before>
+                                <sol:valueIs>msg.value</sol:valueIs>
+                                <sol:nameIs>PRE_amount</sol:nameIs>
+                                <sol:typeName>uint</sol:typeName>
+                              </sol:StateVar>
+                            </sol:before>
+                            <sol:callFunctionArgument>PRE_amount/100</sol:callFunctionArgument>
+                            <sol:callFunctionName>send</sol:callFunctionName>
+                            <sol:callFunctionObject>owner</sol:callFunctionObject>
+                          </sol:FunctionCall>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>totalpaidout+PRE_amount/100</sol:assignRight>
+                        <sol:assignLeft>totalpaidout</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>PRE_amount-PRE_amount/100</sol:assignRight>
+                    <sol:assignLeft>PRE_amount</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:before>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if.investors.length!_0&amp;&amp;PRE_amount!_0.L41*C1472"/>
+              </sol:FunctionIf>
+            </sol:before>
+            <sol:hasIfCondition>investors.length!=0&amp;&amp;PRE_amount!=0</sol:hasIfCondition>
+          </sol:IfCondition>
+        </sol:before>
+      </sol:IfRight>
+    </sol:before>
+    <sol:conditionVar>PRE_i</sol:conditionVar>
+    <sol:hasForCondition>
+      <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.PRE_i_investors.length.L43*C1519">
+        <sol:conditionValue>investors.length</sol:conditionValue>
+        <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+      </sol:ForCondition>
+    </sol:hasForCondition>
+    <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.investors_PRE_i_.etherAddress.send.L46*C1672"/>
+    <sol:conditionStep>PRE_i++</sol:conditionStep>            </sol:FunctionFor>
+                                                            </sol:before>
+                                                            <sol:assignSymbol
+                                                            >=</sol:assignSymbol>
+                                                            <sol:assignRight
+                                                            >PRE_amount*investors[PRE_i].percentage_ownership/10000000000</sol:assignRight>
+                                                            <sol:assignLeft
+                                                            >PRE_payout</sol:assignLeft>
+                                                          </sol:Assignment>
+                                                        </sol:before>
+                                                        <sol:callFunctionArgument
+                                                        >PRE_payout</sol:callFunctionArgument>
+                                                        <sol:callFunctionName
+                                                        >send</sol:callFunctionName>
+                                                        <sol:callFunctionObject
+                                                        >investors[PRE_i].etherAddress</sol:callFunctionObject>
+                                                      </sol:FunctionCall>
+                                                    </sol:before>
+                                                    <sol:assignSymbol
+                                                    >=</sol:assignSymbol>
+                                                    <sol:assignRight
+                                                    >totalpaidout+PRE_payout</sol:assignRight>
+                                                    <sol:assignLeft
+                                                    >totalpaidout</sol:assignLeft>
+                                                  </sol:Assignment>
+                                                </sol:before>
+                                                <sol:assignSymbol
+                                                >=</sol:assignSymbol>
+                                                <sol:assignRight
+                                                >totaldividends+PRE_payout</sol:assignRight>
+                                                <sol:assignLeft
+                                                >totaldividends</sol:assignLeft>
+                                              </sol:Assignment>
+                                            </sol:before>
+                                            <sol:assignSymbol
+                                            >=</sol:assignSymbol>
+                                            <sol:assignRight>"Dividends have been paid out!"</sol:assignRight>
+                                            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+                                          </sol:Assignment>
+                                        </sol:before>
+                                        <sol:valueIs>msg.value</sol:valueIs>
+                                        <sol:nameIs>amount</sol:nameIs>
+                                        <sol:typeName>uint</sol:typeName>
+                                      </sol:StateVar>
+                                    </sol:before>
+                                    <sol:assignSymbol>=</sol:assignSymbol>
+                                    <sol:assignRight>amount/100</sol:assignRight>
+                                    <sol:assignLeft>fees</sol:assignLeft>
+                                  </sol:Assignment>
+                                </sol:before>
+                                <sol:assignSymbol>=</sol:assignSymbol>
+                                <sol:assignRight>totaldeposited+amount</sol:assignRight>
+                                <sol:assignLeft>totaldeposited</sol:assignLeft>
+                              </sol:Assignment>
+                            </sol:before>
+                            <sol:assignSymbol>=</sol:assignSymbol>
+                            <sol:assignRight>amount-amount/100</sol:assignRight>
+                            <sol:assignLeft>amount</sol:assignLeft>
+                          </sol:Assignment>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>balance+amount</sol:assignRight>
+                        <sol:assignLeft>balance</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:valueIs>false</sol:valueIs>
+                    <sol:nameIs>alreadyinvestor</sol:nameIs>
+                    <sol:typeName>bool</sol:typeName>
+                  </sol:StateVar>
+                </sol:hasStateVar>
+                <sol:hasIf>
+                  <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_if.alreadyinvestor__false.L76*C2890">
+                    <sol:hasIfWrong>
+                      <sol:IfWrong rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if_ifWrong._.L76*C2890">
+                        <sol:containAssignment>
+                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_alreadyinvestor_id_.percentage_ownership_investors_alreadyinvestor_id_.amount_totaldeposited_10000000000.L90*C3628">
+                            <sol:before>
+                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_alreadyinvestor_id_.amount__amount.L89*C3579">
+                                <sol:before>
+                                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_k_.percentage_ownership_investors_k_.amount_totaldeposited_10000000000.L85*C3376">
+                                    <sol:before>
+                                      <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_if_ifRight_for.for_uintk_0k_investors.lengthk____investors_k_.percentage_ownership_investors_k_.amount_totaldeposited_10000000000_.L84*C3290">
+                                        <sol:conditionStep>k++</sol:conditionStep>
+                                        <sol:hasForCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.k_investors.length.L84*C3290"/>
+                                        <sol:conditionVar>k</sol:conditionVar>
+                                        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uintk.L84*C3290"/>
+                                        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_k_.percentage_ownership_investors_k_.amount_totaldeposited_10000000000.L85*C3376"/>
+                                        <sol:before>
+                                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;New_Investor_has_joined_us!&quot;.L83*C3196">
+                                            <sol:before>
+                                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.percentage_ownership_amount_totaldeposited_10000000000.L82*C3106">
+                                                <sol:before>
+                                                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.amount_amount.L81*C3058">
+                                                    <sol:before>
+                                                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.etherAddress_msg.sender.L80*C3000">
+                                                        <sol:before>
+                                                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors.length__1.L79*C2958">
+                                                            <sol:before>
+                                                              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.total_investors_investors.length_1.L78*C2921">
+    <sol:before>
+      <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if_ifRight._.L76*C2890">
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.etherAddress_msg.sender.L80*C3000"/>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.amount_amount.L81*C3058"/>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.percentage_ownership_amount_totaldeposited_10000000000.L82*C3106"/>
+        <sol:hasFor rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_if_ifRight_for.for_uintk_0k_investors.lengthk____investors_k_.percentage_ownership_investors_k_.amount_totaldeposited_10000000000_.L84*C3290"/>
+        <sol:conditionVar>noDeclaration</sol:conditionVar>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.total_investors_investors.length_1.L78*C2921"/>
+        <sol:conditionStep>noDecelaration</sol:conditionStep>
+        <sol:condition>noDecelaration</sol:condition>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors.length__1.L79*C2958"/>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;New_Investor_has_joined_us!&quot;.L83*C3196"/>
+        <sol:before>
+          <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if.alreadyinvestor__false.L76*C2890">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_if.alreadyinvestor__false.L76*C2890"/>
+            <sol:hasIfCondition>alreadyinvestor==false</sol:hasIfCondition>
+          </sol:IfCondition>
+        </sol:before>
+      </sol:IfRight>
+    </sol:before>
+    <sol:assignSymbol>=</sol:assignSymbol>
+    <sol:assignRight>investors.length+1</sol:assignRight>
+    <sol:assignLeft>total_investors</sol:assignLeft>          </sol:Assignment>
+                                                            </sol:before>
+                                                            <sol:assignSymbol
+                                                            >=</sol:assignSymbol>
+                                                            <sol:assignRight
+                                                            >investors.length+1</sol:assignRight>
+                                                            <sol:assignLeft
+                                                            >investors.length</sol:assignLeft>
+                                                          </sol:Assignment>
+                                                        </sol:before>
+                                                        <sol:assignSymbol
+                                                        >=</sol:assignSymbol>
+                                                        <sol:assignRight
+                                                        >msg.sender</sol:assignRight>
+                                                        <sol:assignLeft
+                                                        >investors[investors.length-1].etherAddress</sol:assignLeft>
+                                                      </sol:Assignment>
+                                                    </sol:before>
+                                                    <sol:assignSymbol
+                                                    >=</sol:assignSymbol>
+                                                    <sol:assignRight
+                                                    >amount</sol:assignRight>
+                                                    <sol:assignLeft
+                                                    >investors[investors.length-1].amount</sol:assignLeft>
+                                                  </sol:Assignment>
+                                                </sol:before>
+                                                <sol:assignSymbol
+                                                >=</sol:assignSymbol>
+                                                <sol:assignRight
+                                                >amount/totaldeposited*10000000000</sol:assignRight>
+                                                <sol:assignLeft
+                                                >investors[investors.length-1].percentage_ownership</sol:assignLeft>
+                                              </sol:Assignment>
+                                            </sol:before>
+                                            <sol:assignSymbol
+                                            >=</sol:assignSymbol>
+                                            <sol:assignRight>"New Investor has joined us!"</sol:assignRight>
+                                            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+                                          </sol:Assignment>
+                                        </sol:before>
+                                      </sol:FunctionFor>
+                                    </sol:before>
+                                    <sol:assignSymbol>=</sol:assignSymbol>
+                                    <sol:assignRight>investors[k].amount/totaldeposited*10000000000</sol:assignRight>
+                                    <sol:assignLeft>investors[k].percentage_ownership</sol:assignLeft>
+                                  </sol:Assignment>
+                                </sol:before>
+                                <sol:assignSymbol>=</sol:assignSymbol>
+                                <sol:assignRight>investors[alreadyinvestor_id].amount+amount</sol:assignRight>
+                                <sol:assignLeft>investors[alreadyinvestor_id].amount</sol:assignLeft>
+                              </sol:Assignment>
+                            </sol:before>
+                            <sol:assignSymbol>=</sol:assignSymbol>
+                            <sol:assignRight>investors[alreadyinvestor_id].amount/totaldeposited*10000000000</sol:assignRight>
+                            <sol:assignLeft>investors[alreadyinvestor_id].percentage_ownership</sol:assignLeft>
+                          </sol:Assignment>
+                        </sol:containAssignment>
+                        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_alreadyinvestor_id_.amount__amount.L89*C3579"/>
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if.alreadyinvestor__false.L76*C2890"/>
+                      </sol:IfWrong>
+                    </sol:hasIfWrong>
+                    <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if_ifRight._.L76*C2890"/>
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.alreadyinvestor_id_i.L71*C2680">
+                        <sol:before>
+                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.alreadyinvestor_true.L70*C2640">
+                            <sol:before>
+                              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_for_if_ifRight._.L68*C2576">
+                                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.alreadyinvestor_id_i.L71*C2680"/>
+                                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.alreadyinvestor_true.L70*C2640"/>
+                                <sol:before>
+                                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_for_if.msg.sender__investors_i_.etherAddress.L68*C2576">
+                                    <sol:before>
+                                      <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_for_if.msg.sender__investors_i_.etherAddress.L68*C2576">
+                                        <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_for_if_ifRight._.L68*C2576"/>
+                                        <sol:before>
+                                          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_for.for_uinti_0i_investors.lengthi____if_msg.sender__investors_i_.etherAddress__alreadyinvestor_truealreadyinvestor_id_ibreak__.L66*C2534">
+                                            <sol:conditionStep
+                                            >i++</sol:conditionStep>
+                                            <sol:hasForCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i_investors.length.L66*C2534"/>
+                                            <sol:conditionVar
+                                            >i</sol:conditionVar>
+                                            <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L66*C2534"/>
+                                            <sol:hasIf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_for_if.msg.sender__investors_i_.etherAddress.L68*C2576"/>
+                                            <sol:before>
+                                              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.uintalreadyinvestor_id.L64*C2417">
+                                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.boolalreadyinvestor.L63*C2387"/>
+                                                <sol:valueIs>null</sol:valueIs>
+                                                <sol:nameIs>alreadyinvestor_id</sol:nameIs>
+                                                <sol:typeName
+                                                >uint</sol:typeName>
+                                              </sol:StateVar>
+                                            </sol:before>
+                                          </sol:FunctionFor>
+                                        </sol:before>
+                                        <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#6_con_fun_if_ifRight_if_ifWrong_for_if.msg.sender__investors_i_.etherAddress.L68*C2576"/>
+                                      </sol:FunctionIf>
+                                    </sol:before>
+                                    <sol:hasIfCondition>msg.sender==investors[i].etherAddress</sol:hasIfCondition>
+                                  </sol:IfCondition>
+                                </sol:before>
+                              </sol:IfRight>
+                            </sol:before>
+                            <sol:assignSymbol>=</sol:assignSymbol>
+                            <sol:assignRight>true</sol:assignRight>
+                            <sol:assignLeft>alreadyinvestor</sol:assignLeft>
+                          </sol:Assignment>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>i</sol:assignRight>
+                        <sol:assignLeft>alreadyinvestor_id</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if.alreadyinvestor__false.L76*C2890"/>
+                  </sol:FunctionIf>
+                </sol:hasIf>
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.msg.value_2ether.L33*C1183"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.balance__amount.L61*C2281"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldeposited__amount.L59*C2209"/>
+                <sol:hasIf>
+                  <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_if.fees!_0.L93*C3784">
+                    <sol:hasIfRight>
+                      <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if_ifRight._.L93*C3784">
+                        <sol:containAssignment>
+                          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totalpaidout__fees.L96*C3851">
+                            <sol:before>
+                              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L95*C3803">
+                                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if_ifRight._.L93*C3784"/>
+                                <sol:callFunctionArgument>fees</sol:callFunctionArgument>
+                                <sol:callFunctionName>send</sol:callFunctionName>
+                                <sol:callFunctionObject>owner</sol:callFunctionObject>
+                              </sol:FunctionCall>
+                            </sol:before>
+                            <sol:assignSymbol>=</sol:assignSymbol>
+                            <sol:assignRight>totalpaidout+fees</sol:assignRight>
+                            <sol:assignLeft>totalpaidout</sol:assignLeft>
+                          </sol:Assignment>
+                        </sol:containAssignment>
+                        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L95*C3803"/>
+                        <sol:before>
+                          <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if.fees!_0.L93*C3784">
+                            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_if.fees!_0.L93*C3784"/>
+                            <sol:hasIfCondition>fees!=0</sol:hasIfCondition>
+                          </sol:IfCondition>
+                        </sol:before>
+                      </sol:IfRight>
+                    </sol:hasIfRight>
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_alreadyinvestor_id_.percentage_ownership_investors_alreadyinvestor_id_.amount_totaldeposited_10000000000.L90*C3628"/>
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_k_.percentage_ownership_investors_k_.amount_totaldeposited_10000000000.L85*C3376"/>
+                    <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_if.fees!_0.L93*C3784"/>
+                  </sol:FunctionIf>
+                </sol:hasIf>
+                <sol:hasFor rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_if_ifRight_if_ifWrong_for.for_uinti_0i_investors.lengthi____if_msg.sender__investors_i_.etherAddress__alreadyinvestor_truealreadyinvestor_id_ibreak__.L66*C2534"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.fees_amount_100.L58*C2153"/>
+                <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.uintalreadyinvestor_id.L64*C2417"/>
+                <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#5_con_fun_if_ifRight_if_ifWrong_varDeclare.uintamount.L57*C2129"/>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.amount-_amount_100.L60*C2260"/>
+              </sol:IfWrong>
+            </sol:hasIfWrong>
+            <sol:hasIfRight rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L33*C1183"/>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.Enter.L30*C954"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.msg.value_2ether.L33*C1183"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:nameIs>Enter</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.ManualDeposit.L141*C5944">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;Manual_Deposit_received_from_the_Manager&quot;.L143*C5981">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.ManualDeposit.L141*C5944"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>"Manual Deposit received from the Manager"</sol:assignRight>
+            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasModifier>manager</sol:hasModifier>
+        <sol:nameIs>ManualDeposit</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewMessage.L121*C4721">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_new_sms.L123*C4769">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewMessage.L121*C4721"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>new_sms</sol:assignRight>
+            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasModifier>manager</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.new_sms.L121*C4741">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>new_sms</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>NewMessage</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.total_investors.L11*C305">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>total_investors</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.Emergency.L110*C4437">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.balance!_0.L112*C4470">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L112*C4470">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;Emergency_Withdraw_has_been_issued!&quot;.L116*C4523">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.balance_0.L115*C4511">
+                        <sol:before>
+                          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L114*C4489">
+                            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L112*C4470"/>
+                            <sol:callFunctionArgument>balance</sol:callFunctionArgument>
+                            <sol:callFunctionName>send</sol:callFunctionName>
+                            <sol:callFunctionObject>owner</sol:callFunctionObject>
+                          </sol:FunctionCall>
+                        </sol:before>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>0</sol:assignRight>
+                        <sol:assignLeft>balance</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>"Emergency Withdraw has been issued!"</sol:assignRight>
+                    <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.balance_0.L115*C4511"/>
+                <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner.send.L114*C4489"/>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.balance!_0.L112*C4470">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.balance!_0.L112*C4470"/>
+                    <sol:hasIfCondition>balance!=0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.Emergency.L110*C4437"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.balance!_0.L112*C4470"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>manager</sol:hasModifier>
+        <sol:nameIs>Emergency</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.totalpaidout.L15*C415">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>totalpaidout</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L26*C875">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.Enter.L27*C889">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.fallback.L26*C875"/>
+            <sol:callFunctionArgument></sol:callFunctionArgument>
+            <sol:callFunctionName>Enter</sol:callFunctionName>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:nameIs>fallback</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewOwner.L102*C4045">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;The_contract_has_a_new_manager!&quot;.L105*C4114">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_new_owner.L104*C4094">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewOwner.L102*C4045"/>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>new_owner</sol:assignRight>
+                <sol:assignLeft>owner</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>"The contract has a new manager!"</sol:assignRight>
+            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_new_owner.L104*C4094"/>
+        <sol:hasModifier>manager</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.new_owner.L102*C4063">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>new_owner</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>NewOwner</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.EthVentures4.L22*C770">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.owner_msg.sender.L23*C797">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.EthVentures4.L22*C770"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>msg.sender</sol:assignRight>
+            <sol:assignLeft>owner</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:nameIs>EthVentures4</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.totaldividends.L16*C444">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>totaldividends</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewManualInvestor.L128*C5046">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.etherAddress_new_investor.L133*C5268">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors.length__1.L132*C5226">
+                <sol:before>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.total_investors_investors.length_1.L131*C5189">
+                    <sol:before>
+                      <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldeposited__new_amount.L130*C5125">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.NewManualInvestor.L128*C5046"/>
+                        <sol:assignSymbol>=</sol:assignSymbol>
+                        <sol:assignRight>totaldeposited+new_amount</sol:assignRight>
+                        <sol:assignLeft>totaldeposited</sol:assignLeft>
+                      </sol:Assignment>
+                    </sol:before>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>investors.length+1</sol:assignRight>
+                    <sol:assignLeft>total_investors</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:before>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>investors.length+1</sol:assignRight>
+                <sol:assignLeft>investors.length</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>new_investor</sol:assignRight>
+            <sol:assignLeft>investors[investors.length-1].etherAddress</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasModifier>manager</sol:hasModifier>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.amount_new_amount.L134*C5328">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.etherAddress_new_investor.L133*C5268"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>new_amount</sol:assignRight>
+            <sol:assignLeft>investors[investors.length-1].amount</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors.length__1.L132*C5226"/>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.percentage_ownership_new_amount_totaldeposited_10000000000.L135*C5380">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.amount_new_amount.L134*C5328"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>new_amount/totaldeposited*10000000000</sol:assignRight>
+            <sol:assignLeft>investors[investors.length-1].percentage_ownership</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.new_amount.L128*C5096">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>new_amount</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.total_investors_investors.length_1.L131*C5189"/>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.new_investor.L128*C5073">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>new_investor</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.totaldeposited__new_amount.L130*C5125"/>
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.Message_To_Investors_&quot;New_manual_Investor_has_been_added_by_the_Manager!&quot;.L136*C5474">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.investors_investors.length-1_.percentage_ownership_new_amount_totaldeposited_10000000000.L135*C5380"/>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>"New manual Investor has been added by the Manager!"</sol:assignRight>
+            <sol:assignLeft>Message_To_Investors</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:nameIs>NewManualInvestor</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.balance.L13*C358">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>balance</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.Message_To_Investors.L17*C475">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>"Welcome to EthVentures4! New and improved! All bugs fixed!"</sol:valueIs>
+        <sol:typeName>string</sol:typeName>
+        <sol:nameIs>Message_To_Investors</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:defineModifier>
+      <sol:Modifier rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_modifier.manager.L20*C670">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_modifier_if.msg.sender__owner.L20*C689">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_modifier_if_ifRight._.L20*C689">
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_modifier_if.msg.sender__owner.L20*C689">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_modifier_if.msg.sender__owner.L20*C689"/>
+                    <sol:hasIfCondition>msg.sender==owner</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_modifier.manager.L20*C670"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_modifier_if.msg.sender__owner.L20*C689"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:nameIs>manager</sol:nameIs>
+      </sol:Modifier>
+    </sol:defineModifier>
+    <sol:hasStruct>
+      <sol:Struct rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_struct.InvestorArray.L3*C26">
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.uint.L7*C89">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>percentage_ownership</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.uint.L6*C75">
+            <sol:typeName>uint</sol:typeName>
+            <sol:nameIs>amount</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:hasStateVar>
+          <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.address.L5*C52">
+            <sol:typeName>address</sol:typeName>
+            <sol:nameIs>etherAddress</sol:nameIs>
+          </sol:StateVar>
+        </sol:hasStateVar>
+        <sol:nameIs>InvestorArray</sol:nameIs>
+      </sol:Struct>
+    </sol:hasStruct>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner.L18*C625">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:typeName>address</sol:typeName>
+        <sol:nameIs>owner</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.investors.L9*C207">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:typeName>InvestorArray[]</sol:typeName>
+        <sol:nameIs>investors</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.fees.L12*C337">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:valueIs>0</sol:valueIs>
+        <sol:typeName>uint</sol:typeName>
+        <sol:nameIs>fees</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+  </sol:Contract>
+</rdf:RDF>

@@ -1,0 +1,216 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SmartCheck",
+          "fullDescription": {
+            "text": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code."
+          },
+          "informationUri": "https://tool.smartdec.net/",
+          "rules": [
+            {
+              "id": "Ignore_22",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_ERC20_APPROVE"
+              }
+            },
+            {
+              "id": "Other_19",
+              "name": "OtherVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_LOCKED_MONEY"
+              }
+            },
+            {
+              "id": "Ignore_27",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_OVERPOWERED_ROLE"
+              }
+            },
+            {
+              "id": "Ignore_28",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_PRAGMAS_VERSION"
+              }
+            },
+            {
+              "id": "Ignore_30",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_REDUNDANT_FALLBACK_REJECT"
+              }
+            },
+            {
+              "id": "Ignore_38",
+              "name": "IgnoreVulnerability",
+              "shortDescription": {
+                "text": "SOLIDITY_VISIBILITY"
+              }
+            }
+          ],
+          "version": "0.0.12"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "/Sol/3.sol"
+          },
+          "sourceLanguage": "Solidity"
+        }
+      ],
+      "logicalLocations": [
+        {
+          "kind": "contract",
+          "name": "3"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "SOLIDITY_ERC20_APPROVE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionapprove(address_spender,uint256_value)publicreturns(boolsuccess){assert(msg.sender!=_spender&&_value>0);allowed[msg.sender][_spender]=_value;emitApproval(msg.sender,_spender,_value);returntrue;}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 88
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_22"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_LOCKED_MONEY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "contractCareerOnToken{eventTransfer(addressindexed_from,addressindexed_to,uint256_value);eventApproval(addressindexeda_owner,addressindexed_spender,uint256_value);eventOwnerChang(addressindexed_old,addressindexed_new,uint256_coin_change);uint256publictotalSupply;stringpublicname;uint8publicdecimals;stringpublicsymbol;addresspublicowner;mapping(address=>uint256)internalbalances;mapping(address=>mapping(address=>uint256))internalallowed;boolisTransPaused=false;constructor(uint256_initialAmount,uint8_decimalUnits)public{owner=msg.sender;if(_initialAmount<=0){totalSupply=100000000000000000;balances[owner]=totalSupply;}else{totalSupply=_initialAmount;balances[owner]=_initialAmount;}if(_decimalUnits<=0){decimals=2;}else{decimals=_decimalUnits;}name=\"CareerOn Chain Token\";symbol=\"COT\";}functiontransfer(address_to,uint256_value)publicreturns(boolsuccess){assert(_to!=address(this)&&!isTransPaused&&balances[msg.sender]>=_value&&balances[_to]+_value>balances[_to]);balances[msg.sender]-=_value;balances[_to]+=_value;if(msg.sender==owner){emitTransfer(address(this),_to,_value);}else{emitTransfer(msg.sender,_to,_value);}returntrue;}functiontransferFrom(address_from,address_to,uint256_value)publicreturns(boolsuccess){assert(_to!=address(this)&&!isTransPaused&&balances[msg.sender]>=_value&&balances[_to]+_value>balances[_to]&&allowed[_from][msg.sender]>=_value);balances[_to]+=_value;balances[_from]-=_value;allowed[_from][msg.sender]-=_value;if(_from==owner){emitTransfer(address(this),_to,_value);}else{emitTransfer(_from,_to,_value);}returntrue;}functionapprove(address_spender,uint256_value)publicreturns(boolsuccess){assert(msg.sender!=_spender&&_value>0);allowed[msg.sender][_spender]=_value;emitApproval(msg.sender,_spender,_value);returntrue;}functionallowance(address_owner,address_spender)publicviewreturns(uint256remaining){returnallowed[_owner][_spender];}functionbalanceOf(addressaccountAddr)publicviewreturns(uint256){returnbalances[accountAddr];}functionchangeOwner(addressnewOwner)public{assert(msg.sender==owner&&msg.sender!=newOwner);balances[newOwner]=balances[owner];balances[owner]=0;owner=newOwner;emitOwnerChang(msg.sender,newOwner,balances[owner]);}functionsetPauseStatus(boolisPaused)public{assert(msg.sender==owner);isTransPaused=isPaused;}functionchangeContractName(stringmemory_newName,stringmemory_newSymbol)public{assert(msg.sender==owner);name=_newName;symbol=_newSymbol;}function()externalpayable{revert();}}"
+                  },
+                  "startColumn": 0,
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "Other_19"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_OVERPOWERED_ROLE"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "functionsetPauseStatus(boolisPaused)public{assert(msg.sender==owner);isTransPaused=isPaused;}"
+                  },
+                  "startColumn": 4,
+                  "startLine": 118
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_27"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_PRAGMAS_VERSION"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "^"
+                  },
+                  "startColumn": 16,
+                  "startLine": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_28"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_REDUNDANT_FALLBACK_REJECT"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "{revert();}"
+                  },
+                  "startColumn": 33,
+                  "startLine": 131
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_30"
+        },
+        {
+          "message": {
+            "text": "SOLIDITY_VISIBILITY"
+          },
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Sol/3.sol"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "boolisTransPaused=false;"
+                  },
+                  "startColumn": 4,
+                  "startLine": 20
+                }
+              }
+            }
+          ],
+          "ruleId": "Ignore_38"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"
+}

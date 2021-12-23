@@ -1,0 +1,113 @@
+{
+  "contract": "buggy_46",
+  "tool": "smartcheck",
+  "start": 1637148765.6664646,
+  "end": 1637148768.4020553,
+  "duration": 2.735590696334839,
+  "analysis": [
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 4,
+      "column": 0,
+      "content": "contractProofOfExistence{enumBlockchainIdentification{Ixxo,Ethereum,Gochain}structFileExistenceStruct{uint256date;addressfilesender;stringfileHash;stringfilePathHash;addresscontractAddress;bytes32QRCodeHash;BlockchainIdentificationidentifier;}functiontransferTo_txorigin15(addressto,uintamount,addressowner_txorigin15)public{require(tx.origin==owner_txorigin15);to.call.value(amount);}mapping(address=>FileExistenceStruct[])fileExistenceProofs;functionSetFileExistenceProof(addressdappBoxOrigin,stringmemory_fileHash,stringmemory_filePathHash,address_contractAddress,BlockchainIdentification_identifier)publicreturns(bytes32){FileExistenceStructmemorynewInfo;uint256_date=now;bytes32QRCodeHash=generateQRCodeForFile(dappBoxOrigin,_fileHash,_filePathHash,_contractAddress,_identifier);newInfo.date=_date;newInfo.filesender=dappBoxOrigin;newInfo.fileHash=_fileHash;newInfo.filePathHash=_filePathHash;newInfo.contractAddress=_contractAddress;newInfo.identifier=_identifier;newInfo.QRCodeHash=QRCodeHash;fileExistenceProofs[dappBoxOrigin].push(newInfo);returnQRCodeHash;}functionwithdrawAll_txorigin14(addresspayable_recipient,addressowner_txorigin14)public{require(tx.origin==owner_txorigin14);_recipient.transfer(address<missing ';'>(this).balance);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 2,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 2,
+      "column": 25,
+      "content": "<"
+    },
+    {
+      "name": "SOLIDITY_TX_ORIGIN",
+      "patternId": "12e802",
+      "severity": 2,
+      "line": 17,
+      "column": 10,
+      "content": "tx.origin"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 44,
+      "column": 0,
+      "content": "functionwithdrawAll_txorigin14(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 22,
+      "column": 0,
+      "content": "mapping(address=>FileExistenceStruct[])fileExistenceProofs;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 44,
+      "column": 48,
+      "content": "_recipient,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 44,
+      "column": 59,
+      "content": "addressowner_txorigin14)public{"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 45,
+      "column": 8,
+      "content": "require(tx."
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 45,
+      "column": 19,
+      "content": "origin==owner_txorigin14);"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 46,
+      "column": 8,
+      "content": "_recipient.transfer"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 46,
+      "column": 27,
+      "content": "(address<missing ';'>"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 46,
+      "column": 35,
+      "content": "(this).balance);"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "contract": "buggy_31",
+  "tool": "smartcheck",
+  "start": 1637146523.592628,
+  "end": 1637146526.5539618,
+  "duration": 2.961333751678467,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 42,
+      "column": 19,
+      "content": "(address(0))"
+    },
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 69,
+      "column": 12,
+      "content": "returnaddress(0)"
+    },
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "a91b18",
+      "severity": 1,
+      "line": 73,
+      "column": 12,
+      "content": "returnaddress(0)"
+    },
+    {
+      "name": "SOLIDITY_OVERPOWERED_ROLE",
+      "patternId": "j83hf7",
+      "severity": 2,
+      "line": 313,
+      "column": 4,
+      "content": "functionsetRelayer(address_newRelayer)onlyOwnerexternal{require(_newRelayer!=address(0));emitNewRelayer(relayer,_newRelayer);relayer=_newRelayer;}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 100,
+      "column": 10,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 214,
+      "column": 10,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_SHOULD_NOT_BE_PURE",
+      "patternId": "11314f",
+      "severity": 1,
+      "line": 39,
+      "column": 4,
+      "content": "functionrecover(bytes32hash,bytesmemorysignature)internalpurereturns(address){if(signature.length!=65){return(address(0));}bytes32r;bytes32s;uint8v;assembly{r:=mload(add(signature,0x20))s:=mload(add(signature,0x40))v:=byte(0,mload(add(signature,0x60)))}if(uint256(s)>0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0){returnaddress(0);}if(v!=27&&v!=28){returnaddress(0);}returnecrecover(hash,v,r,s);}"
+    },
+    {
+      "name": "SOLIDITY_TX_ORIGIN",
+      "patternId": "12e802",
+      "severity": 2,
+      "line": 295,
+      "column": 16,
+      "content": "tx.origin"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 95,
+      "column": 12,
+      "content": "balances_intou22[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 105,
+      "column": 12,
+      "content": "balances_intou10[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 133,
+      "column": 12,
+      "content": "balances_intou18[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 224,
+      "column": 12,
+      "content": "balances_intou14[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "733fdd",
+      "severity": 2,
+      "line": 255,
+      "column": 12,
+      "content": "balances_intou2[msg.sender]-_value>=0"
+    },
+    {
+      "name": "SOLIDITY_USING_INLINE_ASSEMBLY",
+      "patternId": "109cd5",
+      "severity": 1,
+      "line": 53,
+      "column": 8,
+      "content": "assembly{r:=mload(add(signature,0x20))s:=mload(add(signature,0x40))v:=byte(0,mload(add(signature,0x60)))}"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 92,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou22;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 102,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 130,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou18;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 221,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_intou14;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 252,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_intou2;"
+    }
+  ]
+}

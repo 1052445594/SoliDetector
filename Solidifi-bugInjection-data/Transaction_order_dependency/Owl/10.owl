@@ -1,0 +1,995 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sol="http://www.hty.group/tf/ontologies/2020/07/Solildity#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function">
+    <owl:deprecated rdf:parseType="Resource">
+    </owl:deprecated>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForCondition">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Param">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfCondition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#VariableOperation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Constructor">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#StateVar">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Modifier">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Struct">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Contract"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfRight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionCall">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Expression"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Library"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ForContent">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionFor"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#IfWrong">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#FunctionIf"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnValue">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#Interface"/>
+  <owl:Class rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#ReturnClaim">
+    <rdfs:subClassOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#Function"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#containAssignment"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStateVar"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfCondition"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasParam"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfWrong">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineConstructor"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionVar">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#after"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForConditionStep">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnValue"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasReturnClaim"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIfRight">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#before">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#operateVarible"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFunction"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#defineModifier"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForContent">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasForCondition">
+    <rdfs:subPropertyOf rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasFor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasStruct"/>
+  <owl:ObjectProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasIf"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignLeft">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#storageLocate"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionObject"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#hasModifier"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionVar"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaValue">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#returnText"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#assignRight"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionSymbol"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opSymbol">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#pragmaName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#conditionStep"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#typeName"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#valueIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#opVarible">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#nameIs"/>
+  <owl:DatatypeProperty rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#callFunctionArgument"/>
+  <sol:Pragma rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_pragma.&gt;=0.4.21&lt;0.6.0.L2*C1">
+    <sol:pragmaValue>&gt;=0.4.21&lt;0.6.0</sol:pragmaValue>
+    <sol:pragmaName>solidity</sol:pragmaName>
+  </sol:Pragma>
+  <sol:Contract rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con.DocumentSigner.L4*C36">
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getDetail.L125*C3415">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign._signers_signers__docHash_.L127*C3579">
+            <sol:before>
+              <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign._doc_docs__docHash_.L126*C3548">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getDetail.L125*C3415"/>
+                <sol:assignSymbol>=</sol:assignSymbol>
+                <sol:assignRight>docs[_docHash]</sol:assignRight>
+                <sol:assignLeft>_doc</sol:assignLeft>
+              </sol:Assignment>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>signers[_docHash]</sol:assignRight>
+            <sol:assignLeft>_signers</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:containAssignment rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign._doc_docs__docHash_.L126*C3548"/>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L125*C3483">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param._signers.L125*C3511">
+                <sol:typeName>address[]</sol:typeName>
+                <sol:nameIs>_signers</sol:nameIs>
+              </sol:Param>
+            </sol:hasParam>
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param._doc.L125*C3491">
+                <sol:typeName>string</sol:typeName>
+                <sol:nameIs>_doc</sol:nameIs>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>view</sol:hasModifier>
+        <sol:hasModifier>validDoc</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._docHash.L125*C3434">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>_docHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getDetail</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:defineModifier>
+      <sol:Modifier rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_modifier.validDoc.L39*C991">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L40*C1037">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_modifier.validDoc.L39*C991"/>
+            <sol:callFunctionArgument>bytes(docs[_docHash]).length!=0,"Document is not submitted"</sol:callFunctionArgument>
+            <sol:callFunctionName>require</sol:callFunctionName>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_modifier_param._docHash.L39*C1009">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>_docHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>validDoc</sol:nameIs>
+      </sol:Modifier>
+    </sol:defineModifier>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD16.L8*C143">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.reward_TOD16_msg.value.L13*C328">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD16.transfer.L12*C274">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L11*C230">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L9*C195">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD16.L8*C143"/>
+                        <sol:callFunctionArgument>!claimed_TOD16</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>msg.sender==owner_TOD16</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD16</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>owner_TOD16</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>msg.value</sol:assignRight>
+            <sol:assignLeft>reward_TOD16</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD16.transfer.L12*C274"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L11*C230"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L9*C195"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>setReward_TOD16</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD12.L132*C3694">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.reward_TOD12_msg.value.L137*C3879">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD12.transfer.L136*C3825">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L135*C3781">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L133*C3746">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD12.L132*C3694"/>
+                        <sol:callFunctionArgument>!claimed_TOD12</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>msg.sender==owner_TOD12</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD12</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>owner_TOD12</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>msg.value</sol:assignRight>
+            <sol:assignLeft>reward_TOD12</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD12.transfer.L136*C3825"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L135*C3781"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L133*C3746"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>setReward_TOD12</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.claimed_TOD10.L44*C1130">
+        <sol:valueIs>false</sol:valueIs>
+        <sol:typeName>bool</sol:typeName>
+        <sol:nameIs>claimed_TOD10</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.claimed_TOD14.L85*C2295">
+        <sol:valueIs>false</sol:valueIs>
+        <sol:typeName>bool</sol:typeName>
+        <sol:nameIs>claimed_TOD14</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD10.L47*C1209">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.reward_TOD10_msg.value.L52*C1394">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD10.transfer.L51*C1340">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L50*C1296">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L48*C1261">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD10.L47*C1209"/>
+                        <sol:callFunctionArgument>!claimed_TOD10</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>msg.sender==owner_TOD10</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD10</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>owner_TOD10</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>msg.value</sol:assignRight>
+            <sol:assignLeft>reward_TOD10</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD10.transfer.L51*C1340"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L50*C1296"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L48*C1261"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>setReward_TOD10</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD16.L16*C365">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.claimed_TOD16_true.L21*C551">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L20*C498">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L18*C463">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L17*C429">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD16.L16*C365"/>
+                        <sol:callFunctionArgument>!claimed_TOD16</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>submission&lt;10</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD16</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>msg.sender</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>true</sol:assignRight>
+            <sol:assignLeft>claimed_TOD16</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L20*C498"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L18*C463"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L17*C429"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.submission.L16*C392">
+            <sol:typeName>uint256</sol:typeName>
+            <sol:nameIs>submission</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>claimReward_TOD16</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.winner_TOD15.L24*C621">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>winner_TOD15</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getHash.L148*C4139">
+        <sol:hasReturnValue>
+          <sol:ReturnValue rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_return.keccak256_abi.encodePacked__doc__.L149*C4215">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getHash.L148*C4139"/>
+            <sol:returnText>keccak256(abi.encodePacked(_doc))</sol:returnText>
+          </sol:ReturnValue>
+        </sol:hasReturnValue>
+        <sol:hasReturnClaim>
+          <sol:ReturnClaim rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim..L148*C4188">
+            <sol:hasParam>
+              <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_returnClaim_param.bytes32.L148*C4196">
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:Param>
+            </sol:hasParam>
+          </sol:ReturnClaim>
+        </sol:hasReturnClaim>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>pure</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._doc.L148*C4156">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>_doc</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>getHash</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD14.L88*C2374">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.reward_TOD14_msg.value.L93*C2559">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD14.transfer.L92*C2505">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L91*C2461">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L89*C2426">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.setReward_TOD14.L88*C2374"/>
+                        <sol:callFunctionArgument>!claimed_TOD14</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>msg.sender==owner_TOD14</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD14</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>owner_TOD14</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>msg.value</sol:assignRight>
+            <sol:assignLeft>reward_TOD14</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.owner_TOD14.transfer.L92*C2505"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L91*C2461"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L89*C2426"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>setReward_TOD14</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.claimed_TOD12.L129*C3615">
+        <sol:valueIs>false</sol:valueIs>
+        <sol:typeName>bool</sol:typeName>
+        <sol:nameIs>claimed_TOD12</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner_TOD14.L86*C2323">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner_TOD14</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner_TOD12.L130*C3643">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner_TOD12</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.reward_TOD10.L46*C1187">
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>reward_TOD10</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.signDocument.L104*C2815">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc._signers.push.L109*C3058">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.signDocument.L104*C2815"/>
+            <sol:callFunctionArgument>msg.sender</sol:callFunctionArgument>
+            <sol:callFunctionName>push</sol:callFunctionName>
+            <sol:callFunctionObject>_signers</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasFor>
+          <sol:FunctionFor rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i__signers.lengthi____if__signers_i___msg.sender_return_.L106*C2946">
+            <sol:conditionStep>i++</sol:conditionStep>
+            <sol:hasForCondition>
+              <sol:ForCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.i__signers.length.L106*C2946">
+                <sol:conditionValue>_signers.length</sol:conditionValue>
+                <sol:conditionSymbol>&lt;</sol:conditionSymbol>
+              </sol:ForCondition>
+            </sol:hasForCondition>
+            <sol:conditionVar>i</sol:conditionVar>
+            <sol:hasStateVar>
+              <sol:stateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_conditionExpr.uinti.L106*C2946">
+                <sol:valueIs>0</sol:valueIs>
+                <sol:nameIs>i</sol:nameIs>
+                <sol:typeName>uint</sol:typeName>
+              </sol:stateVar>
+            </sol:hasStateVar>
+            <sol:hasIf>
+              <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if._signers_i___msg.sender.L107*C3002">
+                <sol:hasIfRight>
+                  <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if_ifRight._.L107*C3002">
+                    <sol:before>
+                      <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if._signers_i___msg.sender.L107*C3002">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_for_if._signers_i___msg.sender.L107*C3002"/>
+                        <sol:hasIfCondition>_signers[i]==msg.sender</sol:hasIfCondition>
+                      </sol:IfCondition>
+                    </sol:before>
+                  </sol:IfRight>
+                </sol:hasIfRight>
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_for.for_uinti_0i__signers.lengthi____if__signers_i___msg.sender_return_.L106*C2946"/>
+                <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#4_con_fun_for_if._signers_i___msg.sender.L107*C3002"/>
+              </sol:FunctionIf>
+            </sol:hasIf>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.address__storage_signers.L105*C2890">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.signDocument.L104*C2815"/>
+                <sol:storageLocate>storage</sol:storageLocate>
+                <sol:valueIs>signers[_docHash]</sol:valueIs>
+                <sol:nameIs>_signers</sol:nameIs>
+                <sol:typeName>address[]</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+          </sol:FunctionFor>
+        </sol:hasFor>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.address__storage_signers.L105*C2890"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>validDoc</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._docHash.L104*C2837">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>_docHash</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>signDocument</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner_TOD16.L6*C92">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner_TOD16</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.signers.L37*C938">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:elementTypeName2>address[]</sol:elementTypeName2>
+        <sol:elementTypeName1>bytes32</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>signers</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD12.L140*C3916">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.claimed_TOD12_true.L145*C4102">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L144*C4049">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L142*C4014">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L141*C3980">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD12.L140*C3916"/>
+                        <sol:callFunctionArgument>!claimed_TOD12</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>submission&lt;10</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD12</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>msg.sender</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>true</sol:assignRight>
+            <sol:assignLeft>claimed_TOD12</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L144*C4049"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L142*C4014"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L141*C3980"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.submission.L140*C3943">
+            <sol:typeName>uint256</sol:typeName>
+            <sol:nameIs>submission</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>claimReward_TOD12</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.winner_TOD1.L63*C1707">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>winner_TOD1</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD15.L33*C830">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner_TOD15.transfer.L35*C886">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD15.L33*C830"/>
+            <sol:callFunctionArgument>msg.value</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>winner_TOD15</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>getReward_TOD15</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.winner_TOD13.L111*C3091">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>winner_TOD13</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.docs.L23*C581">
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:elementTypeName2>string</sol:elementTypeName2>
+        <sol:elementTypeName1>bytes32</sol:elementTypeName1>
+        <sol:typeName>mapping</sol:typeName>
+        <sol:nameIs>docs</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD1.L72*C1913">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner_TOD1.transfer.L74*C1968">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD1.L72*C1913"/>
+            <sol:callFunctionArgument>msg.value</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>winner_TOD1</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>getReward_TOD1</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.reward_TOD16.L7*C121">
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>reward_TOD16</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:nameIs>DocumentSigner</sol:nameIs>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD11.L160*C4472">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner_TOD11.transfer.L162*C4528">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD11.L160*C4472"/>
+            <sol:callFunctionArgument>msg.value</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>winner_TOD11</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>getReward_TOD11</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD13.L120*C3300">
+        <sol:callFunction>
+          <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.winner_TOD13.transfer.L122*C3356">
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.getReward_TOD13.L120*C3300"/>
+            <sol:callFunctionArgument>msg.value</sol:callFunctionArgument>
+            <sol:callFunctionName>transfer</sol:callFunctionName>
+            <sol:callFunctionObject>winner_TOD13</sol:callFunctionObject>
+          </sol:FunctionCall>
+        </sol:callFunction>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasModifier>payable</sol:hasModifier>
+        <sol:nameIs>getReward_TOD13</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD13.L112*C3121">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L114*C3173">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L114*C3173">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.winner_TOD13_msg.sender.L116*C3256">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L114*C3173"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>msg.sender</sol:assignRight>
+                    <sol:assignLeft>winner_TOD13</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L114*C3173">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L114*C3173"/>
+                    <sol:hasIfCondition>keccak256(abi.encode(guess))==keccak256(abi.encode('hello'))</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD13.L112*C3121"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L114*C3173"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.guess.L112*C3141">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>guess</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>play_TOD13</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.winner_TOD11.L151*C4263">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>winner_TOD11</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD11.L152*C4293">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L154*C4345">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L154*C4345">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.winner_TOD11_msg.sender.L156*C4428">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L154*C4345"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>msg.sender</sol:assignRight>
+                    <sol:assignLeft>winner_TOD11</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L154*C4345">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L154*C4345"/>
+                    <sol:hasIfCondition>keccak256(abi.encode(guess))==keccak256(abi.encode('hello'))</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD11.L152*C4293"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L154*C4345"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.guess.L152*C4313">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>guess</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>play_TOD11</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.claimed_TOD16.L5*C64">
+        <sol:valueIs>false</sol:valueIs>
+        <sol:typeName>bool</sol:typeName>
+        <sol:nameIs>claimed_TOD16</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.reward_TOD12.L131*C3672">
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>reward_TOD12</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.reward_TOD14.L87*C2352">
+        <sol:typeName>uint256</sol:typeName>
+        <sol:nameIs>reward_TOD14</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD1.L64*C1736">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L66*C1787">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L66*C1787">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.winner_TOD1_msg.sender.L68*C1870">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L66*C1787"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>msg.sender</sol:assignRight>
+                    <sol:assignLeft>winner_TOD1</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L66*C1787">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L66*C1787"/>
+                    <sol:hasIfCondition>keccak256(abi.encode(guess))==keccak256(abi.encode('hello'))</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD1.L64*C1736"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L66*C1787"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.guess.L64*C1755">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>guess</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>play_TOD1</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasStateVar>
+      <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#0_con_sv.owner_TOD10.L45*C1158">
+        <sol:typeName>addresspayable</sol:typeName>
+        <sol:nameIs>owner_TOD10</sol:nameIs>
+      </sol:StateVar>
+    </sol:hasStateVar>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD14.L96*C2596">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.claimed_TOD14_true.L101*C2782">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L100*C2729">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L98*C2694">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L97*C2660">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD14.L96*C2596"/>
+                        <sol:callFunctionArgument>!claimed_TOD14</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>submission&lt;10</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD14</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>msg.sender</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>true</sol:assignRight>
+            <sol:assignLeft>claimed_TOD14</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L100*C2729"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L98*C2694"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L97*C2660"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.submission.L96*C2623">
+            <sol:typeName>uint256</sol:typeName>
+            <sol:nameIs>submission</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>claimReward_TOD14</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD10.L55*C1431">
+        <sol:containAssignment>
+          <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.claimed_TOD10_true.L60*C1616">
+            <sol:before>
+              <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L59*C1564">
+                <sol:before>
+                  <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L57*C1529">
+                    <sol:before>
+                      <sol:FunctionCall rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L56*C1495">
+                        <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.claimReward_TOD10.L55*C1431"/>
+                        <sol:callFunctionArgument>!claimed_TOD10</sol:callFunctionArgument>
+                        <sol:callFunctionName>require</sol:callFunctionName>
+                      </sol:FunctionCall>
+                    </sol:before>
+                    <sol:callFunctionArgument>submission&lt;10</sol:callFunctionArgument>
+                    <sol:callFunctionName>require</sol:callFunctionName>
+                  </sol:FunctionCall>
+                </sol:before>
+                <sol:callFunctionArgument>reward_TOD10</sol:callFunctionArgument>
+                <sol:callFunctionName>transfer</sol:callFunctionName>
+                <sol:callFunctionObject>msg.sender</sol:callFunctionObject>
+              </sol:FunctionCall>
+            </sol:before>
+            <sol:assignSymbol>=</sol:assignSymbol>
+            <sol:assignRight>true</sol:assignRight>
+            <sol:assignLeft>claimed_TOD10</sol:assignLeft>
+          </sol:Assignment>
+        </sol:containAssignment>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.msg.sender.transfer.L59*C1564"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L57*C1529"/>
+        <sol:callFunction rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprFc.require.L56*C1495"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.submission.L55*C1458">
+            <sol:typeName>uint256</sol:typeName>
+            <sol:nameIs>submission</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>claimReward_TOD10</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD15.L25*C651">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L27*C703">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L27*C703">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.winner_TOD15_msg.sender.L29*C786">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L27*C703"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>msg.sender</sol:assignRight>
+                    <sol:assignLeft>winner_TOD15</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L27*C703">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L27*C703"/>
+                    <sol:hasIfCondition>keccak256(abi.encode(guess))==keccak256(abi.encode('hello'))</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.play_TOD15.L25*C651"/>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.keccak256_abi.encode_guess____keccak256_abi.encode_&apos;hello&apos;__.L27*C703"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param.guess.L25*C671">
+            <sol:typeName>bytes32</sol:typeName>
+            <sol:nameIs>guess</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>play_TOD15</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+    <sol:hasFunction>
+      <sol:Function rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.submitDocument.L78*C2061">
+        <sol:hasIf>
+          <sol:FunctionIf rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.bytes_docs__docHash__.length__0.L80*C2164">
+            <sol:hasIfRight>
+              <sol:IfRight rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L80*C2164">
+                <sol:containAssignment>
+                  <sol:Assignment rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_func_exprAssign.docs__docHash___doc.L81*C2216">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if_ifRight._.L80*C2164"/>
+                    <sol:assignSymbol>=</sol:assignSymbol>
+                    <sol:assignRight>_doc</sol:assignRight>
+                    <sol:assignLeft>docs[_docHash]</sol:assignLeft>
+                  </sol:Assignment>
+                </sol:containAssignment>
+                <sol:before>
+                  <sol:IfCondition rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.bytes_docs__docHash__.length__0.L80*C2164">
+                    <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#2_con_fun_if.bytes_docs__docHash__.length__0.L80*C2164"/>
+                    <sol:hasIfCondition>bytes(docs[_docHash]).length==0</sol:hasIfCondition>
+                  </sol:IfCondition>
+                </sol:before>
+              </sol:IfRight>
+            </sol:hasIfRight>
+            <sol:before>
+              <sol:StateVar rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32_docHash.L79*C2122">
+                <sol:before rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun.submitDocument.L78*C2061"/>
+                <sol:valueIs>getHash(_doc)</sol:valueIs>
+                <sol:nameIs>_docHash</sol:nameIs>
+                <sol:typeName>bytes32</sol:typeName>
+              </sol:StateVar>
+            </sol:before>
+            <sol:hasIfCondition rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#3_con_fun_if.bytes_docs__docHash__.length__0.L80*C2164"/>
+          </sol:FunctionIf>
+        </sol:hasIf>
+        <sol:hasStateVar rdf:resource="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_varDeclare.bytes32_docHash.L79*C2122"/>
+        <sol:hasModifier>public</sol:hasModifier>
+        <sol:hasParam>
+          <sol:Param rdf:about="http://www.hty.group/tf/ontologies/2020/07/Solildity#1_con_fun_param._doc.L78*C2085">
+            <sol:typeName>string</sol:typeName>
+            <sol:nameIs>_doc</sol:nameIs>
+          </sol:Param>
+        </sol:hasParam>
+        <sol:nameIs>submitDocument</sol:nameIs>
+      </sol:Function>
+    </sol:hasFunction>
+  </sol:Contract>
+</rdf:RDF>

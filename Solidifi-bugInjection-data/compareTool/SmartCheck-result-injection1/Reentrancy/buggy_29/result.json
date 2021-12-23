@@ -1,0 +1,337 @@
+{
+  "contract": "buggy_29",
+  "tool": "smartcheck",
+  "start": 1637147448.6428337,
+  "end": 1637147451.9730897,
+  "duration": 3.3302559852600098,
+  "analysis": [
+    {
+      "name": "SOLIDITY_ADDRESS_HARDCODED",
+      "patternId": "adc165",
+      "severity": 1,
+      "line": 162,
+      "column": 61,
+      "content": "0x0C8cDC16973E88FAb31DD0FCB844DdF0e1056dE2"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 170,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent26[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 217,
+      "column": 35,
+      "content": "call.value(balances_re_ent21[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 303,
+      "column": 35,
+      "content": "call.value(balances_re_ent1[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 375,
+      "column": 35,
+      "content": "call.value(_weiToWithdraw)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 440,
+      "column": 35,
+      "content": "call.value(1ether)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_EXTRA_GAS_IN_LOOPS",
+      "patternId": "d3j11j",
+      "severity": 1,
+      "line": 349,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_GAS_LIMIT_IN_LOOPS",
+      "patternId": "f6f853",
+      "severity": 2,
+      "line": 349,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": ">="
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 171,
+      "column": 8,
+      "content": "if(!success){revert();}"
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 441,
+      "column": 8,
+      "content": "if(!success){revert();}"
+    },
+    {
+      "name": "SOLIDITY_SAFEMATH",
+      "patternId": "837cac",
+      "severity": 1,
+      "line": 156,
+      "column": 4,
+      "content": "usingSafeMathforuint256;"
+    },
+    {
+      "name": "SOLIDITY_TRANSFER_IN_LOOP",
+      "patternId": "8jdj43",
+      "severity": 2,
+      "line": 349,
+      "column": 8,
+      "content": "for(uint256i=0;i<listingIds.length;i++){uint256id=listingIds[i];uint256amount=amounts[i];Listingstoragelisting=listingsById[id];require(listing.active,\"Listing is not active anymore!\");listing.amountLeft=listing.amountLeft.sub(amount);require(listing.amountLeft>=0,\"Amount left needs to be higher than 0.\");if(listing.amountLeft==0){listing.active=false;}uint256amountToPay=listing.pricePerToken*amount;listing.seller.transfer(amountToPay);totalAmountPayed=totalAmountPayed.add(amountToPay);totalAmount=totalAmount.add(amount);require(raffleContract.transferFrom(listing.seller,msg.sender,amount),'Token transfer failed!');}"
+    },
+    {
+      "name": "SOLIDITY_UINT_CANT_BE_NEGATIVE",
+      "patternId": "d48ac4",
+      "severity": 2,
+      "line": 355,
+      "column": 20,
+      "content": "listing.amountLeft>=0"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 170,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent26[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 217,
+      "column": 35,
+      "content": "call.value(balances_re_ent21[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 303,
+      "column": 35,
+      "content": "call.value(balances_re_ent1[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 375,
+      "column": 35,
+      "content": "call.value(_weiToWithdraw)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 440,
+      "column": 35,
+      "content": "call.value(1ether)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 15,
+      "column": 0,
+      "content": "boolnot_called_re_ent20=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 27,
+      "column": 0,
+      "content": "addresspayablelastPlayer_re_ent2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 28,
+      "column": 6,
+      "content": "uintjackpot_re_ent2;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 36,
+      "column": 0,
+      "content": "mapping(address=>uint)userBalance_re_ent19;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 166,
+      "column": 2,
+      "content": "mapping(address=>uint)userBalance_re_ent26;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 180,
+      "column": 2,
+      "content": "mapping(address=>uint)redeemableEther_re_ent25;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 192,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent24;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 203,
+      "column": 2,
+      "content": "addresspayablelastPlayer_re_ent23;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 204,
+      "column": 6,
+      "content": "uintjackpot_re_ent23;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 215,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent21;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 225,
+      "column": 2,
+      "content": "uint256counter_re_ent21=0;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 284,
+      "column": 2,
+      "content": "mapping(address=>uint)redeemableEther_re_ent11;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 293,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 301,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent1;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 332,
+      "column": 0,
+      "content": "mapping(address=>uint)redeemableEther_re_ent18;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 371,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_re_ent17;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 394,
+      "column": 0,
+      "content": "addresspayablelastPlayer_re_ent16;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 395,
+      "column": 6,
+      "content": "uintjackpot_re_ent16;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 412,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_re_ent15;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 423,
+      "column": 0,
+      "content": "uint256counter_re_ent14=0;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 437,
+      "column": 0,
+      "content": "boolnot_called_re_ent13=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 453,
+      "column": 0,
+      "content": "mapping(address=>uint)userBalance_re_ent12;"
+    }
+  ]
+}

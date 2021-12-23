@@ -1,0 +1,561 @@
+{
+  "contract": "buggy_20",
+  "tool": "smartcheck",
+  "start": 1637147606.6640608,
+  "end": 1637147609.7768064,
+  "duration": 3.112745523452759,
+  "analysis": [
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 43,
+      "column": 35,
+      "content": "call.value(1ether)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 76,
+      "column": 29,
+      "content": "call.value(_weiToWithdraw)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 224,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_CALL_WITHOUT_DATA",
+      "patternId": "111ppp",
+      "severity": 2,
+      "line": 265,
+      "column": 35,
+      "content": "call.value(balances_re_ent1[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 142,
+      "column": 0,
+      "content": "contractRampInstantEscrowsPoolInterface{uint16publicASSET_TYPE;functionrelease(address_pool,address<missing ')'>payable_receiver,address_oracle,bytescalldata_assetData,bytes32_paymentDetailsHash)external;uint256counter_re_ent28=0;functioncallme_re_ent28()public{require(counter_re_ent28<=5);msg.sender.call.value(10ether);revert();counter_re_ent28+=1;}functionreturnFunds(addresspayable_pool,address_receiver,address_oracle,bytescalldata_assetData,bytes32_paymentDetailsHash)external;boolnot_called_re_ent27=true;functionbug_re_ent27()public{require(not_called_re_ent27);msg.sender.call.value(1ether);revert();not_called_re_ent27=false;}}"
+    },
+    {
+      "name": "SOLIDITY_LOCKED_MONEY",
+      "patternId": "30281d",
+      "severity": 3,
+      "line": 460,
+      "column": 0,
+      "content": "contractRampInstantEthPoolisRampInstantPool{mapping(address=>uint)balances_re_ent31;functionwithdrawFunds_re_ent31(uint256_weiToWithdraw)public{require(balances_re_ent31[msg.sender]>=_weiToWithdraw);msg.sender.call.value(_weiToWithdraw);balances_re_ent31[msg.sender]-=_weiToWithdraw;}uint16internalconstantETH_TYPE_ID=1;constructor(addresspayable_swapsContract,uint256_minSwapAmount,uint256_maxSwapAmount,bytes32_paymentDetailsHash)publicRampInstantPool(_swapsContract,_minSwapAmount,_maxSwapAmount,_paymentDetailsHash,ETH_TYPE_ID){}"
+    },
+    {
+      "name": "SOLIDITY_OVERPOWERED_ROLE",
+      "patternId": "j83hf7",
+      "severity": 2,
+      "line": 112,
+      "column": 4,
+      "content": "functionsetIsActive(bool_isActive)externalonlyOwner{if(_isActive==isActive)return;isActive=_isActive;emitIsActiveChanged(_isActive);}"
+    },
+    {
+      "name": "SOLIDITY_PRAGMAS_VERSION",
+      "patternId": "23fc32",
+      "severity": 1,
+      "line": 3,
+      "column": 16,
+      "content": "^"
+    },
+    {
+      "name": "SOLIDITY_PRIVATE_MODIFIER_DONT_HIDE_DATA",
+      "patternId": "5616b2",
+      "severity": 1,
+      "line": 199,
+      "column": 21,
+      "content": "private"
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 44,
+      "column": 8,
+      "content": "if(!success){revert();}"
+    },
+    {
+      "name": "SOLIDITY_REVERT_REQUIRE",
+      "patternId": "c56b12",
+      "severity": 1,
+      "line": 225,
+      "column": 8,
+      "content": "if(!success){revert();}"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 43,
+      "column": 35,
+      "content": "call.value(1ether)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 76,
+      "column": 29,
+      "content": "call.value(_weiToWithdraw)(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 224,
+      "column": 36,
+      "content": "call.value(userBalance_re_ent33[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_UNCHECKED_CALL",
+      "patternId": "f39eed",
+      "severity": 3,
+      "line": 265,
+      "column": 35,
+      "content": "call.value(balances_re_ent1[msg.sender])(\"\")"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 146,
+      "column": 4,
+      "content": "functionrelease(address_pool,address<missing ')'>payable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 163,
+      "column": 4,
+      "content": "functionreturnFunds(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 271,
+      "column": 4,
+      "content": "constructor(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": 910067,
+      "severity": 1,
+      "line": 471,
+      "column": 4,
+      "content": "constructor(addresspayable"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 30,
+      "column": 2,
+      "content": "addresspayablelastPlayer_re_ent37;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 31,
+      "column": 6,
+      "content": "uintjackpot_re_ent37;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 40,
+      "column": 2,
+      "content": "boolnot_called_re_ent13=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 54,
+      "column": 0,
+      "content": "addresspayablelastPlayer_re_ent30;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 55,
+      "column": 6,
+      "content": "uintjackpot_re_ent30;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 72,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_re_ent3;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 89,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent36;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 96,
+      "column": 2,
+      "content": "mapping(address=>uint)userBalance_re_ent12;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 117,
+      "column": 0,
+      "content": "mapping(address=>uint)balances_re_ent29;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 148,
+      "column": 24,
+      "content": "_receiver,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 149,
+      "column": 8,
+      "content": "address_oracle,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 150,
+      "column": 8,
+      "content": "bytescalldata"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 150,
+      "column": 23,
+      "content": "_assetData,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 151,
+      "column": 8,
+      "content": "bytes32_paymentDetailsHash)external;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 154,
+      "column": 0,
+      "content": "uint256counter_re_ent28=0;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 164,
+      "column": 24,
+      "content": "_pool,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 165,
+      "column": 8,
+      "content": "address_receiver,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 166,
+      "column": 8,
+      "content": "address_oracle,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 167,
+      "column": 8,
+      "content": "bytescalldata"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 167,
+      "column": 23,
+      "content": "_assetData,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 168,
+      "column": 8,
+      "content": "bytes32_paymentDetailsHash)external;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 171,
+      "column": 0,
+      "content": "boolnot_called_re_ent27=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 202,
+      "column": 2,
+      "content": "uint256counter_re_ent35=0;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 211,
+      "column": 2,
+      "content": "boolnot_called_re_ent34=true;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 220,
+      "column": 2,
+      "content": "mapping(address=>uint)userBalance_re_ent33;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 231,
+      "column": 2,
+      "content": "mapping(address=>uint)redeemableEther_re_ent32;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 246,
+      "column": 2,
+      "content": "mapping(address=>uint)redeemableEther_re_ent11;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 255,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent10;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 263,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent1;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 272,
+      "column": 24,
+      "content": "_swapsContract,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 273,
+      "column": 8,
+      "content": "uint256_minSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 274,
+      "column": 8,
+      "content": "uint256_maxSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 275,
+      "column": 8,
+      "content": "bytes32_paymentDetailsHash,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 276,
+      "column": 8,
+      "content": "uint16_assetType)public"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 279,
+      "column": 8,
+      "content": "validateLimits(_minSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 279,
+      "column": 39,
+      "content": "_maxSwapAmount)validateSwapsContract"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 280,
+      "column": 29,
+      "content": "(_swapsContract,_assetType){"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 282,
+      "column": 8,
+      "content": "swapsContract=_swapsContract;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 283,
+      "column": 8,
+      "content": "paymentDetailsHash=_paymentDetailsHash;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 284,
+      "column": 8,
+      "content": "minSwapAmount=_minSwapAmount;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 285,
+      "column": 8,
+      "content": "maxSwapAmount=_maxSwapAmount;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 286,
+      "column": 8,
+      "content": "ASSET_TYPE=_assetType;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 462,
+      "column": 2,
+      "content": "mapping(address=>uint)balances_re_ent31;"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 472,
+      "column": 24,
+      "content": "_swapsContract,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 473,
+      "column": 8,
+      "content": "uint256_minSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 474,
+      "column": 8,
+      "content": "uint256_maxSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 475,
+      "column": 8,
+      "content": "bytes32_paymentDetailsHash)public"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 478,
+      "column": 8,
+      "content": "RampInstantPool(_swapsContract,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 479,
+      "column": 28,
+      "content": "_minSwapAmount,_maxSwapAmount,"
+    },
+    {
+      "name": "SOLIDITY_VISIBILITY",
+      "patternId": "b51ce0",
+      "severity": 1,
+      "line": 479,
+      "column": 60,
+      "content": "_paymentDetailsHash,ETH_TYPE_ID){"
+    }
+  ]
+}

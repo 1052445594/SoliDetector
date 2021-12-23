@@ -1,0 +1,148 @@
+/data/buggy_19.sol
+line 56:42 mismatched input 'payable' expecting {',', ')'}
+line 56:60 no viable alternative at input '_recipient,'
+line 56:60 mismatched input ',' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 56:85 mismatched input ')' expecting {';', '='}
+line 57:15 extraneous input '(' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 57:18 mismatched input '.' expecting {';', '='}
+line 57:26 extraneous input '==' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 57:45 extraneous input ')' expecting {';', '='}
+line 58:27 mismatched input '(' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 58:35 mismatched input '(' expecting ')'
+line 58:41 extraneous input '.' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 58:49 extraneous input ')' expecting {';', '='}
+line 60:2 extraneous input 'address' expecting {<EOF>, 'pragma', 'import', 'contract', 'library', 'interface'}
+line 101:37 mismatched input 'payable' expecting {',', ')'}
+line 101:53 no viable alternative at input '_address,'
+line 101:53 mismatched input ',' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 101:65 mismatched input ')' expecting {';', '='}
+line 101:83 extraneous input '{' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 102:15 mismatched input '(' expecting {';', '='}
+line 102:27 mismatched input '==' expecting ')'
+line 102:35 mismatched input ',' expecting {';', '='}
+line 103:25 extraneous input '(' expecting {'solidity', 'experimental', 'from', 'constructor', 'block', 'coinbase', 'difficulty', 'gaslimit', 'number', 'timestamp', 'blockhash', 'msg', 'data', 'gas', 'sender', 'sig', 'value', 'now', 'this', 'tx', 'origin', 'gasprice', 'public', 'internal', 'external', 'private', 'constant', 'length', 'balance', 'emit', '_', 'revert', Identifier}
+line 103:32 extraneous input ')' expecting {';', '='}
+line 105:0 extraneous input 'function' expecting {<EOF>, 'pragma', 'import', 'contract', 'library', 'interface'}
+jar:file:/usr/local/lib/node_modules/@smartdec/smartcheck/jdeploy-bundle/smartcheck-2.0-jar-with-dependencies.jar!/solidity-rules.xmlruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 55
+column: 0
+content: contractowned{functionwithdrawAll_txorigin34(addresspayable_recipient,addressowner_txorigin34)public{require(tx.origin==owner_txorigin34);_recipient.transfer(address<missing ';'>(this).balance);}
+
+ruleId: SOLIDITY_LOCKED_MONEY
+patternId: 30281d
+severity: 3
+line: 93
+column: 0
+content: contractethBankisowned{function()payableexternal{}functiontransferTo_txorigin31(addressto,uintamount,addressowner_txorigin31)public{require(tx.origin==owner_txorigin31);to.call.value(amount);}functionwithdrawForUser(addresspayable_address,uintamount)onlyOwnerpublic{require(msg.sender==owner,"only owner can use this method");_address.transfer(amount);}
+
+ruleId: SOLIDITY_PRAGMAS_VERSION
+patternId: 23fc32
+severity: 1
+line: 3
+column: 16
+content: ^
+
+ruleId: SOLIDITY_TX_ORIGIN
+patternId: 12e802
+severity: 2
+line: 97
+column: 10
+content: tx.origin
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 56
+column: 2
+content: functionwithdrawAll_txorigin34(addresspayable
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: 910067
+severity: 1
+line: 101
+column: 4
+content: functionwithdrawForUser(addresspayable
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 56
+column: 50
+content: _recipient,
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 56
+column: 61
+content: addressowner_txorigin34)public{
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 57
+column: 8
+content: require(tx.
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 57
+column: 19
+content: origin==owner_txorigin34);
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 58
+column: 8
+content: _recipient.transfer
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 58
+column: 27
+content: (address<missing ';'>
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 58
+column: 35
+content: (this).balance);
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 101
+column: 45
+content: _address,
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 101
+column: 54
+content: uintamount)
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 102
+column: 15
+content: (msg.sender==owner,"only owner can use this method");
+
+ruleId: SOLIDITY_VISIBILITY
+patternId: b51ce0
+severity: 1
+line: 103
+column: 8
+content: _address.transfer(amount);
+
+SOLIDITY_VISIBILITY :13
+SOLIDITY_PRAGMAS_VERSION :1
+SOLIDITY_LOCKED_MONEY :2
+SOLIDITY_TX_ORIGIN :1
