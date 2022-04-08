@@ -43,12 +43,12 @@ Num | Defect Name | Description
  27   | Dos with Failed Call (SWC-113)           | External calls can fail accidentally or deliberately, which can cause a DoS condition in the contract. To minimize the damage caused by such failures, it is better to isolate each external call into its own transaction that can be initiated by the recipient of the call. This is especially relevant for payments, where it is better to let users withdraw funds rather than push funds to them automatically (this also reduces the chance of problems with the gas limit). 
  28   | Signature Malleability                   | The signature is included in the encryption function used before verifying the existence of the transaction. 
  29   | Require Violation (SWC-123)              | The ```require() ```statement is intended to validate the external input to the function. When there is an internal defect or logic problem in require, the statement is said to violate the require() requirement. 
- 30   | Unused Type Bytes  | In Solidity, ```bytes```, and ```byte[ ]``` provide the same function. But using ```byte[ ]``` is a waste of storage. 
- 31 | Unused Type Fixed | Use a variable of type ```fixed``` or ```unfixed``` 
+ 30   | Use of Type Bytes | In Solidity, ```bytes```, and ```byte[ ]``` provide the same function. But using ```byte[ ]``` is a waste of storage. 
+ 31 | Use of Type Fixed | Use a variable of type ```fixed``` or ```unfixed``` 
  32 | Private Modifier for Private Data              | Use ```private``` to modify important data such as passwords. 
  33   | Integer Division                               | All integer division rounds down to the nearest integer. If you need more precision, consider using a multiplier, or store both the numerator and denominator. 
  34   | Typographical Error (SWC-129)                  | A typographical error can occur for example when the intent of a defined operation is to sum a number to a variable (+=) but it has accidentally been defined in a wrong way (=+), introducing a typo which happens to be a valid operator. Instead of calculating the sum, it initializes the variable again. 
- 35   | Use of Deprecated Solidity Functions (SWC-111) | Several functions and operators in Solidity are deprecated. Using them leads to reduced code quality. With new major versions of the Solidity compiler, deprecated functions and operators may result in side effects and compile errors. 
+ 35   | Ambitrary Use of Assembly | The use of assembly is error-prone and should be avoided. 
 
 
 
