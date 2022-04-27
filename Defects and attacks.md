@@ -1,11 +1,4 @@
-SoliDetector, the Solidity source code analyzer
-
 SoliDetector: Detect Security Defects of Solidity Smart Contract Based on Knowledge Graph
-
-- [Supported Defect Types](#Supported Defect Types)
-- [Real-World Attacks](#real-world attacks)
-
-
 
 
 
